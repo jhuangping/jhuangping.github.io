@@ -1,0 +1,49 @@
+//電腦
+@mixin rwdw-pc()
+	@media all and (min-width: $rwd-pc + px)
+		@content
+
+//平板
+@mixin rwdw-pad()
+	@media all and (min-width: $rwd-pad + px) and (max-width: $rwd-pc + px)
+		@content
+
+//小平板
+@mixin rwds-small-pad($min-size: $rwd-phone, $max-size: $rwd-pads)
+	@media all and (min-width: $min-size + px) and (max-width: $max-size + px) 
+		@content
+
+//手機
+@mixin rwdw-phone($size: $rwd-phones)
+	@media all and (max-width: $size + px)
+		@content
+
+// 自訂 Max-width
+@mixin rwdw-max($size: $rwd)
+	@media all and (max-width: $size + px)
+		@content
+
+// 自訂 min-width
+@mixin rwdw-min($size: $rwd)
+	@media all and (min-width: $size + 1 +px)
+		@content
+
+// 自訂 range-width
+@mixin rwdw-range($max: 1920, $min: $rwd)
+	@media screen and (min-width: $min + 1 + px) and (max-width: $max + px)
+		@content
+
+// 自訂 Max-height
+@mixin rwdh-max($size: $rwd)
+	@media all and (max-width: $size + px)
+		@content
+
+// 自訂 min-height
+@mixin rwdh-min($size: $rwd)
+	@media all and (min-width: $size + 1 + px)
+		@content
+
+// 自訂 range-height
+@mixin rwdh-range($max: 1080, $min: $rwd)
+	@media screen and (min-width: $min + 1 + px) and (max-width: $max + px)
+		@content

@@ -1,0 +1,38 @@
+// Layout ===================================================================== 
+@mixin md-layout_main()
+    /* main */
+    .main,main
+        @content
+
+// Container SASS ------------------------------------------------------------------
+@mixin md-layout_ctr()
+    /* container */
+    .ctr,.container
+        margin: 0 auto
+        width: 100%
+        max-width: $ctrRange + px
+        +md-ctr($ctrRange)
+
+        @each $name,$val in $ctrArry
+            &--#{$name}
+                max-width: $val + px
+                +md-ctr($val)
+
+        &--full,&--max
+            max-width: 100%
+            padding-left: 0px
+            padding-right: 0px
+        &--html
+            max-width: 100%
+            min-width: 320px
+            overflow: hidden
+            +md-layout_ctr--html()
+        @content
+
+@mixin md-layout_ctr--html()
+    @content
+// Container Mixin -----------------------------------------------------------------
+@mixin md-ctr($size: $ctrRange, $mg: $ctrMargin * 2,$both: $ctrBoth)
+	@media all and (max-width: $size + $mg + px)
+		padding-left: $both
+		padding-right: $both

@@ -1,0 +1,63 @@
+@mixin md-page()
+    /* page */
+    .page
+        max-width: 875px
+        margin: 0 auto
+        +flex-center()
+        a
+            +flex-center()
+            font-size: px(16px)
+            padding: 5px
+            color: #7e8fb5
+            cursor: pointer
+
+            width: 40px
+            height: 40px
+
+            &.current
+                color: cr(hover)
+                // font-weight: bold
+
+                color: #fff
+                background: #3B96E5
+            
+
+            &.prev 
+                padding-right: 10px 
+            &.next 
+                padding-left: 10px 
+
+            &.prev::before,&.next::before
+                content: ''
+                font-family: $FontAwesome-Solid
+                display: block
+                opacity: .5
+                font-size: 20px
+            
+
+            &.prev::before
+                content: '\f104' 
+            &.next::before 
+                content: '\f105' 
+
+            +rwdw-min()
+                &:hover 
+                    opacity: .5 
+    .page-btn
+        width: 100%
+        padding: vh(55) 0 vh(45) 0
+        /* p: 55px 0 45px 0 */
+        position: relative
+
+        .btn-arrow-top
+            +flex-center()
+            position: absolute
+            width: 50px
+            height: 50px
+            top: -20px
+            left: calc(50% - 25px)
+            border-radius: 100%
+            font-size: px(25)
+            line-height: 0
+            &::before
+                margin-top: -16px

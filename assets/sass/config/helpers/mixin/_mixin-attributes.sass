@@ -1,0 +1,139 @@
+// Display Flex
+@mixin flex($dis: flex, $fd: default, $fw: default, $ai: default, $jc: default)
+  display: $dis
+
+  @if $fd != default
+      flex-direction: $fd
+
+  @if $fw != default
+    flex-wrap: $fw
+
+  @if $ai != default
+    @if $ai == start
+      align-items: flex-start
+    @else if $ai == end
+      align-items: flex-end
+    @else
+      align-items: $ai
+
+  @if $jc != default
+    @if $jc == sa
+      justify-content: space-around
+    @else if $jc == sb
+      justify-content: space-between
+    @else if $jc == start
+      justify-content: flex-start
+    @else if $jc == end
+      justify-content: flex-end
+    @else
+      justify-content: $jc
+
+// Flex 置中
+@mixin flex-center($dis: flex, $fd: row, $fw: nowrap, $ai: center, $jc: center)
+  display: $dis
+
+  @if $ai != center
+    @if $ai == start
+      align-items: flex-start
+    @else if $ai == end
+      align-items: flex-end
+    @else
+      align-items: $ai
+  @else
+    align-items: $ai
+
+  @if $jc != center
+    @if $jc == sa
+      justify-content: space-around
+    @else if $jc == sb
+      justify-content: space-between
+    @else if $jc == start
+      justify-content: flex-start
+    @else if $jc == end
+      justify-content: flex-end
+    @else
+      justify-content: $jc
+  @else
+    justify-content: $jc
+
+  @if $fd != row
+    flex-direction: $fd
+  @if $fw != nowrap
+    flex-wrap: $fw
+
+// Text Linear Gradient 文字漸層
+@mixin text-lg($L: red, $R: blue, $path: left)
+  background: linear-gradient($path, $L, $R)
+  background-clip: text
+  color: transparent
+
+// Border Linear Gradient 邊線漸層
+@mixin border-lg($L: red, $R: blue, $path: left)
+  border-style: solid
+  border-image: linear-gradient($path, $L, $R)
+  border-image-slice: 1
+
+// Background linear gradient 背景漸層
+@mixin bg-lg($L: red, $R: blue, $path: left)
+  background: linear-gradient($path, $L, $R)
+
+// Text Overflow
+@mixin text-overflow($row: 1)
+  overflow: hidden
+  text-overflow: ellipsis
+  @if $row == 1
+    white-space: nowrap
+  @else
+    display: -webkit-box
+		-webkit-box-orient: vertical
+		-webkit-line-clamp: $row
+
+// appearance
+@mixin appearance($arrow) 
+  -webkit-appearance: $arrow 
+  /*Chrome*/
+  -moz-appearance: $arrow 
+  /*FF*/
+  appearance: $arrow
+  /*CSS3*/
+  &:-ms-expand 
+    display: $arrow 
+  /*IE*/ 
+
+// transition(trs)
+@mixin transition($time: .5, $prop: all)
+  transition: $prop $time+s
+@mixin trs($time: .5, $prop: all)
+  transition: $prop $time+s
+
+// Position
+@mixin pos-center()
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+// Percentage Height
+@mixin per-h($h: 9, $w: 16, $patch: 0)
+  // 16:9 (youtube: 1280:720) youtube 56.25%  
+
+  // (height / width)
+  padding-bottom: percentage($h / $w)
+  @if $patch != 0
+    padding-top: $patch + px
+
+// Table Width Percentage
+@mixin tab-w($td,$tab)
+	width: $td / $tab * 100%
+
+// Scrollbar
+@mixin scrollbar($bar: #00f,$bg: #f00,$w: 5)
+  &::-webkit-scrollbar
+    width: $w + px
+    background: $bg
+
+  &::-webkit-scrollbar-track
+    background: $bg
+
+  &::-webkit-scrollbar-thumb
+    background: $bar

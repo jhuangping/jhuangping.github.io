@@ -1,0 +1,19 @@
+// Table ======================================================================
+@mixin md-table()
+    /* Table */
+    .tab
+        width: 100%
+        text-align: center
+        border-bottom: 1px solid #DADADA
+        tr:nth-child(odd)
+            td
+                background: #eee
+        td,th
+            padding: px(10) vw(10)
+            border: 1px solid #DADADA
+            border-top: 0px
+            border-bottom: 0px
+        th
+            background: #034099
+            color: #fff
+        @content

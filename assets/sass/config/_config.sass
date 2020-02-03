@@ -1,0 +1,71 @@
+/* //////////////////////////////////////////////////////////////////////////// */
+/* JhuangPing v.1.0.0 [12.28.2019]                                              */
+/* Github: https://jhuangping.github.io                                         */
+/* //////////////////////////////////////////////////////////////////////////// */
+// Config =====================================================================
+@import helpers/variable/_variable
+// Media ======================================================================
+//-----------------------------------------------------------------------------
+// PC: 1920x1080, 1680x1050, 1600x900, 1440x900, 1366x800, 1366x768, 1024x768
+// Pad: 800x1280, 768x1024, 600x1024, 600x962
+// Phone: [iPhone 6/7/8 Plus, 414x736] [iPhone 6/7/8, 375x667] [iPhone 5/SE, 320x568]
+//-----------------------------------------------------------------------------
+$rwd: 1024 //Menu轉換手機尺寸
+$rwd-pc: 1280 //電腦尺寸
+$rwd-pcs: 1024 //小電腦尺寸
+$rwd-pad: 992 //平板尺寸
+$rwd-pads: 768 //小平板尺寸
+$rwd-phone: 480 //手機尺寸
+$rwd-phones: 320 //小手機尺寸
+
+// Font =======================================================================
+// Font Main  預設 ( Arial, 'Microsoft JhengHei', sans-serif )
+$font-main: 'Quicksand', Arial, 'Microsoft JhengHei', sans-serif !default //主字體
+$font: (bold: 'Righteous',
+line: 'Quicksand')
+
+// Font Awesome Icon
+$FontAwesome: 'Font Awesome 5 Solid','Font Awesome 5 Regular','Font Awesome 5 Brands'
+$FontAwesome-Solid: 'Font Awesome 5 Solid'
+$FontAwesome-Regular: 'Font Awesome 5 Regular'
+$FontAwesome-Brands: 'Font Awesome 5 Brands'
+
+// Icomoon ICON
+$icm: 'icomoon'
+
+// Color ======================================================================
+// Common
+$color: (inner: #fff,
+hover: #F3C860,
+white: #fff,
+black: #000)
+
+// Default ====================================================================
+// PC 預設字級 18px, Moblie 預設字級 16px
+$defaultFz: 16
+
+// Container ==================================================================
+$ctrRange: 1240 // 基本範圍
+$ctrBoth: 5% // 自適應左右間距 (mobile)
+$ctrMargin: 15 // 自適應左右間距 (pc)
+
+// 控制 container
+// 名稱: 值, name: vaal
+$ctrArry: (max1240:1240,max1860:1860,max1190: 1190,max1180: 1180,max1170: 1170,max1160: 1160,max1090: 1090,max875:875)
+
+// Grid =======================================================================
+$gridArry: 2, 3, 4
+
+// Banner =====================================================================
+$bnWidth: 1920
+$bnHeight: 300
+$bnMask: false // true, false
+$bnMaskStyle: style01
+
+// Form =======================================================================
+$formCol: 2
+$formSort: row // row , col
+
+// Setting SASS ===============================================================
+@import helpers/_helpers-setting
+@import module/_module-setting

@@ -1,0 +1,21 @@
+@charset 'utf-8'
+@mixin md-default()
+	/* Default ==================================================================== */
+	html
+		font-size: 10px
+		// @if $defaultFz == 16
+		// 	+rwdw-min($rwd-pad)
+		// 		font-size: 11.25px
+		// @else
+		// 	+rwdw-max($rwd-pad)
+		// 		font-size: 8.88889px
+	body 
+		font-family: $font-main
+		font-size: px($defaultFz)
+		line-height: lh($defaultFz,24)
+		letter-spacing: 1px
+		color: cr(inner)
+		overflow-x: hidden
+		opacity: 0
+		animation: opacity_in 1s both
+		@content

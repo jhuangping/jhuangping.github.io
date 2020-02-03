@@ -1,0 +1,89 @@
+/* Header ===================================================================== */
+header
+    width: 100vw
+    position: fixed
+    top: 20px
+    left: 0px
+    z-index: 10000
+.hd
+    &_ctr
+        +flex($jc: sb)
+    &_logo
+        flex: 0 0 50px
+        z-index: 1
+    &_toggle
+        position: fixed
+        z-index: 10001
+        top: 35px
+        right: 5%
+        width: 35px
+        height: 35px
+        border-radius: 5px
+        border: 1px solid #333
+        background: #ccc
+        cursor: pointer
+        +trs()
+        &.js-active
+            background: #252525
+            box-shadow: 0 0 10px rgba(#000, .8) inset
+
+    +rwdw-min()
+        &_ctr
+            max-width: vw(1680)
+        &_toggle
+            display: none
+
+    +rwdw-max()
+        &_menu
+            position: fixed
+            top: 50%
+            left: 0px
+            width: 100%
+            height: 0px
+            background: rgba(#000, .8)
+            +flex-center()
+            opacity: 0
+            pointer-events: none
+            +trs()
+            &.js-show
+                pointer-events: auto
+                opacity: 1
+                top: 0px
+                height: 100%
+
+.menu
+    +flex($fd: column)
+    margin-top: 10px
+    font-family: font(bold)
+    font-size: px(20)
+    text-transform: capitalize
+
+    &_item
+        margin-bottom: 5px
+        text-align: right
+
+    +rwdw-min()
+        a:hover
+            color: #fff
+            opacity: .5      
+            
+    +rwdw-max()
+        margin-top: 0px
+        max-width: 320px
+        width: 100%
+        max-height: 80%
+        overflow-x: hidden
+        border-radius: 5px
+        box-shadow: 0px 5px 10px rgba(#000,.8)
+        opacity: 0
+        +trs()
+        &.js-show
+            opacity: 1
+
+        &_item
+            margin-bottom: 0px
+            text-align: center
+        a
+            display: block
+            padding: 15px 8px
+            background: #212121

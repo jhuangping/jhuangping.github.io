@@ -1,0 +1,146 @@
+// noRest
+@mixin noRest($color:cr(inner))
+	
+	color: $color
+	word-wrap: break-word
+
+	ul,ol
+		margin: 1.12em 0 //段落
+
+	ol ul, ul ol, ul ul, ol ol 
+		margin-top: 0
+		margin-bottom: 0
+
+	li 
+		display: list-item 
+		list-style-type: inherit
+	
+	ul
+		list-style-type: disc //預設
+	ol
+		list-style-type: decimal  //預設
+	ol,ul 
+		&.n
+			list-style: none //沒有標誌，不使用編號
+		&.c
+			list-style: circle  //空心圓
+		&.s
+			list-style: square  //實心方形
+		&.dlz
+			list-style: decimal-leading-zero  //阿拉伯數字(十進制前置零) IE6 顯示為實心圓形符號
+		&.lr
+			list-style: lower-roman  //小寫羅馬數字
+		&.ur
+			list-style: upper-roman //大寫羅馬數字
+		&.la
+			list-style: lower-alpha  //小寫英文字母
+		&.ua
+			list-style: upper-alpha  //大寫英文字母
+		&.lg
+			list-style: lower-greek  //希臘語 IE6 顯示為實心圓形符號
+		&.amn
+			list-style: armenian  //亞美尼亞 IE6 顯示為實心圓形符號
+		&.grg
+			list-style: georgian  //格魯吉亞語 IE6 顯示為實心圓形符號
+
+
+	ul, ol
+		display: block
+		page-break-before: avoid 
+		padding-left: 40px
+
+	h1 
+		font-size: 2em
+		margin: .67em 0
+
+	h2
+		font-size: 1.5em
+		margin: .75em 0
+
+	h3
+		font-size: 1.17em
+		margin: .83em 0
+	
+	h4, p, blockquote, fieldset, form, dl, dir, menu
+		margin: 1.12em 0
+	
+	h5 
+		font-size: .83em
+		margin: 1.5em 0
+	
+	h6 
+		font-size: .75em
+		margin: 1.67em 0
+	
+	h1, h2, h3, h4, h5, h6, b, strong
+		font-weight: bolder
+	
+
+	.sub
+		vertical-align:sub //下標
+	.sup
+		vertical-align: super//上標
+
+	.red
+		color: #E06666
+
+	@content
+
+// BS Grid
+@mixin bs-grid($size:$rwd)
+	$grid: 100%/12
+	.row
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -15px
+
+	[class^="col-"]
+		padding: 10px 15px
+
+		// Position
+		&.gdp,&.gd
+			display: flex
+			flex-wrap: wrap
+			padding: 10px 15px
+
+	$i: 1
+	@while $i <= 12
+		.col-#{$i}
+			width: $grid * $i
+			padding: 0 15px
+			@if $i == 12
+			@else if $i >= 6
+				+rwdw-max($rwd-phone)
+					width: 100%
+			@else if $i >= 3
+				+rwdw-max($rwd-pad)
+					width: 50%
+				+rwdw-max($rwd-phone)
+					width: 100%
+			@else if $i >= 1
+				+rwdw-max(1500)
+					width: calc(100%/4)
+				+rwdw-max(1366)
+					width: calc(100%/3)
+				+rwdw-max($rwd-pad)
+					width: 50%
+				+rwdw-max($rwd-phone)
+					width: 100%
+			$i: $i + 1
+
+	.row
+		&--center
+			justify-content: center
+			align-items: center
+
+		// 水平 
+		&--left
+			justify-content: flex-start 
+		&--right
+			justify-content: flex-end
+
+		// 垂直 
+		&--on
+			align-items: flex-start
+		&--under
+			align-items: flex-end

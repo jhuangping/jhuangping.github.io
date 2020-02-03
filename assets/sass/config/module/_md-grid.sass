@@ -1,0 +1,40 @@
+// Grid Mixin -----------------------------------------------------------------
+@mixin grid-mg($both: 15,$mg: 30)
+    margin-left: vw(-$both)
+    margin-right: vw(-$both)
+    & > *
+        padding-right: vw($both)
+        padding-left: vw($both)
+        margin-bottom: px($mg)
+// Grid SASS ------------------------------------------------------------------
+@mixin md-grid()
+    /* Grid */
+    .gd,.grid
+        +flex($fw: wrap)
+        @each $val in $gridArry
+            &--row#{$val}
+                > *
+                    width: calc(100%/#{$val})
+                    @if $val <= 2
+                        +rwdw-max($rwd-phone)
+                            width: 100%
+                    @else if $val <= 3
+                        +rwdw-max($rwd-pad)
+                            width: 50%
+                        +rwdw-max($rwd-phone)
+                            width: 100%
+                    @else if $val <= 4
+                        +rwdw-max(1366)
+                            width: calc(100%/3)
+                        +rwdw-max($rwd-pad)
+                            width: 50%
+                        +rwdw-max($rwd-phone)
+                            width: 100%
+                    @else if $val <= 6
+                        +rwdw-max(1366)
+                            width: calc(100%/3)
+                        +rwdw-max($rwd-pad)
+                            width: 50%
+                        +rwdw-max($rwd-phone)
+                            width: 100%
+        @content

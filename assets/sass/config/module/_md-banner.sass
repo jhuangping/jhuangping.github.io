@@ -1,0 +1,55 @@
+
+// Banner SASS ----------------------------------------------------------------
+@mixin md-banner()
+    /* Banner */
+    .bn
+        line-height: 0px
+        overflow: hidden
+        background: #ccc
+        position: relative
+
+        &_ctr
+            max-width: 100%
+            position: relative
+            // 無圖時高度
+            min-height: 150px
+            +md-banner_mask()
+
+        &_txt
+            position: absolute
+            top: 0px
+            left: 0px
+            width: 100%
+            height: 100%
+            +flex($ai: center,$jc: center)
+            line-height: lh(16,24)
+            z-index: 3
+
+        &_pic,&_img,&_bg
+            width: 100%
+            min-height: 150px
+            img
+                width: 100%
+
+        @content
+// Banner Edit ----------------------------------------------------------------
+
+// Banner Mixin ---------------------------------------------------------------
+@mixin md-banner_mask($switch: $bnMask,$bnMaskStyle: style01)
+    @if $switch
+        @if $bnMaskStyle == style01
+            &::before,&::after
+                content: ''
+                position: absolute
+                z-index: 2
+                left: 0px
+                width: 100%
+                +per-h(160 ,$bnWidth, 30)
+                pointer-events: none
+            &::before
+                top: 0px
+                +bg-lg(rgba(#000,.15), $colorRe, top)
+            &::after
+                bottom: 0px
+                +bg-lg(rgba(#000,.15), $colorRe, bottom)
+        @content

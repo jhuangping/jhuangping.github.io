@@ -1,0 +1,29 @@
+/* Footer ===================================================================== */
+footer
+    width: 100vw
+    position: fixed
+    left: 0px
+    bottom: 20px
+    z-index: 1
+
+.ft
+    +rwdw-min()
+        &_ctr
+            max-width: vw(1680)
+.community
+    +flex($jc: end)
+    margin: 10px -5px
+    font-size: px(22)
+
+    a
+        margin: 0 5px
+    +rwdw-min()
+        a:hover
+            color: #fff
+            opacity: .5
+
+.copyright
+    text-align: right
+    font-size: px(14)
+    span
+        opacity: .5

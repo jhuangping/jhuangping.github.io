@@ -1,0 +1,27 @@
+@mixin md-typography()
+    /* Typography */
+    a
+        cursor: pointer
+        text-decoration: none
+        
+        +rwdw-min()
+            &[href^="tel:"]
+                pointer-events: none
+            &:hover
+                color: cr(hover)
+                // opacity: .5
+
+    p:not(:last-child)
+        // margin-bottom: 20px
+
+    h1, h2, h3, h4, h5, h6
+        display: inline-block
+    @content
+
+@mixin md-edit()
+    /* eidt */
+    .edit
+        +noRest()
+        +bs-grid()
+        
+        @content

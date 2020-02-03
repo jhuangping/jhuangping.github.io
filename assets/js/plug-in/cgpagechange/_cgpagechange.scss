@@ -1,0 +1,274 @@
+/*----- cgpagechange A -----*/
+
+$circle:"circle";
+
+
+svg#endbg {
+    position: fixed;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+}
+
+circle{
+    display: block;
+    fill:none;
+    transition: all .7s;
+    transition-timing-function: linear;
+    stroke-width: 0;
+}
+
+
+.stroke {
+    animation: stroke 1s both;
+}
+
+
+@keyframes stroke {
+    0% {
+        stroke-width: 0;
+    }
+    100% {
+        stroke-width: 41vh;
+    }
+}
+
+@media all and (max-aspect-ratio:1/1) {
+    @keyframes stroke {
+        0% {
+            stroke-width: 0;
+        }
+        100% {
+            stroke-width: 41vw;
+        }
+    }
+}
+
+
+
+@for $i from 0 through 9 {
+    .#{$circle}#{$i} {
+        animation-delay: ($i/15)+s;
+    }
+}
+
+@for $i from 0 through 9 {
+    .#{$circle}#{$i} {
+        transition-delay: ($i/20)+s;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*logo動畫*/
+
+#svgLogo {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    animation: radar .6s both .4s;
+    animation-timing-function: linear;
+    max-width:150px;
+    padding-top: 5px;
+    @media all and (max-width: 700px){
+        animation: radar .6s both .7s;
+    }
+}
+
+
+
+
+@keyframes radar {
+    0% {
+        -webkit-clip-path: polygon(50% 50%, 0% 49%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
+        clip-path: polygon(50% 50%, 0% 49%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
+    }
+    12.5% {
+        -webkit-clip-path: polygon(50% 50%, 0% 49%, 0 0, 0 0, 0 0, 0 0, 0 0);
+        clip-path: polygon(50% 50%, 0% 49%, 0 0, 0 0, 0 0, 0 0, 0 0);
+    }
+    37.5% {
+        -webkit-clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 0, 100% 0, 100% 0);
+        clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 0, 100% 0, 100% 0);
+    }
+    62.5% {
+        -webkit-clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+        clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+    }
+    87.5% {
+        -webkit-clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 100%);
+        clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 100%);
+    }
+    100% {
+        -webkit-clip-path: polygon(50% 50%, 0% 50%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 50%);
+        clip-path: polygon(50% 50%, 0% 50%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 50%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*******************************************/
+
+
+/*                                         */
+
+
+/*              cgpagechange B             */
+
+
+/*偽燈箱動畫*/
+
+
+/*                                         */
+
+
+/*******************************************/
+
+
+/*.fakeLiboxOpen {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    background-color: #fff;
+    animation:fakeLiboxOpen 1s both ;
+}
+
+@keyframes fakeLiboxOpen {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.fakeLiboxClose{
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    background-color: #fff;
+    animation:fakeLiboxClose .8s both;
+}
+
+@keyframes fakeLiboxClose {
+    0% {
+        height: 100%;
+    }
+    100% {
+        height: 0;
+    }
+}
+*/
+
+
+
+
+.winnerBlock{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    display: flex;
+    flex-wrap:wrap;
+    .blockLeft,
+    .blockCenter,
+    .blockRight {
+        height: 100%;
+        background-color: #f2f2f2;
+        @media all and (max-width: 1024px){
+            height: 33.33%;
+        }
+    }
+    .blockLeft,
+    .blockRight {
+        width: calc(50% - 410px);
+        animation: slideInUp 0.6s both;
+        @media all and (max-width: 1370px){
+            width:20%;
+        }
+        @media all and (max-width: 1024px){
+            width: 100%;
+            animation:slideInLeft  0.6s both;
+        }
+    }
+    .blockCenter {
+        width: 820px;
+        border-right: 1px solid #fff;
+        border-left: 1px solid #fff;
+        animation: slideInDown 0.6s both;
+        @media all and (max-width: 1370px){
+            width:60%;
+        }
+        @media all and (max-width: 1024px){
+            width: 100%;
+            animation: slideInRight 0.6s both;
+            border-right: none;
+            border-left: none;
+            border-top:  1px solid #fff;
+            border-bottom:  1px solid #fff;
+        }
+    }
+}
+
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}

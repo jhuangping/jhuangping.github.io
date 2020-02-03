@@ -1,0 +1,33 @@
+// Javascript =================================================================
+// Common ---------------------------------------------------------------------
+// Javascript SASS ------------------------------------------------------------
+@mixin md-javascript()
+    /* Javascript */
+    [data-img]
+        background-repeat: no-repeat
+
+    .js-img
+        &--full
+            background-size: cover
+        &--hold
+            background-size: auto 100%
+        &--config
+            background-position: center
+        +md-javascript_img()
+        
+    .js
+        @content
+// Image Content --------------------------------------------------------------
+@mixin md-javascript_img()
+    @content
+
+// Image Description ----------------------------------------------------------
+// data-img="full" [ 超出外框 ]
+// data-img="hold" [ 在框內 ]
+// .js-img--config [ 預設圖片置中, 也可以設定其他參數]
+//  Image Mixin ---------------------------------------------------------------
+@mixin img-config($site: center)
+    .js-img--config
+        @if $site != center
+            background-position: $site
+        @content

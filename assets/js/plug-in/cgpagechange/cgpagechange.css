@@ -1,0 +1,364 @@
+@charset "UTF-8";
+/*----- cgpagechange A -----*/
+svg#endbg {
+  position: fixed;
+  z-index: 20;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+circle {
+  display: block;
+  fill: none;
+  -webkit-transition: all .7s;
+  -o-transition: all .7s;
+  transition: all .7s;
+  -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+  stroke-width: 0; }
+
+.stroke {
+  -webkit-animation: stroke 1s both;
+  animation: stroke 1s both; }
+
+@-webkit-keyframes stroke {
+  0% {
+    stroke-width: 0; }
+  100% {
+    stroke-width: 41vh; } }
+
+@keyframes stroke {
+  0% {
+    stroke-width: 0; }
+  100% {
+    stroke-width: 41vh; } }
+
+@media all and (max-aspect-ratio: 1 / 1) {
+  @-webkit-keyframes stroke {
+    0% {
+      stroke-width: 0; }
+    100% {
+      stroke-width: 41vw; } }
+  @keyframes stroke {
+    0% {
+      stroke-width: 0; }
+    100% {
+      stroke-width: 41vw; } } }
+
+.circle0 {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s; }
+
+.circle1 {
+  -webkit-animation-delay: 0.06667s;
+  animation-delay: 0.06667s; }
+
+.circle2 {
+  -webkit-animation-delay: 0.13333s;
+  animation-delay: 0.13333s; }
+
+.circle3 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+
+.circle4 {
+  -webkit-animation-delay: 0.26667s;
+  animation-delay: 0.26667s; }
+
+.circle5 {
+  -webkit-animation-delay: 0.33333s;
+  animation-delay: 0.33333s; }
+
+.circle6 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s; }
+
+.circle7 {
+  -webkit-animation-delay: 0.46667s;
+  animation-delay: 0.46667s; }
+
+.circle8 {
+  -webkit-animation-delay: 0.53333s;
+  animation-delay: 0.53333s; }
+
+.circle9 {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s; }
+
+.circle0 {
+  -webkit-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s; }
+
+.circle1 {
+  -webkit-transition-delay: 0.05s;
+  -o-transition-delay: 0.05s;
+  transition-delay: 0.05s; }
+
+.circle2 {
+  -webkit-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  transition-delay: 0.1s; }
+
+.circle3 {
+  -webkit-transition-delay: 0.15s;
+  -o-transition-delay: 0.15s;
+  transition-delay: 0.15s; }
+
+.circle4 {
+  -webkit-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s; }
+
+.circle5 {
+  -webkit-transition-delay: 0.25s;
+  -o-transition-delay: 0.25s;
+  transition-delay: 0.25s; }
+
+.circle6 {
+  -webkit-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s; }
+
+.circle7 {
+  -webkit-transition-delay: 0.35s;
+  -o-transition-delay: 0.35s;
+  transition-delay: 0.35s; }
+
+.circle8 {
+  -webkit-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  transition-delay: 0.4s; }
+
+.circle9 {
+  -webkit-transition-delay: 0.45s;
+  -o-transition-delay: 0.45s;
+  transition-delay: 0.45s; }
+
+/*logo動畫*/
+#svgLogo {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  -webkit-animation: radar .6s both .4s;
+  animation: radar .6s both .4s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  max-width: 150px;
+  padding-top: 5px; }
+  @media all and (max-width: 700px) {
+    #svgLogo {
+      -webkit-animation: radar .6s both .7s;
+      animation: radar .6s both .7s; } }
+
+@-webkit-keyframes radar {
+  0% {
+    -webkit-clip-path: polygon(50% 50%, 0% 49%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
+    clip-path: polygon(50% 50%, 0% 49%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%); }
+  12.5% {
+    -webkit-clip-path: polygon(50% 50%, 0% 49%, 0 0, 0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(50% 50%, 0% 49%, 0 0, 0 0, 0 0, 0 0, 0 0); }
+  37.5% {
+    -webkit-clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 0, 100% 0, 100% 0);
+    clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 0, 100% 0, 100% 0); }
+  62.5% {
+    -webkit-clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+    clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%); }
+  87.5% {
+    -webkit-clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 100%);
+    clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 100%); }
+  100% {
+    -webkit-clip-path: polygon(50% 50%, 0% 50%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 50%);
+    clip-path: polygon(50% 50%, 0% 50%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 50%); } }
+
+@keyframes radar {
+  0% {
+    -webkit-clip-path: polygon(50% 50%, 0% 49%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
+    clip-path: polygon(50% 50%, 0% 49%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%); }
+  12.5% {
+    -webkit-clip-path: polygon(50% 50%, 0% 49%, 0 0, 0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(50% 50%, 0% 49%, 0 0, 0 0, 0 0, 0 0, 0 0); }
+  37.5% {
+    -webkit-clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 0, 100% 0, 100% 0);
+    clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 0, 100% 0, 100% 0); }
+  62.5% {
+    -webkit-clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+    clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%); }
+  87.5% {
+    -webkit-clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 100%);
+    clip-path: polygon(50% 50%, 0% 49%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 100%); }
+  100% {
+    -webkit-clip-path: polygon(50% 50%, 0% 50%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 50%);
+    clip-path: polygon(50% 50%, 0% 50%, 0% 0%, 100% 0%, 100% 100%, 0 100%, 0 50%); } }
+
+/*******************************************/
+/*                                         */
+/*              cgpagechange B             */
+/*偽燈箱動畫*/
+/*                                         */
+/*******************************************/
+/*.fakeLiboxOpen {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    background-color: #fff;
+    animation:fakeLiboxOpen 1s both ;
+}
+
+@keyframes fakeLiboxOpen {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.fakeLiboxClose{
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    background-color: #fff;
+    animation:fakeLiboxClose .8s both;
+}
+
+@keyframes fakeLiboxClose {
+    0% {
+        height: 100%;
+    }
+    100% {
+        height: 0;
+    }
+}
+*/
+.winnerBlock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .winnerBlock .blockLeft,
+  .winnerBlock .blockCenter,
+  .winnerBlock .blockRight {
+    height: 100%;
+    background-color: #f2f2f2; }
+    @media all and (max-width: 1024px) {
+      .winnerBlock .blockLeft,
+      .winnerBlock .blockCenter,
+      .winnerBlock .blockRight {
+        height: 33.33%; } }
+  .winnerBlock .blockLeft,
+  .winnerBlock .blockRight {
+    width: calc(50% - 410px);
+    -webkit-animation: slideInUp 0.6s both;
+    animation: slideInUp 0.6s both; }
+    @media all and (max-width: 1370px) {
+      .winnerBlock .blockLeft,
+      .winnerBlock .blockRight {
+        width: 20%; } }
+    @media all and (max-width: 1024px) {
+      .winnerBlock .blockLeft,
+      .winnerBlock .blockRight {
+        width: 100%;
+        -webkit-animation: slideInLeft  0.6s both;
+        animation: slideInLeft  0.6s both; } }
+  .winnerBlock .blockCenter {
+    width: 820px;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    -webkit-animation: slideInDown 0.6s both;
+    animation: slideInDown 0.6s both; }
+    @media all and (max-width: 1370px) {
+      .winnerBlock .blockCenter {
+        width: 60%; } }
+    @media all and (max-width: 1024px) {
+      .winnerBlock .blockCenter {
+        width: 100%;
+        -webkit-animation: slideInRight 0.6s both;
+        animation: slideInRight 0.6s both;
+        border-right: none;
+        border-left: none;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff; } }
+
+@-webkit-keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%); }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); } }
+
+@keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%); }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); } }
+
+@-webkit-keyframes slideInDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%); }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); } }
+
+@keyframes slideInDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%); }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); } }
+
+@-webkit-keyframes slideInLeft {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%); } }
+
+@keyframes slideInLeft {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%); } }
+
+@-webkit-keyframes slideInRight {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%); }
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%); } }
+
+@keyframes slideInRight {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%); }
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%); } }

@@ -1,0 +1,169 @@
+// Form Mixin -----------------------------------------------------------------
+@mixin form-mg($both: 15,$mg: 30)
+    margin-left: vw(-$both)
+    margin-right: vw(-$both)
+    & > *
+        padding-right: vw($both)
+        padding-left: vw($both)
+        margin-bottom: px($mg)
+
+// Form SASS ------------------------------------------------------------------
+@mixin md-form()
+    /* Form Input */
+    .inpt
+        &-select
+            position: relative
+            display: inline-block
+            background: rgba(#fff,.35)
+            width: auto
+            line-height: 0px;
+            border-style: solid
+            border-width: 1px 
+            border-color: #B6B7B7
+            border-radius: 0px
+            &::after
+                content: ''
+                position: absolute
+                top: calc(50% - 3px)
+                right: 9px
+                text-align: center
+                border-width: 5px
+                border-style: solid
+                border-color: #333 $colorRe $colorRe $colorRe
+            select
+                font-size: px(16)
+                border-style: solid
+                border-width: 1px 
+                border-color: #B6B7B7
+                border-radius: 10px
+                appearance: none
+                padding: 4px 5px
+                padding-right: 25px
+                text-align: center
+                max-width: inherit
+                border: none
+                background: rgba(#fff,.35)
+                width: 100%
+                outline: none
+                &::-ms-expand
+                    display: none
+    /* Form */
+    .fm,.form
+        +flex($fw: wrap)
+        @each $val in $formCol
+            &--row#{$val}
+                > *
+                    width: calc(100%/#{$val})
+                    @if $val <= 2
+                        +rwdw-max($rwd-phone)
+                            width: 100%
+                    @else if $val <= 3
+                        +rwdw-max($rwd-pad)
+                            width: 50%
+                        +rwdw-max($rwd-phone)
+                            width: 100%
+                    @else if $val <= 4
+                        +rwdw-max(1366)
+                            width: calc(100%/3)
+                        +rwdw-max($rwd-pad)
+                            width: 50%
+                        +rwdw-max($rwd-phone)
+                            width: 100%
+                    @else if $val <= 6
+                        +rwdw-max(1366)
+                            width: calc(100%/3)
+                        +rwdw-max($rwd-pad)
+                            width: 50%
+                        +rwdw-max($rwd-phone)
+                            width: 100%
+
+        input[type="text"],input[type="tel"],input[type="email"],input[type="password"],textarea
+            font-size: px(16)    
+            border-style: solid
+            border: none
+            background: rgba(#fff,.35)
+            padding: 4px 5px
+            max-width: 100%
+            width: 100%
+            outline: none
+
+        textarea
+            width: 100%
+            max-width: 100%
+            min-height: 100px
+            padding: px(10)
+            border: 1px solid #DADADA
+
+        &-td,&-th
+            +flex($ai: center)
+            padding-bottom: px(10)
+            // border-bottom: 1px solid #DADADA
+            position: relative
+            &::before
+                content: ''
+                position: absolute
+                bottom: 0px
+                left: vw(30)
+                width: calc(100% - #{vw(60)} )
+                height: 1px
+                background: #DADADA
+            @if $formSort == row
+            @else
+                flex-direction: column
+
+            &_name
+                white-space: nowrap
+                margin-right: vw(15)
+                font-size: px(20)
+                font-weight: bold
+                color: #014099
+                +rwdw-max($rwd-phone)
+                    flex: 0 0 115px
+                &--red
+                    &::before
+                        display: inline-block
+                        content: '*'
+                        padding-right: 8px
+                        color: #ec6666
+            &_inpt
+                flex-grow: 1
+            &--full
+                width: 100%
+                &::before
+                    display: none
+            &--btn
+                +flex($jc: sb)
+                width: 100%
+                +rwdw-max($rwd-phone)
+                    flex-direction: column
+                    > *:not(:last-child)
+                        margin-bottom: px(20)
+                &::before
+                    display: none
+                .btn
+                    width: 115px
+                    height: 45px
+                    +rwdw-min()
+                        &:hover
+                            input
+                                box-shadow: 0 0 10px #000 inset
+                    input
+                        font-size: px(18)
+                        color: #fff
+                        text-align: center
+                        width: 100%
+                        height: 100%
+                        border: none
+                        outline: none
+                        appearance: none
+                        cursor: pointer
+                        +trs()
+                    &--submit input
+                        background: #E60044
+                    &--send 
+                        width: 100%
+                        input
+                            background: #E60044
+                    &--reset input
+                        background: #014099
+        @content
