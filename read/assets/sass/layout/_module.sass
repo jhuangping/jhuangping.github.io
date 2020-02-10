@@ -1,0 +1,60 @@
++md-reset()
++md-default()
+    overflow: hidden
++md-common()
++md-javascript()
++md-layout_main()
+    width: 100vw
+    height: 100vh
++md-layout_ctr()
++md-keyframes()
++md-typography()
+    #edit
+        ol, ul
+            padding-left: 20px
+        ol, ul, li
+            list-style: $Re
+        p
+            margin: 0px
+            &:not(:last-child)
+                +mg(b,20px)
+        hr
+            border: none
+            border-bottom: 1px dotted #aaa
+
+        h1, h2, h3, h4, h5, h6
+            display: block
+
+        @for $i from 1 through 6
+            h#{$i}
+                font-size: px(50 - $i * 5)
+
+        pre
+            color: crc(code-white)
+            background: crc(code-bg)
+            font-size: px(14)
+            padding: 10px 20px
+            border-radius: 5px
+            position: relative
+
+            .tag, .red
+                color: crc(code-r)
+            .cls, .green
+                color: crc(code-g)
+            .blue
+                color: crc(code-b)
+            .gray
+                color: crc(code-gray)
+            .y
+                color: crc(code-y)
+
+        +bs-grid()
+// +md-edit()
++md-button()
++md-grid()
++md-banner()
+    &--index
+    &--inside
++md-path()
++md-form()
++md-table()
