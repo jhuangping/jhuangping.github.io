@@ -11,16 +11,28 @@
 
 <h1>JhuangPing Helpers</h1>
 <ul>
-    <li>簡述 Description</li>
-    <li>下載 download</li>
-    <li>結構 skeleton</li>
-    <li>設定 setting</li>
-    <li>元件 element</li>
+    <!-- <li>簡述 Description</li> -->
+    <li>下載 Download</li>
+    <li>結構 Skeleton</li>
+    <li>設定 Setting</li>
+    <li>元件 Element
+        <ul>
+            <li>共用類別 Common Class</li>
+        </ul>
+    </li>
+</ul>
+
+<hr>
+<h2>下載 Download</h2>
+<ul>
+    <li>
+        <a href="">JhuangPing Helpers</a>
+    </li>
 </ul>
 
 <hr>
 
-<h4>結構 Skeleton</h4>
+<h2>結構 Skeleton</h2>
 <pre><code>config/
 ├─ helpers/
 │  ├─ function/
@@ -31,7 +43,7 @@
 
 <hr>
 
-<h4>設定 Setting</h4>
+<h2>設定 Setting</h2>
 <pre><code><span class="gray">// Config</span>
 <span class="red">@import</span> <span class="blue">config/_config</span>
 
@@ -45,8 +57,46 @@
 
 <hr>
 
-<h4>layout</h4>
-<h5>Container</h5>
+<h2>元件 Element</h2>
+
+<h3>helpers # 助手</h3>
+<h4>function # 功能</h4>
+<h4>mixin # 函式</h4>
+<h4>variable # 變數</h4>
+<h5>helpers-setting</h5>
+
+<hr>
+
+<h3>module # 模組</h3>
+<h5>module-setting</h5>
+<h5>md-reset</h5>
+<h5>md-default</h5>
+<h5>md-common</h5>
+<div class="info">
+    <h6>Style</h6>
+    <ul>
+        <li>.style-none</li>
+    </ul>
+    <h6>text</h6>
+    <ul>
+        <li>.txt-left</li>
+        <li>.txt-center</li>
+        <li>.txt-right</li>
+    </ul>
+    <h6>scroll</h6>
+    <ul>
+        <li>.scroll-no</li>
+        <li>.scroll-x</li>
+        <li>.scroll-y</li>
+    </ul>
+    <h6>display</h6>
+    <ul>
+        <li>.show-pc, .display-pc</li>
+        <li>.show-mobile, .display-mobile</li>
+    </ul>
+</div>
+<h5>md-layout</h5>
+<h6>Container</h6>
 <p>
     $ctrRange: 1280 // 基本範圍 <br>
     $ctrBoth: 5% // 自適應左右間距 (mobile) <br>
@@ -62,7 +112,7 @@
     // 自訂: 名稱: 值, name: val (class: ctr--[name][val])
     $ctrArry: (max1680:1680,max1440:1440,max1366: 1366,max1024:1024)
 </p>
-<pre class="code code--html"><code><span class="cls">cls</span>CustomName: false, true (default: false)
+<pre class="code code--html"><code>CustomName: false, true (default: false)
 $ctrCustomName: false] 預設: 值 val (class: ctr--w[val])
 $ctrArry: 1680, 1440, 1366, 1024
 [$ctrCustomName: true] 自訂: 名稱: 值, name: val (class: ctr--[name][val])
