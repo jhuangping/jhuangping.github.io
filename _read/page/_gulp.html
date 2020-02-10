@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/page-style.css">
+    <title>Gulp</title>
+</head>
+<body id="edit">
+    <ol>
+        <li>
+            <h2>Gulp 介紹</h2>
+            <p>
+                Gulp，在開發的時候是可以區分環境的。
+                Gulp 分為兩個環境
+                <ol>
+                    <li>全域，屬於整個Windows的開發環境</li>
+                    <li>local,專屬專案開發環境</li>
+                </ol>
+            </p>
+            <hr>
+
+            <h3>Gulp 環境(Windows 安裝 Node.js)</h3>
+            <h5>指令</h5>
+            <code>
+                    <p>'node -v' 會出現Node.js的版本</p>
+                    <p>'npm -v' 會出現npm的版本</p>
+                </code>
+            <h5>安裝步驟</h5>
+            <ol>
+                <li>
+                    <p>
+                        安裝 <a href="http://nodejs.org/download/" target="_blank">Node.js</a>
+                        <span>
+                            <p>
+                                安裝 node.js 也會順便把 npm 安裝進去，接著就是使用 windows 的 cmd 或 Mac 的 Termial 來安裝 Gulp，首先我們先輸入以下的指令，把
+                                Gulp安裝到全域的環境。( 在 Mac 要記得加 sudo 不然會裝不進去 )
+                            </p>
+                            <p>依作業系統選擇Node.js版本</p>
+                        </span>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        先安裝全域gulp環境，配合npm(套件管理工具)
+                        <code>npm install gulp-cli -g</code>
+                        <span>記得後面要有一個"-g",有這個"-g", 才會用全域的方式去安裝。沒有"-g"，就會安裝在專案資料夾內</span>
+                    </p>
+                    <p>
+                        <strong>有沒有加入 -g 差異在哪裡呢？</strong>
+                        <ul>
+                            <li>
+                                <strong>有加入 "-g"：</strong>這是安裝全域的套件<br>
+                                也就是安裝在目前的電腦上<br>
+                                目的是啟用 "gulp" 這個指令
+                            </li>
+                            <li>
+                                <strong>沒有加入：</strong>這是 local 套件安裝的指令<br>
+                                是裝在目前的專案資料夾內<br>
+                                目的是執行 gulp 時可以取用的套件
+                            </li>
+                        </ul>
+                        <p>
+                            總結：只有 npm install gulp -g 才會使用到全域的指令<br>
+                            在教學中， -g 也只會出現一次喔～
+                        </p>
+                        <p>
+                            其餘 gulp 套件只會用到 "npm install --save"，像是
+                        </p>
+                        <ul>
+                            <li>
+                                npm install gulp --save # gulp 這個套件在專案資料夾也需要載入一次喔
+                            </li>
+                            <li>
+                                npm install gulp-jade --save # 其它套件都不會用到 -g
+                            </li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        安裝package.json(控管目前專案資料夾，裡面的專案套件)<br>
+                        <code>npm init</code>
+                    </p>
+                    <p>
+                        <code>npm install [套件名稱] --save</code>
+                        <span>這樣就會將套件資訊儲存於package.json,之後第二次安裝"npm install" 會自動將package.json的套件資訊裝到 node_modules內</span>
+                    </p>
+                    <p>
+                        <code>npm install gulp --save</code>
+                    </p>
+                    <p>
+                        <strong>"--save" & "--save-dev" 差異在哪裡呢？</strong>
+                        <ul>
+                            <li><strong>--save</strong>正式的環境使用</li>
+                            <li><strong>--save-dev</strong></li>
+                        </ul>
+                    </p>
+                </li>
+
+            </ol>
+            <hr>
+            <h5>gulp 語法</h5>
+            <ul>
+                <li>gulp.task(name,fn(){}) //定義任務名稱</li>
+                <li>gulp.watch(glob,fn) //監控資料來源</li>
+                <li>gulp.src('資料來源') //檔案的來源(路徑)</li>
+                <li>.pipe(/*do something*/)</li>
+                <li>gulp.dest('輸出目標') //檔案的存檔路徑</li>
+            </ul>
+            <h5>Pipe 串接概念</h5>
+            <div>
+                <ol>
+                    <li>來源</li>
+                    <li>.pipe(coffee()) //編譯</li>
+                    <li>.pipe(concat(..)) //合併</li>
+                    <li>.pipe(uglify()) // 壓縮</li>
+                    <li>.pipe(gulp.dest()) //輸出</li>
+                </ol>
+                
+            </div>
+            <h5>gulp 插件</h5>
+            <ul>
+                <li><strong>推薦</strong>
+                    <ul>
+                        <li>gulp-jade <a href="https://www.npmjs.com/package/gulp-jade" target="_blank">// HTML 樣板語言</a></li>
+                        <li>gulp-sass <a href="https://www.npmjs.com/package/gulp-sass" target="_blank">// CSS 預處理器</a></li>
+                        <li>gulp-plumber <a href="https://www.npmjs.com/package/gulp-plumber" target="_blank">// Gulp 在運行的過程中遇錯不會中斷</a></li>
+                        <li>gulp-postcss <a href="https://www.npmjs.com/package/gulp-postcss" target="_blank">// CSS 後處理器</a></li>
+                        <li>autoprefixer // 自動為你的 CSS 補上前綴詞 https://www.npmjs.com/package/autoprefixer</li>
+                        <li>gulp-load-plugins // 簡化 gulp 載入流程 https://www.npmjs.com/package/gulp-load-plugins</li>
+                        <li>gulp-babel // JavaScript ES6 編譯工具 https://www.npmjs.com/package/gulp-babel</li>
+                        <li>babel-preset-es2015 // JavaScript ES6 編譯工具 https://www.npmjs.com/package/babel-preset-es2015</li>
+                        <li>gulp-sourcemaps // 標示壓縮、合併程式碼的原始位置 https://www.npmjs.com/package/gulp-sourcemaps</li>
+                        <li>gulp-concat // 合併串接程式碼 https://www.npmjs.com/package/gulp-concat</li>
+                        <li>Browser Sync // 前端愛用的 Web Server 、 包含 Livereload <br>
+                            https://www.npmjs.com/package/browser-sync <br>
+                            https://browsersync.io/docs
+                        </li>
+                        <li>main-bower-files // Bower 工具 https://www.npmjs.com/package/main-bower-files</li>
+                        <li>gulp-minify-css // CSS 壓縮工具 https://www.npmjs.com/package/gulp-minify-css</li>
+                        <li>gulp-uglify // JavaScript 壓縮工具 https://www.npmjs.com/package/gulp-uglify</li>
+                        <li>minimist // 將指令碼匯入 gulp 流程 https://www.npmjs.com/package/minimist</li>
+                        <li>gulp-if <a href="https://www.npmjs.com/package/gulp-if" target="_blank">// 將 gulp 加入判斷式</a></li>
+                    </ul>
+                </li>
+                <li>gulp-tinypng-compress <a href="https://www.npmjs.com/package/gulp-tinypng-compress" target="_blank">// 圖片壓縮</a><a href="https://tinypng.com/developers" target="_blank">API</a></li>
+                <li>gulp-ruby-css //編訪SASS</li>
+                <li>gulp-rename //重新命名</li>
+                <li>gulp-notify //更新通知</li>
+                <li>gulp-jshint //檢測js代碼工具</li>
+                <li>gulp-concat //合併程式碼</li>
+                <li>gulp-uglify //醜化(Uglify)壓縮代碼</li>
+                <li>gulp-imagemin //圖片壓縮</li>
+                <li>del //重新命名</li>
+                <li>watch //即時監聽</li>
+                <li>gulp-livereload //頁面自動更新</li>
+                <li>gulp-connect //結合webserver跟livereload的套件</li>
+            </ul>
+        </li>
+    </ol>
+    <ul>
+        <li>
+            <p>Q: npm install的依赖问题</p>
+            <p>
+                A: npm cache clear <br>
+                npm install --no-optional
+            </p>
+        </li>
+    </ul>
+
+</body>
+</html>

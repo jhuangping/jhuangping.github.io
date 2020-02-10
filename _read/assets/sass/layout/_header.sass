@@ -1,0 +1,35 @@
+/* Header ===================================================================== */
+header
+    width: 250px
+    height: 100vh
+    position: fixed
+    top: 0px
+    left: 0px
+    z-index: 10000
+    padding: 20px 0
+    background: crc(hdBg)
+    box-shadow: 0 0 10px cr(black)
+.hd
+    &_ctr
+        +flex($fd: column, $ai: center)
+    &_logo
+        flex: 0 0 70px
+        max-width: 70px
+        width: 100%
+    &_toggle
+        +rwdw-min()
+            display: none
+.menu
+    +flex($fd: column)
+    margin-top: 10px
+    font-family: font(bold)
+    text-transform: capitalize
+
+    &_item
+        color: #fff
+        margin-bottom: 5px
+        cursor: pointer
+        +trs()
+        +rwdw-min()
+            &:hover
+                color: cr(iy)
