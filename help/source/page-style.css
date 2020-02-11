@@ -218,7 +218,7 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 
 .skeleton h3::before, .skeleton h3::after { content: ''; position: absolute; }
 
-.skeleton h3::before { top: 12px; left: 0px; width: 12px; height: 8px; border: 1px solid #E69138; background: #E69138; border-radius: 1px; }
+.skeleton h3::before { top: 12px; left: 0px; width: 12px; height: 8px; border: 1px solid #E69138; border-top-color: #CB7C28; background: #E69138; border-radius: 1px; }
 
 .skeleton h3::after { top: 10px; left: 1px; width: 8px; height: 2px; background: #AC6820; border-top-right-radius: 2px; }
 
@@ -230,11 +230,13 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 
 .skeleton ul ul, .skeleton ul ul li { position: relative; }
 
-.skeleton ul ul::before, .skeleton ul ul li::before { position: absolute; content: ''; }
-
-.skeleton ul ul::before { top: 0px; left: 20px; width: 1px; height: calc(100% - 17px); border-left: 1px dotted #bbb; }
+.skeleton ul ul::before, .skeleton ul ul::after, .skeleton ul ul li::before, .skeleton ul ul li::after { position: absolute; content: ''; }
 
 .skeleton ul ul li::before { top: 15px; left: -20px; width: 10px; height: 1px; border-bottom: 1px dotted #bbb; }
+
+.skeleton ul ul li::after { top: 0px; left: -20px; width: 1px; height: calc(100% - 1px); border-left: 1px dotted #bbb; }
+
+.skeleton ul ul li:last-child::after { height: 16px; }
 
 .skeleton span { color: #909090; }
 

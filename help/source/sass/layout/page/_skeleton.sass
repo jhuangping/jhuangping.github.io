@@ -18,6 +18,7 @@
             width: 12px
             height: 8px
             border: 1px solid #E69138
+            border-top-color:#CB7C28
             background: #E69138
             border-radius: 1px
         &::after
@@ -38,16 +39,16 @@
         padding-inline-start: 40px
         ul, ul li
             position: relative
-            &::before
+            &::before, &::after
                 position: absolute
                 content: ''
         ul
-            &::before
-                top: 0px
-                left: 20px
-                width: 1px
-                height: calc(100% - 17px)
-                border-left: 1px dotted #bbb
+            // &::before
+            //     top: 0px
+            //     left: 20px
+            //     width: 1px
+            //     height: calc(100% - 17px)
+            //     border-left: 1px dotted #bbb
             li
                 &::before
                     top: 15px
@@ -55,12 +56,15 @@
                     width: 10px
                     height: 1px
                     border-bottom: 1px dotted #bbb
-                // &::after
-                //     top: 0px
-                //     left: 20px
-                //     width: 1px
-                //     height: 100%
-                //     border-left: 1px dotted #bbb
+                &::after
+                    top: 0px
+                    left: -20px
+                    width: 1px
+                    height: calc(100% - 1px)
+                    border-left: 1px dotted #bbb
+                &:last-child::after
+                    height: 16px
+                    
 
     span
         color: #909090
