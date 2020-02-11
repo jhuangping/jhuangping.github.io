@@ -48,12 +48,19 @@
                 width: 1px
                 height: calc(100% - 17px)
                 border-left: 1px dotted #bbb
-            li::before
-                top: 15px
-                left: -20px
-                width: 10px
-                height: 1px
-                border-bottom: 1px dotted #bbb
+            li
+                &::before
+                    top: 15px
+                    left: -20px
+                    width: 10px
+                    height: 1px
+                    border-bottom: 1px dotted #bbb
+                // &::after
+                //     top: 0px
+                //     left: 20px
+                //     width: 1px
+                //     height: 100%
+                //     border-left: 1px dotted #bbb
 
     span
         color: #909090

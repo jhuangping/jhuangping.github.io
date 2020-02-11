@@ -90,13 +90,19 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 /* Page Edit ================================================================== */
 #edit ol, #edit ul { padding-left: 20px; }
 
-#edit ol, #edit ul, #edit li { list-style: initial; }
+#edit ol { list-style-type: decimal; }
 
-#edit p { margin: 0px; }
+#edit ul { list-style-type: disc; }
 
-#edit p:not(:last-child) { margin-bottom: 20px; }
+#edit ul ul { list-style-type: circle; }
 
-#edit hr { border: none; border-bottom: 1px dotted #aaa; }
+#edit ul ul ul { list-style-type: square; }
+
+#edit li { list-style: inherit; }
+
+#edit p { margin: 0px; margin-top: 1em; margin-bottom: 1em; }
+
+#edit hr { margin-top: 2em; margin-bottom: 2em; border: none; border-bottom: 1px dotted #aaa; }
 
 #edit h1, #edit h2, #edit h3, #edit h4, #edit h5, #edit h6 { display: block; position: relative; }
 
@@ -201,6 +207,8 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 #edit .row--on { -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
 
 #edit .row--under { -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
+
+#edit .info p:first-child { margin-top: 0px; }
 
 .skeleton { line-height: 2; }
 

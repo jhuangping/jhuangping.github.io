@@ -2,13 +2,21 @@
 #edit
     ol, ul
         padding-left: 20px
-    ol, ul, li
-        list-style: $Re
+    ol
+        list-style-type: decimal
+    ul
+        list-style-type: disc
+        ul
+            list-style-type: circle
+            ul
+                list-style-type: square
+    li
+        list-style: $Dna
     p
         margin: 0px
-        &:not(:last-child)
-            +mg(b,20px)
+        +mg(tb,1em)
     hr
+        +mg(tb, 2em)
         border: none
         border-bottom: 1px dotted #aaa
 
@@ -59,3 +67,7 @@
             color: crc(code-gray)
 
     +bs-grid()
+
+    .info
+        p:first-child
+            +mg(t,0px)
