@@ -120,13 +120,15 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 
 #edit pre { color: #fff; background: #272822; font-size: 1.4rem; padding: 10px 20px; border-radius: 5px; position: relative; }
 
-#edit pre .tag, #edit pre .red { color: #EB2658; }
+#edit pre .tag, #edit pre .red, #edit pre .code-r { color: #EB2658; }
 
-#edit pre .cls, #edit pre .green { color: #A6E22E; }
+#edit pre .cls, #edit pre .green, #edit pre .code-g { color: #A6E22E; }
 
-#edit pre .blue { color: #66D9EF; }
+#edit pre .blue, #edit pre .code-b { color: #66D9EF; }
 
-#edit pre .gray { color: #75715E; }
+#edit pre .gray, #edit pre .code-gray { color: #75715E; }
+
+#edit pre .purple, #edit pre .code-p { color: #AE81FF; }
 
 #edit .row { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 0 -15px; }
 

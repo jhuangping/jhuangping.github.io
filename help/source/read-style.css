@@ -80,7 +80,7 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 /* container */
 .ctr, .container { margin: 0 auto; width: 100%; max-width: 1270px; padding-left: 15px; padding-right: 15px; }
 
-.ctr--max1680, .container--max1680 { max-width: 1710px; padding-left: 15px; padding-right: 15px; }
+.ctr--max1680, .container--max1680 { max-width: 1710px; }
 
 .ctr--full, .ctr--max, .container--full, .container--max { max-width: 100%; padding-left: 0px; padding-right: 0px; }
 

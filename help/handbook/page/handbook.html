@@ -67,18 +67,96 @@
 <h2>元件 Element</h2>
 
 <h3>helpers # 助手</h3>
+
 <h4>function # 功能</h4>
+
 <h4>mixin # 函式</h4>
+
+<hr>
+<div class="info">
+    <h5>media</h5>
+    <h6>段點 @media</h6>
+    <p>
+        針對指定的「媒體」設定樣式，這裡使用的<b>媒體類型</b>為" <span class="red">all</span> " ( 用於所有設備 )。
+    </p>
+    <p>
+        在這裡有三個可用分別是
+    </p>
+    <ol>
+        <li>
+            <h6>
+                @media all and (max-width)
+            </h6>
+            <pre><code><span class="blue">+rwdw-max(</span><span class="purple">val</span><span class="blue">)</span></code></pre>
+            <p>
+                <b>使用方式：</b>
+            </p>
+<pre><code><span class="blue">+rwdw-max(</span><span class="purple">val</span><span class="blue">)</span> <span class="gray">// 自訂，+rwdw-max(1024)</span>
+
+<span class="blue">+rwdw-max()</span> <span class="gray">// 預設變數 $rwd</span>
+<span class="blue">+rwdw-max(</span><span class="purple">pc</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pc</span>
+<span class="blue">+rwdw-max(</span><span class="purple">netbook</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pc</span>
+<span class="blue">+rwdw-max(</span><span class="purple">pad</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pad, $rwd-pc</span>
+<span class="blue">+rwdw-max(</span><span class="purple">pads</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pads, $rwd-pcs</span>
+<span class="blue">+rwdw-max(</span><span class="purple">phone</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-phone</span>
+<span class="blue">+rwdw-max(</span><span class="purple">phones</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-phones</span></code></pre>
+        </li>
+        <li>
+            <h6>
+                @media all and (min-width)
+            </h6>
+            <pre><code><span class="blue">+rwdw-min(</span><span class="purple">val</span><span class="blue">)</span></code></pre>
+            <p>
+                <b>使用方式：</b>
+            </p>
+<pre><code><span class="blue">+rwdw-min(</span><span class="purple">val</span><span class="blue">)</span> <span class="gray">// 自訂，+rwdw-min(1024)</span>
+
+<span class="blue">+rwdw-min()</span> <span class="gray">// 預設變數 $rwd</span>
+<span class="blue">+rwdw-min(</span><span class="purple">pc</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pc</span>
+<span class="blue">+rwdw-min(</span><span class="purple">netbook</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pc</span>
+<span class="blue">+rwdw-min(</span><span class="purple">pad</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pad, $rwd-pc</span>
+<span class="blue">+rwdw-min(</span><span class="purple">pads</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pads, $rwd-pcs</span>
+<span class="blue">+rwdw-min(</span><span class="purple">phone</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-phone</span>
+<span class="blue">+rwdw-min(</span><span class="purple">phones</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-phones</span></code></pre>
+        </li>
+        <li>
+            <h6>
+                @media all and (min-width) and (max-width)
+            </h6>
+            <pre><code><span class="blue">+rwdw-range(</span><span class="purple">max</span><span class="gray">,</span><span class="purple">min</span><span class=blue>)</span></code></pre>
+            <p>
+                <b>使用方式：</b>
+            </p>
+<pre><code><span class="blue">+rwdw-range(</span><span class="purple">1024</span><span class="gray">,</span><span class="purple">768</span><span class="blue">)</span> <span class="gray"></span></code></pre>
+        </li>
+    </ol>
+    <p>
+        上頭提到的$rwd 等變數可在_config.sass修改設定。
+    </p>
+    <p>
+        <b>預設值：</b>
+    </p>
+<pre><code>$rwd: <span class="purple">1200</span> <span class="gray">//Menu轉換手機尺寸</span>
+$rwd-pc: <span class="purple">1280</span> <span class="gray">//電腦尺寸</span>
+$rwd-pcs: <span class="purple">1024</span> <span class="gray">//小電腦尺寸</span>
+$rwd-pad: <span class="purple">992</span> <span class="gray">//平板尺寸</span>
+$rwd-pads: <span class="purple">768</span> <span class="gray">//小平板尺寸</span>
+$rwd-phone: <span class="purple">480</span> <span class="gray">//手機尺寸</span>
+$rwd-phones: <span class="purple">320</span> <span class="gray">//小手機尺寸</span></code></pre>
+</div>
+<hr>
+
 <h4>variable # 變數</h4>
+
 <h5>helpers-setting</h5>
 
 <hr>
 
 <h3>module # 模組</h3>
-<h5>module-setting</h5>
-<h5>md-reset</h5>
-<h5>md-default</h5>
-<h5>md-common</h5>
+<h5>setting</h5>
+<h5>reset</h5>
+<h5>default</h5>
+<h5>common</h5>
 <div class="info">
     <h6>Style</h6>
     <ul>
@@ -102,7 +180,7 @@
         <li>.show-mobile, .display-mobile</li>
     </ul>
 </div>
-<h5>md-layout</h5>
+<h5>layout</h5>
 <h6>Container</h6>
 <p>
     $ctrRange: 1280 // 基本範圍 <br>
