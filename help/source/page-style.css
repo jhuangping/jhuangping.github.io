@@ -84,21 +84,6 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 @keyframes h100 { 0% { }
   100% { height: 100%; } }
 
-/* Button */
-[class^="btn-"], .btn { cursor: pointer; display: inline-block; -webkit-transition: all 0.5s; transition: all 0.5s; }
-
-.btn { border-radius: 5px; border: none; padding: 3px 8px; }
-
-.btn-grup { width: 100%; }
-
-.btn-grup--code { position: relative; }
-
-.btn-grup--code .btn { color: #666; font-size: 1.4rem; position: absolute; z-index: 5; top: calc(1em + 20px); right: 20px; }
-
-@media all and (min-width: 769px) { .btn-grup--code .btn:hover { background: #f3c860; } }
-
-.btn--copy { background: #ccc; }
-
 /* ============================================================================ */
 /* Page                                                                         */
 /* ============================================================================ */
@@ -113,19 +98,19 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 
 #edit hr { border: none; border-bottom: 1px dotted #aaa; }
 
-#edit h1, #edit h2, #edit h3, #edit h4, #edit h5, #edit h6 { display: block; }
+#edit h1, #edit h2, #edit h3, #edit h4, #edit h5, #edit h6 { display: block; position: relative; }
 
-#edit h1 { font-size: 4.5rem; }
+#edit h1 { font-size: 2.85rem; color: #332a1e; }
 
-#edit h2 { font-size: 4rem; }
+#edit h2 { font-size: 2.7rem; color: #3f3424; }
 
-#edit h3 { font-size: 3.5rem; }
+#edit h3 { font-size: 2.55rem; color: #4a3d2b; }
 
-#edit h4 { font-size: 3rem; }
+#edit h4 { font-size: 2.4rem; color: #554631; }
 
-#edit h5 { font-size: 2.5rem; }
+#edit h5 { font-size: 2.25rem; color: #615038; }
 
-#edit h6 { font-size: 2rem; }
+#edit h6 { font-size: 2.1rem; color: #6c593e; }
 
 #edit pre { color: #fff; background: #272822; font-size: 1.4rem; padding: 10px 20px; border-radius: 5px; position: relative; }
 
@@ -136,8 +121,6 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 #edit pre .blue { color: #66D9EF; }
 
 #edit pre .gray { color: #75715E; }
-
-#edit pre .y { color: #E6DB74; }
 
 #edit .row { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 0 -15px; }
 
