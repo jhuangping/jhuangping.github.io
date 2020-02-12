@@ -65,12 +65,95 @@
 <hr>
 
 <h2>元件 Element</h2>
+<hr>
 
 <h3>helpers # 助手</h3>
+<hr>
 
 <h4>function # 功能</h4>
+<hr>
 
 <h4>mixin # 函式</h4>
+
+<div class="info">
+    <h5>CSS</h5>
+    <ul>
+        <li>
+            <h6>+flex()</h6>
+            <b>flex layout</b>
+<pre><code>+flex($dis: flex, $fd: default, $fw: default, $ai: default, $jc: default)
+
+// 變數參數
+<span class="gray">$fd [ row, row-r, row-reverse, col, column, col-r, column-reverse ]
+$fw [ wp ,wrap ,nwp, nowrap ,wpr ,wrap-reverse ]
+$ai [ start ,flex-start ,end , flex-end, center, baseline, stretch ]
+$jc [ start ,flex-start ,end , flex-end, center, sa ,space-around ,sb ,space-between ]
+</span>
+</code></pre>
+            <b>使用方式：</b>
+            <div class="row">
+                <div class="col-6">
+                    <b>SASS</b>
+<pre><code><span class="green">.test1</span>
+    <span class="red">+</span><span class="blue">flex</span><span class="green">()</span>
+
+<span class="green">.test2</span>
+    <span class="red">+</span><span class="blue">flex</span><span class="green">(</span>$ai: <span class="blue">center</span><span class="green">)</span>
+
+<span class="green">.test3</span>
+    <span class="red">+</span><span class="blue">flex</span><span class="green">(</span>$ai: <span class="blue">center</span><span class="gray">,</span> $jc: <span class="blue">sb</span><span class="green">)</span></code></pre>
+                </div>
+                <div class="col-6">
+                    <b>CSS</b>
+<pre><code><span class="green">.test {</span>
+    <span class="blue">display</span>: <span class="purple">flex</span>; 
+<span class="green">}</span>
+<span class="green">.test2 {</span>
+    <span class="blue">display</span>: <span class="purple">flex</span>;
+    <span class="blue">align-items</span>: <span class="purple">center</span>;
+<span class="green">}</span>
+<span class="green">.test3 {</span>
+    <span class="blue">display</span>: <span class="purple">flex</span>;
+    <span class="blue">align-items</span>: <span class="purple">center</span>;
+    <span class="blue">justify-content</span>: <span class="purple">space-between</span>;
+<span class="green">}</span></code></pre>
+                </div>
+            </div>
+        </li>
+        <li>
+            <h6>+flex-center()</h6>
+            <b>flex layout 置中</b>
+        </li>
+        <li>
+            <h6>+text-lg()</h6>
+            <b>文字漸層</b>
+        </li>
+        <li>
+            <h6>+border-lg()</h6>
+            <b>邊線漸層</b>
+        </li>
+        <li>
+            <h6>+bg-lg()</h6>
+            <b>背景漸層</b>
+        </li>
+        <li>
+            <h6>+text-overflow()</h6>
+            <b>文字溢出</b>
+        </li>
+        <li>
+            <h6>+trs() || +transition()</h6>
+            <b>過渡</b>
+        </li>
+        <li>
+            <h6>+pd()</h6>
+            <b>內距</b>
+        </li>
+        <li>
+            <h6>+mg()</h6>
+            <b>外距</b>
+        </li>
+    </ul>
+</div>
 
 <hr>
 <div class="info">
