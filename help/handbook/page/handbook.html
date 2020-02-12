@@ -71,6 +71,86 @@
 <hr>
 
 <h4>function # 功能</h4>
+<ul>
+    <li>
+        <h5>rem()</h5>
+        <p>px to rem</p>
+        <div class="row">
+            <div class="col-6">
+                <b>SASS</b>
+<pre><code><span class="span green">.test</span>
+    <span class="blue">width</span>: <span class="blue">rem</span>(<span class="purple">16</span>)</code></pre>
+            </div>
+            <div class="col-6">
+                <b>CSS</b>
+<pre><code><span class="span green">.test {</span>
+    <span class="blue">width</span>: <span class="purple">1.6</span><span class="red">rem</span>;
+<span class="green">}</span></code></pre>
+
+            </div>
+        </div>
+    </li>
+    <li>
+        <h5>em()</h5>
+        <p>px to em</p>
+        <div class="row">
+            <div class="col-6">
+                <b>SASS</b>
+<pre><code><span class="span green">.test</span>
+    <span class="blue">width</span>: <span class="blue">em</span>(<span class="purple">16</span>)</code></pre>
+            </div>
+            <div class="col-6">
+                <b>CSS</b>
+                <pre><code><span class="span green">.test {</span>
+    <span class="blue">width</span>: <span class="purple">1</span><span class="red">em</span>;
+<span class="green">}</span></code></pre>
+
+            </div>
+        </div>
+    </li>
+    <li>
+        <h5>lh()</h5>
+        <p>line-height</p>
+        <div class="row">
+            <div class="col-6">
+                <b>SASS</b>
+<pre><code><span class="span green">.test</span>
+    <span class="blue">line-height</span>: <span class="blue">lh</span>(<span class="purple">16</span>)</code></pre>
+            </div>
+            <div class="col-6">
+                <b>CSS</b>
+                <pre><code><span class="span green">.test {</span>
+    <span class="blue">line-height</span>: <span class="purple">1</span>;
+<span class="green">}</span></code></pre>
+
+            </div>
+        </div>
+    </li>
+    <li>
+        <h5>cr()</h5>
+        <p>color basis</p>
+    </li>
+    <li>
+        <h5>crc()</h5>
+        <p>color custom</p>
+    </li>
+    <li>
+        <h5>vw()</h5>
+        <p>vw</p>
+    </li>
+    <li>
+        <h5>vh()</h5>
+        <p>vh</p>
+    </li>
+    <li>
+        <h5>per()</h5>
+        <p>percentage</p>
+    </li>
+    <li>
+        <h5>font()</h5>
+        <p>font-family</p>
+    </li>
+</ul>
 <hr>
 
 <h4>mixin # 函式</h4>
@@ -81,7 +161,7 @@
         <li>
             <h6>+flex()</h6>
             <b>flex layout</b>
-<pre><code>+flex($dis: flex, $fd: default, $fw: default, $ai: default, $jc: default)
+<pre><code><span class="red">+</span><span class="blue">flex</span><span class="green">(</span>$dis: <span class="blue">flex</span><span class="gray">,</span> $fd: <span class="blue">default</span><span class="gray">,</span> $fw: <span class="blue">default</span><span class="gray">,</span> $ai: <span class="blue">default</span><span class="gray">,</span> $jc: <span class="blue">default</span><span class="green">)</span>
 
 // 變數參數
 <span class="gray">$fd [ row, row-r, row-reverse, col, column, col-r, column-reverse ]
@@ -174,15 +254,26 @@ $jc [ start ,flex-start ,end , flex-end, center, sa ,space-around ,sb ,space-bet
             <p>
                 <b>使用方式：</b>
             </p>
-<pre><code><span class="blue">+rwdw-max(</span><span class="purple">val</span><span class="blue">)</span> <span class="gray">// 自訂，+rwdw-max(1024)</span>
-
-<span class="blue">+rwdw-max()</span> <span class="gray">// 預設變數 $rwd</span>
-<span class="blue">+rwdw-max(</span><span class="purple">pc</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pc</span>
-<span class="blue">+rwdw-max(</span><span class="purple">netbook</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pc</span>
-<span class="blue">+rwdw-max(</span><span class="purple">pad</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pad, $rwd-pc</span>
-<span class="blue">+rwdw-max(</span><span class="purple">pads</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pads, $rwd-pcs</span>
-<span class="blue">+rwdw-max(</span><span class="purple">phone</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-phone</span>
-<span class="blue">+rwdw-max(</span><span class="purple">phones</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-phones</span></code></pre>
+            <div class="row">
+                <div class="col-6">
+                    <b>SASS</b>
+<pre><code><span class="green">.test</span>
+    <span class="blue">width</span>: <span class="purple">50</span><span class="red">%</span>
+    <span class="red">+</span><span class="blue">rwdw-max</span>(<span class="purple"></span>)
+        <span class="blue">width</span>: <span class="purple">100</span><span class="red">%</span></code></pre>
+                </div>
+                <div class="col-6">
+                    <b>CSS</b>
+<pre><code><span class="green">.test {</span>
+    <span class="blue">width</span>: <span class="purple">50</span><span class="red">%</span>;
+<span class="green">}</span>
+<span class="red">@media</span> <span class="blue">all</span> <span class="red">and</span> (<span class="blue">max-width</span>: <span class="purple">1024</span><span class="red">px</span>) <span class="green">{</span>
+    <span class="green">.test {</span>
+        <span class="blue">width</span>: <span class="purple">100</span><span class="red">%</span>;
+    <span class="green">}</span>
+<span class="green">}</span></code></pre>
+                </div>
+            </div>
         </li>
         <li>
             <h6>
@@ -192,15 +283,26 @@ $jc [ start ,flex-start ,end , flex-end, center, sa ,space-around ,sb ,space-bet
             <p>
                 <b>使用方式：</b>
             </p>
-<pre><code><span class="blue">+rwdw-min(</span><span class="purple">val</span><span class="blue">)</span> <span class="gray">// 自訂，+rwdw-min(1024)</span>
-
-<span class="blue">+rwdw-min()</span> <span class="gray">// 預設變數 $rwd</span>
-<span class="blue">+rwdw-min(</span><span class="purple">pc</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pc</span>
-<span class="blue">+rwdw-min(</span><span class="purple">netbook</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pc</span>
-<span class="blue">+rwdw-min(</span><span class="purple">pad</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pad, $rwd-pc</span>
-<span class="blue">+rwdw-min(</span><span class="purple">pads</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-pads, $rwd-pcs</span>
-<span class="blue">+rwdw-min(</span><span class="purple">phone</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-phone</span>
-<span class="blue">+rwdw-min(</span><span class="purple">phones</span><span class="blue">)</span> <span class="gray">// 預設變數 $rwd-phones</span></code></pre>
+            <div class="row">
+                <div class="col-6">
+                    <b>SASS</b>
+<pre><code><span class="green">.test</span>
+    <span class="blue">width</span>: <span class="purple">50</span><span class="red">%</span>
+    <span class="red">+</span><span class="blue">rwdw-min</span>(<span class="purple"></span>)
+        <span class="blue">width</span>: <span class="purple">100</span><span class="red">%</span></code></pre>
+                </div>
+                <div class="col-6">
+                    <b>CSS</b>
+    <pre><code><span class="green">.test {</span>
+    <span class="blue">width</span>: <span class="purple">50</span><span class="red">%</span>;
+<span class="green">}</span>
+<span class="red">@media</span> <span class="blue">all</span> <span class="red">and</span> (<span class="blue">min-width</span>: <span class="purple">1025</span><span class="red">px</span>) <span class="green">{</span>
+    <span class="green">.test {</span>
+        <span class="blue">width</span>: <span class="purple">100</span><span class="red">%</span>;
+    <span class="green">}</span>
+<span class="green">}</span></code></pre>
+                </div>
+            </div>
         </li>
         <li>
             <h6>
@@ -219,7 +321,7 @@ $jc [ start ,flex-start ,end , flex-end, center, sa ,space-around ,sb ,space-bet
     <p>
         <b>預設值：</b>
     </p>
-<pre><code>$rwd: <span class="purple">1200</span> <span class="gray">//Menu轉換手機尺寸</span>
+<pre><code>$rwd: <span class="purple">1024</span> <span class="gray">//Menu轉換手機尺寸</span>
 $rwd-pc: <span class="purple">1280</span> <span class="gray">//電腦尺寸</span>
 $rwd-pcs: <span class="purple">1024</span> <span class="gray">//小電腦尺寸</span>
 $rwd-pad: <span class="purple">992</span> <span class="gray">//平板尺寸</span>
