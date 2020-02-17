@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>helpers</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
+    <link rel="stylesheet" href="../../source/page-style.css">
+</head>
+<body id="edit">
+    <h1>Helpers 助手</h1>
+    <hr>
+    
+    <h4>variable # 變數</h4>
+    
+    <h5>helpers-setting</h5>
+    <div class="info">
+        
+    </div>
+    <hr>
+    <h2>單位換算</h2>
+    <ul>
+        <li>
+            <h5>rem()</h5>
+            <p>px to rem</p>
+            <div class="row">
+                <div class="col-6">
+                    <b>SASS</b>
+<pre><code><span class="span green">.test</span>
+    <span class="blue">width</span>: <span class="blue">rem</span>(<span class="purple">16</span>)</code></pre>
+                </div>
+                <div class="col-6">
+                    <b>CSS</b>
+<pre><code><span class="span green">.test {</span>
+    <span class="blue">width</span>: <span class="purple">1.6</span><span class="red">rem</span>;
+<span class="green">}</span></code></pre>
+
+                </div>
+            </div>
+        </li>
+        <li>
+            <h5>em()</h5>
+            <p>px to em</p>
+            <div class="row">
+                <div class="col-6">
+                    <b>SASS</b>
+<pre><code><span class="span green">.test</span>
+    <span class="blue">width</span>: <span class="blue">em</span>(<span class="purple">16</span>)</code></pre>
+                </div>
+                <div class="col-6">
+                    <b>CSS</b>
+<pre><code><span class="span green">.test {</span>
+    <span class="blue">width</span>: <span class="purple">1</span><span class="red">em</span>;
+<span class="green">}</span></code></pre>
+
+                </div>
+            </div>
+        </li>
+        <li>
+            <h5>vw()</h5>
+            <p>vw</p>
+        </li>
+        <li>
+            <h5>vh()</h5>
+            <p>vh</p>
+        </li>
+        <li>
+            <h5>per()</h5>
+            <p>percentage</p>
+        </li>
+    </ul>
+    <hr>
+    <div class="info">
+        <h2>文字</h2>
+        <ul>
+            <li>
+                <h5>lh()</h5>
+                <p>line-height</p>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+<pre><code><span class="span green">.test</span>
+    <span class="blue">line-height</span>: <span class="blue">lh</span>(<span class="purple">16</span>)</code></pre>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+<pre><code><span class="span green">.test {</span>
+    <span class="blue">line-height</span>: <span class="purple">1</span>;
+<span class="green">}</span></code></pre>
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h5>font()</h5>
+                <p>font-family</p>
+            </li>
+        </ul>
+    </div>
+    <div class="info">
+        <h2>顏色</h2>
+        <ul>
+            <li>
+                <h5>cr()</h5>
+                <p>color basis</p>
+            </li>
+            <li>
+                <h5>crc()</h5>
+                <p>color custom</p>
+            </li>
+        </ul>
+    </div>
+
+    <h4>mixin # 函式</h4>
+
+    <div class="info">
+        <h5>CSS</h5>
+        <h6>flex 變數參數</h6>
+        <table>
+            <tr>
+                <th>variable</th>
+                <th>CSS</th>
+                <th>value</th>
+            </tr>
+            <tr>
+                <th>$dis</th>
+                <td>display</td>
+                <td>flex, inline-flex</td>
+            </tr>
+            <tr>
+                <th>$fd</th>
+                <td>flex-direction</td>
+                <td>
+                    row, row-reverse(row-r), col, column, column-reverse(col-r)
+                </td>
+            </tr>
+            <tr>
+                <th>$fw</th>
+                <td>flex-wrap</td>
+                <td>
+                    wrap(wp), nowrap(nwp), wrap-reverse(wpr)
+                </td>
+            </tr>
+            <tr>
+                <th>$ai</th>
+                <td>align-items</td>
+                <td>
+                    flex-start(start) ,flex-end(end) ,center, baseline, stretch
+                </td>
+            </tr>
+            <tr>
+                <th>$jc</th>
+                <td>justify-content</td>
+                <td>
+                    flex-start(start), flex-end(end), center, space-around(sa) ,space-between(sb)
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li>
+                <h6>+flex()</h6>
+                <b>flex layout</b>
+                <pre><code><span class="red">+</span><span class="blue">flex</span><span class="green">(</span>$dis: <span class="blue">flex</span><span class="gray">,</span> $fd: <span class="blue">default</span><span class="gray">,</span> $fw: <span class="blue">default</span><span class="gray">,</span> $ai: <span class="blue">default</span><span class="gray">,</span> $jc: <span class="blue">default</span><span class="green">)</span></code></pre>
+                <b>使用方式：</b>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+<pre><code><span class="green">.test1</span>
+    <span class="red">+</span><span class="blue">flex</span><span class="green">()</span>
+
+<span class="green">.test2</span>
+    <span class="red">+</span><span class="blue">flex</span><span class="green">(</span>$ai: <span class="blue">center</span><span class="green">)</span>
+
+<span class="green">.test3</span>
+    <span class="red">+</span><span class="blue">flex</span><span class="green">(</span>$ai: <span class="blue">center</span><span class="gray">,</span> $jc: <span class="blue">sb</span><span class="green">)</span></code></pre>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+<pre><code><span class="green">.test {</span>
+    <span class="blue">display</span>: <span class="purple">flex</span>; 
+<span class="green">}</span>
+<span class="green">.test2 {</span>
+    <span class="blue">display</span>: <span class="purple">flex</span>;
+    <span class="blue">align-items</span>: <span class="purple">center</span>;
+<span class="green">}</span>
+<span class="green">.test3 {</span>
+    <span class="blue">display</span>: <span class="purple">flex</span>;
+    <span class="blue">align-items</span>: <span class="purple">center</span>;
+    <span class="blue">justify-content</span>: <span class="purple">space-between</span>;
+<span class="green">}</span></code></pre>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h6>+flex-center()</h6>
+                <b>flex layout 置中</b>
+            </li>
+            <li>
+                <h6>+text-lg()</h6>
+                <b>文字漸層</b>
+            </li>
+            <li>
+                <h6>+border-lg()</h6>
+                <b>邊線漸層</b>
+            </li>
+            <li>
+                <h6>+bg-lg()</h6>
+                <b>背景漸層</b>
+            </li>
+            <li>
+                <h6>+text-overflow()</h6>
+                <b>文字溢出</b>
+            </li>
+            <li>
+                <h6>+trs() || +transition()</h6>
+                <b>過渡</b>
+            </li>
+            <li>
+                <h6>+pd()</h6>
+                <b>內距</b>
+            </li>
+            <li>
+                <h6>+mg()</h6>
+                <b>外距</b>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+    <div class="info">
+        <h5>media</h5>
+        <h6>段點 @media</h6>
+        <p>
+            針對指定的「媒體」設定樣式，這裡使用的<b>媒體類型</b>為" <span class="red">all</span> " ( 用於所有設備 )。
+        </p>
+        <p>
+            裡頭的$rwd 等變數可在_config.sass修改設定。
+        </p>
+        <p>
+            <b>預設值：</b>
+        </p>
+        <table>
+            <tr>
+                <th>變數</th>
+                <th>$rwd</th>
+                <th>$rwd-pc</th>
+                <th>$rwd-pcs</th>
+                <th>$rwd-pad</th>
+                <th>$rwd-pads</th>
+                <th>$rwd-phone</th>
+                <th>$rwd-phones</th>
+            </tr>
+            <tr>
+                <th>預設值</th>
+                <td>1024</td>
+                <td>1280</td>
+                <td>1024</td>
+                <td>992</td>
+                <td>768</td>
+                <td>480</td>
+                <td>320</td>
+            </tr>
+        </table>
+        <p>
+            在這裡有三個可用分別是
+        </p>
+        <ol>
+            <li>
+                <h6>
+                    @media all and (max-width)
+                </h6>
+                <pre><code><span class="blue">+rwdw-max(</span><span class="purple">val</span><span class="blue">)</span></code></pre>
+                <p>
+                    <b>使用方式：</b>
+                </p>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+<pre><code><span class="green">.test</span>
+    <span class="blue">width</span>: <span class="purple">50</span><span class="red">%</span>
+    <span class="red">+</span><span class="blue">rwdw-max</span>(<span class="purple"></span>)
+        <span class="blue">width</span>: <span class="purple">100</span><span class="red">%</span></code></pre>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+<pre><code><span class="green">.test {</span>
+    <span class="blue">width</span>: <span class="purple">50</span><span class="red">%</span>;
+<span class="green">}</span>
+<span class="red">@media</span> <span class="blue">all</span> <span class="red">and</span> (<span class="blue">max-width</span>: <span class="purple">1024</span><span class="red">px</span>) <span class="green">{</span>
+    <span class="green">.test {</span>
+        <span class="blue">width</span>: <span class="purple">100</span><span class="red">%</span>;
+    <span class="green">}</span>
+<span class="green">}</span></code></pre>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h6>
+                    @media all and (min-width)
+                </h6>
+                <pre><code><span class="blue">+rwdw-min(</span><span class="purple">val</span><span class="blue">)</span></code></pre>
+                <p>
+                    <b>使用方式：</b>
+                </p>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+<pre><code><span class="green">.test</span>
+    <span class="blue">width</span>: <span class="purple">50</span><span class="red">%</span>
+    <span class="red">+</span><span class="blue">rwdw-min</span>(<span class="purple"></span>)
+        <span class="blue">width</span>: <span class="purple">100</span><span class="red">%</span></code></pre>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+<pre><code><span class="green">.test {</span>
+    <span class="blue">width</span>: <span class="purple">50</span><span class="red">%</span>;
+<span class="green">}</span>
+<span class="red">@media</span> <span class="blue">all</span> <span class="red">and</span> (<span class="blue">min-width</span>: <span class="purple">1025</span><span class="red">px</span>) <span class="green">{</span>
+    <span class="green">.test {</span>
+        <span class="blue">width</span>: <span class="purple">100</span><span class="red">%</span>;
+    <span class="green">}</span>
+<span class="green">}</span></code></pre>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h6>
+                    @media all and (min-width) and (max-width)
+                </h6>
+                <pre><code><span class="blue">+rwdw-range(</span><span class="purple">max</span><span class="gray">,</span><span class="purple">min</span><span class=blue>)</span></code></pre>
+                <p>
+                    <b>使用方式：</b>
+                </p>
+                <pre><code><span class="blue">+rwdw-range(</span><span class="purple">1024</span><span class="gray">,</span><span class="purple">768</span><span class="blue">)</span> <span class="gray"></span></code></pre>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>

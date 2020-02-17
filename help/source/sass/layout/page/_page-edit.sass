@@ -26,7 +26,7 @@
 
     @for $i from 1 through 6
         h#{$i}
-            font-size: px(30 - $i * 1.5)
+            font-size: rem(30 - $i * 1.5)
             
             color: lighten(#282117, $i * 3.5% )
             // color: lighten(#171E28, $i * 3.5% )
@@ -36,7 +36,7 @@
     pre
         color: crc(code-white)
         background: crc(code-bg)
-        font-size: px(14)
+        font-size: rem(14)
         padding: 10px 20px
         border-radius: 5px
         position: relative
@@ -45,7 +45,7 @@
         //     position: absolute
         //     top: 15px
         //     right: 20px
-        //     font-size: px(12)
+        //     font-size: rem(12)
         //     line-height: 1
         //     color: #333
         //     background: #ededed
@@ -73,3 +73,20 @@
     .info
         p:first-child
             +mg(t,0px)
+    table
+        tr
+            &:first-child
+                th
+                    color: #fff
+                    background: #333
+            +rwdw-min()
+                &:not(:first-child):hover
+                    tr, td, th
+                        color: #fff
+                        background: #666
+        td, th
+            padding: 8px 10px
+            border: 1px solid #ccc
+            +trs()
+        th
+            background: #e0e0e0

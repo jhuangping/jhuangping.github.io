@@ -1,52 +1,3 @@
-/* Reset ====================================================================*/
-*
-    box-sizing: border-box;
-body, div, menu, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, button, textarea, th, td, figure 
-    margin: 0
-    padding: 0
-img 
-    max-width: 100%
-    height: auto
-    border: 0
-h1, h2, h3, h4, h5, h6
-    font-size: 100%
-    font-weight: normal
-    display: inline-block
-
-input, button, textarea, select, optgroup, option
-    font-family: inherit
-    font-size: inherit
-    font-style: inherit
-    font-weight: inherit
-table 
-    border-collapse: collapse
-    border-spacing: 0
-input, button, textarea, select 
-    *font-size: 100%
-ol, ul, li, menu
-    list-style: none
-a
-    text-decoration: none
-    transition: all .5s
-input, textarea
-    outline: none
-section, article, aside, footer, header, nav, main
-    display: block
-
-/* Default ==================================================================== */
-html
-    font-size: 10px
-
-body
-    font-family: Arial, "Microsoft JhengHei", sans-serif
-    font-size: 1.6rem
-    line-height: 1.5
-    letter-spacing: 0px
-    overflow-x: hidden
-    color: #666
-    padding: 20px
-    padding-left: 35px
-    padding-right: 45px
 @import ../../../../assets/sass/config/helpers/variable/_variable
 // Media ======================================================================
 //-----------------------------------------------------------------------------
@@ -99,12 +50,11 @@ code-gray: #75715E)
 
 // Default ====================================================================
 // PC 預設字級 18px, Moblie 預設字級 16px
-$defaultFz: 16
+$default: (fz: 16, lh: 24)
 
 // Container ==================================================================
-$ctrRange: 1240 // 基本範圍
-$ctrBoth: 5% // 自適應左右間距 (mobile)
-$ctrMargin: 15 // 自適應左右間距 (pc)
+$ctrRange: 1024 // 基本範圍
+$ctrBoth: 15 // 左右間距(px)
 
 // 控制 container----------------------------------------------------------------
 // CustomName: false, true (default: false)
@@ -132,7 +82,3 @@ $formSort: row // row , col
 // Setting SASS ===============================================================
 @import ../../../../assets/sass/config/helpers/_helpers-setting
 @import ../../../../assets/sass/config/module/_module-setting
-
-+md-common()
-+md-javascript()
-+md-keyframes()
