@@ -16,7 +16,17 @@
 </head>
 <body>
     <div class="ctr ctr--html">
-        <header></header>
+        <header>
+            <div class="hd_ctr ctr ctr--max1680">
+                <a href="index.html" class="hd_logo"><img src="../source/img/common/logo.svg" alt=""></a>
+                <div class="hd_toggle"></div>
+                <div class="menu">
+                    <ul class="menu_ctr">
+                        <li v-for="val in menu" class="menu_item" v-bind:data-import="val.link">{{val.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
         <main class="main">
             <div class="stn-body">
                 <div class="body-close"></div>
@@ -35,5 +45,32 @@
     <script src="../../assets/js/plug-in/vue/vue.min.js"></script>
     <script src="../../assets//js/jhuangping.tool.js"></script>
     <script src="../source/js/template.js"></script>
+    <script>
+        new Vue({
+            el: '.ctr--html',
+            data: {
+                menu: [
+                    {
+                        name: 'Getting Started 入門',
+                        link: 'page/setting.html'
+                    },
+                    {
+                        name: 'Helpers 助手',
+                        link: 'page/helpers.html'
+                    },
+                    {
+                        name: 'Module 模組',
+                        link: 'page/module.html'
+                    },
+                    {
+                        name: 'Download 下載',
+                        link: 'page/download.html'
+                    }
+                ]
+            }
+        })
+        
+    </script>
+    
 </body>
 </html>
