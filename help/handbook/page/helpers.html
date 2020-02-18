@@ -11,15 +11,58 @@
 <body id="edit">
     <h1>Helpers 助手</h1>
     <hr>
-    
-    <h4>variable # 變數</h4>
-    
-    <h5>helpers-setting</h5>
-    <div class="info">
         
+    <h2>helpers-setting</h2>
+    <div class="info">
+        <p>
+            helpers 檔案總管, 目前檔案如下
+        </p>
+<pre><code>helpers/
+├─ function/
+│   └─ _function-UnitConversion.sass <span class="gray">// 單位換算</span>
+├─ mixin/
+│   ├─_mixin-button.sass <span class="gray">// 按鈕樣式</span>
+│   ├─_mixin-compute.sass <span class="gray">// CSS輔助，計算(ex. 影片高度)</span>
+│   ├─_mixin-css.sass <span class="gray">// CSS輔助</span>
+│   ├─_mixin-media.sass <span class="gray">// 斷點</span>
+│   └─_mixin-module.sass <span class="gray">// edit 模組</span>
+└─ variable/
+    └─_variable.sass <span class="gray">// 預設、輔助變數</span></code></pre>
     </div>
     <hr>
-    <h2>單位換算</h2>
+    <div class="info">
+        <h4>variable # 變數</h4>
+        <p>
+            此變數皆可在_config.sass 重新設定。
+        </p>
+        <ul>
+            <li>
+                <h5>圖片路徑</h5>
+<pre><code>$imgPath: <span class="yellow">'../images/'</span> <span class="red">!default</span></code></pre>
+            </li>
+            <li>
+                <h5>Media 斷點</h5>
+<pre><code>$rwd: <span class="purple">1024</span><span class="red">px !default</span>
+$rwd-pc: <span class="purple">1280</span><span class="red">px !default</span>
+$rwd-pcs: <span class="purple">1024</span><span class="red">px !default</span>
+$rwd-pad: <span class="purple">992</span><span class="red">px !default</span>
+$rwd-pads: <span class="purple">768</span><span class="red">px !default</span>
+$rwd-phone: <span class="purple">480</span><span class="red">px !default</span>
+$rwd-phones: <span class="purple">320</span><span class="red">px !default</span></code></pre>
+            </li>
+            <li>
+                <h5>Css 屬性</h5>
+<pre><code>$Re: <span class="blue">initial</span> <span class="red">!default</span>
+$Dna: <span class="blue">inherit</span> <span class="red">!default</span>
+$colorRe: <span class="blue">transparent</span> <span class="red">!default</span></code></pre>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <h3>單位換算</h3>
+    <p>
+        配合html font-size: 10px
+    </p>
     <ul>
         <li>
             <h5>rem()</h5>
@@ -59,15 +102,39 @@
         </li>
         <li>
             <h5>vw()</h5>
-            <p>vw</p>
+            <p>px to vw</p>
+            <div class="row">
+                <div class="col-6">
+                    <b>SASS</b>
+                </div>
+                <div class="col-6">
+                    <b>CSS</b>
+                </div>
+            </div>
         </li>
         <li>
             <h5>vh()</h5>
-            <p>vh</p>
+            <p>px to vh</p>
+            <div class="row">
+                <div class="col-6">
+                    <b>SASS</b>
+                </div>
+                <div class="col-6">
+                    <b>CSS</b>
+                </div>
+            </div>
         </li>
         <li>
             <h5>per()</h5>
-            <p>percentage</p>
+            <p>px to percentage</p>
+            <div class="row">
+                <div class="col-6">
+                    <b>SASS</b>
+                </div>
+                <div class="col-6">
+                    <b>CSS</b>
+                </div>
+            </div>
         </li>
     </ul>
     <hr>
@@ -76,16 +143,24 @@
         <ul>
             <li>
                 <h5>lh()</h5>
-                <p>line-height</p>
+                <p>line-height，_config 預設值[文字大小: 16px, 行高 24px]</p>
+<pre><code>$default: (<span class="blue">fz</span>: <span class="purple">16</span><span class="gray">,</span> <span class="blue">lh</span>: <span class="purple">24</span>)</code></pre>
                 <div class="row">
                     <div class="col-6">
                         <b>SASS</b>
-<pre><code><span class="span green">.test</span>
+<pre><code><span class="green">.default</span>
+    <span class="blue">line-height</span>: <span class="blue">lh</span>()</span>
+
+<span class="green">.custom</span>
     <span class="blue">line-height</span>: <span class="blue">lh</span>(<span class="purple">16</span>)</code></pre>
                     </div>
                     <div class="col-6">
                         <b>CSS</b>
-<pre><code><span class="span green">.test {</span>
+<pre><code><span class="green">.default {</span>
+    <span class="blue">line-height</span>: <span class="purple">1.5</span>;
+<span class="green">}</span>
+
+<span class="green">.custom {</span>
     <span class="blue">line-height</span>: <span class="purple">1</span>;
 <span class="green">}</span></code></pre>
 
@@ -94,7 +169,15 @@
             </li>
             <li>
                 <h5>font()</h5>
-                <p>font-family</p>
+                <p>font-family, 字型設定輔助</p>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
@@ -103,11 +186,27 @@
         <ul>
             <li>
                 <h5>cr()</h5>
-                <p>color basis</p>
+                <p>color basis, 預設顏色輔助</p>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+                    </div>
+                </div>
             </li>
             <li>
                 <h5>crc()</h5>
-                <p>color custom</p>
+                <p>color custom, 自訂顏色</p>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
@@ -180,10 +279,12 @@
 <pre><code><span class="green">.test {</span>
     <span class="blue">display</span>: <span class="purple">flex</span>; 
 <span class="green">}</span>
+
 <span class="green">.test2 {</span>
     <span class="blue">display</span>: <span class="purple">flex</span>;
     <span class="blue">align-items</span>: <span class="purple">center</span>;
 <span class="green">}</span>
+
 <span class="green">.test3 {</span>
     <span class="blue">display</span>: <span class="purple">flex</span>;
     <span class="blue">align-items</span>: <span class="purple">center</span>;
@@ -195,34 +296,98 @@
             <li>
                 <h6>+flex-center()</h6>
                 <b>flex layout 置中</b>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+                    </div>
+                </div>
             </li>
             <li>
                 <h6>+text-lg()</h6>
                 <b>文字漸層</b>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+                    </div>
+                </div>
             </li>
             <li>
                 <h6>+border-lg()</h6>
                 <b>邊線漸層</b>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+                    </div>
+                </div>
             </li>
             <li>
                 <h6>+bg-lg()</h6>
                 <b>背景漸層</b>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+                    </div>
+                </div>
             </li>
             <li>
                 <h6>+text-overflow()</h6>
                 <b>文字溢出</b>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+                    </div>
+                </div>
             </li>
             <li>
                 <h6>+trs() || +transition()</h6>
                 <b>過渡</b>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+                    </div>
+                </div>
             </li>
             <li>
                 <h6>+pd()</h6>
                 <b>內距</b>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+                    </div>
+                </div>
             </li>
             <li>
                 <h6>+mg()</h6>
                 <b>外距</b>
+                <div class="row">
+                    <div class="col-6">
+                        <b>SASS</b>
+                    </div>
+                    <div class="col-6">
+                        <b>CSS</b>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
