@@ -12,11 +12,13 @@
 	<div id="edit">
 		<h1>Getting Started 入門</h1>
 		<h2>下載 Download</h2>
-		<ul>
-			<li>
-				<a href="../../source/upload/file/jhuangping-beta.zip" target="_blank">JhuangPing Helpers</a>
-			</li>
-		</ul>
+		
+		<P>
+			<a href="../../source/upload/file/jhuangping-beta.zip" target="_blank" class="btn btn--download">
+				<span class="btn_txt">JhuangPing Helpers.zip (beta)</span>
+			</a>
+		</P>
+			
 
 		<hr>
 
@@ -38,6 +40,7 @@
 
 <span class="gray">// page</span>
 <span class="red">@import</span> <span class="blue">layout/page/_index</span></code></pre>
+		<hr>
 		<h2>結構 Skeleton</h2>
 <pre><code>config/
 ├─ helpers/
@@ -47,7 +50,6 @@
 └─ module/
 </code></pre>
 
-		<hr>
 	</div>
 	<div class="skeleton" style="display: none;">
 		<div class="inner">
@@ -103,6 +105,187 @@
 						</li>
 						<li>style.sass</li>
 					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="edit">
+		<hr>
+		<h2>config</h2>
+		<div class="info">
+			<ul>
+				<li>
+					<h3>Config</h3>
+					<p>
+						匯入輔助變數
+					</p>
+<pre><code><span class="red">@import</span> <span class="purple">helpers/variable/_var-setting</span></code></pre>
+				</li>
+				<li>
+					<h3>Media 斷點</h3>
+					<p>
+						可自行設定斷點值
+					</p>
+<pre><code>$rwd: <span class="purple">1200</span> <span class="gray">//Menu轉換手機尺寸</span>
+$rwd-pc: <span class="purple">1280</span> <span class="gray">//電腦尺寸</span>
+$rwd-pcs: <span class="purple">1024</span> <span class="gray">//小電腦尺寸</span>
+$rwd-pad: <span class="purple">992</span> <span class="gray">//平板尺寸</span>
+$rwd-pads: <span class="purple">768</span> <span class="gray">//小平板尺寸</span>
+$rwd-phone: <span class="purple">480</span> <span class="gray">//手機尺寸</span>
+$rwd-phones: <span class="purple">320</span> <span class="gray">//小手機尺寸</span></code></pre>
+					<p>
+						<b>參考尺寸</b>
+					</p>
+					<table>
+						<tr>
+							<th>裝置</th>
+							<th>尺寸</th>
+						</tr>
+						<tr>
+							<th>PC</th>
+							<td>1920x1080, 1680x1050, 1600x900, 1440x900, 1366x800, 1366x768, 1024x768</td>
+						</tr>
+						<tr>
+							<th>Pad</th>
+							<td>800x1280, 768x1024, 600x1024, 600x962</td>
+						</tr>
+						<tr>
+							<th>Phone</th>
+							<td>[iPhone 6/7/8 Plus, 414x736] [iPhone 6/7/8, 375x667] [iPhone 5/SE, 320x568]</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					<h3>Font</h3>
+					<p>
+						文字字體、icon 等相關設定。
+					</p>
+					<table>
+						<tr>
+							<th>$font-main</th>
+							<td>主要字體設定</td>
+						</tr>
+						<tr>
+							<th>$font</th>
+							<td>外嵌字體設定，使用方式參考helpers font()</td>
+						</tr>
+					</table>
+<pre><code><span class="gray">// Font Main  預設 ( Arial, 'Microsoft JhengHei', sans-serif )</span>
+$font-main: <span class="blue">Arial</span><span class="gray">,</span> <span class="yellow">'Microsoft JhengHei'</span><span class="gray">,</span> <span class="blue">sans-serif</span> <span class="red">!default</span>
+
+<span class="gray">// import font</span>
+$font: ()</code></pre>
+				</li>
+				<li>
+					<h3>Color</h3>
+					<p>
+						常用顏色相關設定。(參照boostorp 色碼)。<br>
+						使用方式參考helpers cr() , crc()
+					</p>
+					<table>
+						<tr>
+							<th>$color: ()</th>
+							<td>基礎共用顏色</td>
+						</tr>
+						<tr>
+							<th>$colorCustom()</th>
+							<td>自訂CIS顏色</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					<h3>Default</h3>
+					<p>
+						module default, 預設字級 16px & 行高 24px
+					</p>
+<pre><code>$default: (<span class="blue">fz</span>: <span class="purple">16</span><span class="gray">,</span> <span class="blue">lh</span>: <span class="purple">24</span>)</code></pre>
+				</li>
+				<li>
+					<h3>Container(ctr)</h3>
+					<p>
+						module layout, Container 相關設定。<br>
+						主要控制內容寬度
+					</p>
+<pre><code>$ctrRange: <span class="purple">1024</span> <span class="gray">// 基本範圍</span>
+$ctrBoth: <span class="purple">15</span> <span class="gray">// 左右間距(px)</span></code></pre>
+					<h4>設定方式</h4>
+					<p>
+						有兩個模式，1.自行命名。2.預設名稱。<br>
+						因主要採BEM的方式命名，產出的class皆為".ctr--[name]"前方的綴詞是固定的
+					</p>
+					<table>
+						<thead>
+							<tr>
+								<th>變數</th>
+								<th>值</th>
+								<th>說明</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>$ctrCustomName</th>
+								<td>false, true</td>
+								<td>是否自行命名開關</td>
+							</tr>
+							<tr>
+								<th>$ctrArry</th>
+								<td>0 ~ 99+</td>
+								<td>陣列(輸入數值即可)</td>
+							</tr>
+						</tbody>
+					</table>
+					<h5>$ctrCustomName: false</h5>
+					<p>
+						class: .ctr--w[val]
+					</p>
+					<div class="row">
+						<div class="col-6"><b>SASS</b>
+<pre><code>$ctrCustomName: <span class="blue">false</span>
+$ctrArry: <span class="purple">1680</span><span class="gray">,</span> <span class="purple">1440</span></code></pre>
+						</div>
+						<div class="col-6"><b>CSS</b>
+<pre><code><span class="green">.ctr--w1680 {</span> <span class="blue">max-width</span>: <span class="purple">1710</span><span class="red">px</span>; <span class="green">}</span>
+<span class="green">.ctr--w1440 {</span> <span class="blue">max-width</span>: <span class="purple">1470</span><span class="red">px</span>; <span class="green">}</span></code></pre>
+						</div>
+					</div>
+					<h5>$ctrCustomName: true</h5>
+					<p>
+						class: .ctr--[name][val]
+					</p>
+					<div class="row">
+						<div class="col-6"><b>SASS</b>
+<pre><code>$ctrCustomName: <span class="blue">true</span>
+$ctrArry: (<span class="blue">max1680</span>:<span class="purple">1680</span><span class="gray">,</span> <span class="blue">max1440</span>:<span class="purple">1440</span>)</code></pre>
+						</div>
+						<div class="col-6"><b>CSS</b>
+<pre><code><span class="green">.ctr--max1680 {</span> <span class="blue">max-width</span>: <span class="purple">1710</span><span class="red">px</span>; <span class="green">}</span>
+<span class="green">.ctr--max1440 {</span> <span class="blue">max-width</span>: <span class="purple">1470</span><span class="red">px</span>; <span class="green">}</span></code></pre>
+						</div>
+					</div>
+				</li>
+				<li>
+					<h3>Grid(gd)</h3>
+					<p>網格相關設定 (p.s. 已有自適應)</p>
+					<div class="row">
+						<div class="col-6">
+							<b>SASS</b>
+<pre><code>$gridArry: <span class="purple">2</span><span class="gray">,</span> <span class="purple">3</span><span class="gray">,</span> <span class="purple">4</span></code></pre>
+						</div>
+						<div class="col-6">
+							<b>CSS</b>
+<pre><code><span class="green">.gd--row2</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">2</span><span class="green">)</span>; <span class="green">}</span>
+
+<span class="green">.gd--row3</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">3</span><span class="green">)</span>; <span class="green">}</span>
+
+<span class="green">.gd--row4</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">4</span><span class="green">)</span>; <span class="green">}</span></code></pre>
+						</div>
+					</div>
+				</li>
+				<li>
+					<h3>Setting SASS</h3>
+					<p>匯入helpers-setting & module-setting 位置</p>
+<pre><code><span class="red">@import</span> <span class="purple">helpers/_helpers-setting</span>
+<span class="red">@import</span> <span class="purple">module/_module-setting</span></code></pre>
 				</li>
 			</ul>
 		</div>

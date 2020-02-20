@@ -12,6 +12,7 @@
                 list-style-type: square
     li
         list-style: $Dna
+        +mg(tb, 10px)
     p
         margin: 0px
         +mg(tb,1em)
@@ -40,6 +41,7 @@
         padding: 10px 20px
         border-radius: 5px
         position: relative
+        overflow-y: hidden
         // &::before
         //     content: 'Copy Code.'
         //     position: absolute
@@ -74,13 +76,20 @@
         p:first-child
             +mg(t,0px)
     table
+        +mg(tb, 10px)
+        thead
+            tr
+                +rwdw-min()
+                    &:hover
+                        tr, td, th
+                            color: #fff
+                            background: #333
+            th
+                color: #fff
+                background: #333
         tr
-            &:first-child
-                th
-                    color: #fff
-                    background: #333
             +rwdw-min()
-                &:not(:first-child):hover
+                &:hover
                     tr, td, th
                         color: #fff
                         background: #666

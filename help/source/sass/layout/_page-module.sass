@@ -54,3 +54,17 @@ body
 +md-javascript()
 +md-keyframes()
 +md-button()
+    padding: 8px 1em
+    border-radius: 5px
+    &--download
+        display: inline-block
+        color: #fff
+        background: #6AA84F
+        position: relative
+        +trs()
+        +rwdw-min()
+            &:hover
+                background: #6AA84F
+                opacity: 1
+                box-shadow: 0 2px 10px rgba(#274E13, .5) inset
+                +trs()

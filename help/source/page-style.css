@@ -30,29 +30,34 @@ html { font-size: 10px; }
 body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; line-height: 1.5; letter-spacing: 0px; overflow-x: hidden; color: #666; padding-top: 20px; padding-left: 35px; padding-bottom: 8.16667%; padding-right: 45px; }
 
 /* Module ===================================================================== */
-/* style */
+/* Common ================================================================= */
+/* style ------------------------------------------------------------------ */
 .style-none { margin: 0; padding: 0; list-style: none; }
 
-/* txt */
+/* txt -------------------------------------------------------------------- */
 .txt-left { text-align: left; }
 
 .txt-center { text-align: center; }
 
 .txt-right { text-align: right; }
 
-/* scroll */
+/* scroll ----------------------------------------------------------------- */
 .scroll-no { overflow: hidden; }
 
 .scroll-x { overflow-y: hidden; }
 
 .scroll-y { overflow-x: hidden; }
 
-/* display */
+/* display ---------------------------------------------------------------- */
 @media all and (max-width: 992px) { .show-pc, .display-pc { display: none !important; } }
 
 @media all and (min-width: 993px) { .show-mobile, .display-mobile { display: none !important; } }
 
-/* Javascript */
+/* Javascript =============================================================0 */
+/* Javascript href -------------------------------------------------------- */
+[data-href] { cursor: pointer; }
+
+/* javascript Image ------------------------------------------------------- */
 [data-img] { background-repeat: no-repeat; }
 
 .js-img--full { background-size: cover; }
@@ -61,7 +66,7 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 
 .js-img--config { background-position: center; }
 
-/* Keyframes */
+/* Keyframes ============================================================== */
 @-webkit-keyframes opacity_in { 0% { }
   100% { opacity: 1; } }
 @keyframes opacity_in { 0% { }
@@ -85,8 +90,16 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 @keyframes h100 { 0% { }
   100% { height: 100%; } }
 
-/* Button */
-[class^="btn-"], .btn { cursor: pointer; display: inline-block; -webkit-transition: all 0.5s; transition: all 0.5s; }
+/* Button ================================================================= */
+.btn { cursor: pointer; display: inline-block; line-height: 1; -webkit-transition: all 0.5s; transition: all 0.5s; }
+
+.btn_txt, .btn_name { color: inherit; }
+
+.btn { padding: 8px 1em; border-radius: 5px; }
+
+.btn--download { display: inline-block; color: #fff; background: #6AA84F; position: relative; -webkit-transition: all 0.5s; transition: all 0.5s; }
+
+@media all and (min-width: 769px) { .btn--download:hover { background: #6AA84F; opacity: 1; -webkit-box-shadow: 0 2px 10px rgba(39, 78, 19, 0.5) inset; box-shadow: 0 2px 10px rgba(39, 78, 19, 0.5) inset; -webkit-transition: all 0.5s; transition: all 0.5s; } }
 
 /* ============================================================================ */
 /* Page                                                                         */
@@ -102,7 +115,7 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 
 #edit ul ul ul { list-style-type: square; }
 
-#edit li { list-style: inherit; }
+#edit li { list-style: inherit; margin-top: 10px; margin-bottom: 10px; }
 
 #edit p { margin: 0px; margin-top: 1em; margin-bottom: 1em; }
 
@@ -122,7 +135,7 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 
 #edit h6 { font-size: 2.1rem; color: #6c593e; }
 
-#edit pre { color: #fff; background: #272822; font-size: 1.4rem; padding: 10px 20px; border-radius: 5px; position: relative; }
+#edit pre { color: #fff; background: #272822; font-size: 1.4rem; padding: 10px 20px; border-radius: 5px; position: relative; overflow-y: hidden; }
 
 #edit pre .tag, #edit pre .red, #edit pre .code-r { color: #EB2658; }
 
@@ -216,9 +229,13 @@ body { font-family: Arial, "Microsoft JhengHei", sans-serif; font-size: 1.6rem; 
 
 #edit .info p:first-child { margin-top: 0px; }
 
-#edit table tr:first-child th { color: #fff; background: #333; }
+#edit table { margin-top: 10px; margin-bottom: 10px; }
 
-@media all and (min-width: 769px) { #edit table tr:not(:first-child):hover tr, #edit table tr:not(:first-child):hover td, #edit table tr:not(:first-child):hover th { color: #fff; background: #666; } }
+@media all and (min-width: 769px) { #edit table thead tr:hover tr, #edit table thead tr:hover td, #edit table thead tr:hover th { color: #fff; background: #333; } }
+
+#edit table thead th { color: #fff; background: #333; }
+
+@media all and (min-width: 769px) { #edit table tr:hover tr, #edit table tr:hover td, #edit table tr:hover th { color: #fff; background: #666; } }
 
 #edit table td, #edit table th { padding: 8px 10px; border: 1px solid #ccc; -webkit-transition: all 0.5s; transition: all 0.5s; }
 
