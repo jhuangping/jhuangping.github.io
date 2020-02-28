@@ -29,12 +29,15 @@
             margin-bottom: vh(165)
 
             +rwdw-max()
-                flex-basis: 80px
-                max-width: 80px
+                flex-basis: 50px
+                max-width: 50px
 
         &_content
             .headline
                 margin-bottom: per(55, 515)
+                +rwdw-max()
+                    margin-bottom: 20px
+                    
                 > *
                     display: block
                     line-height: 1

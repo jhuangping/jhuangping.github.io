@@ -329,9 +329,11 @@ footer { width: 100vw; position: fixed; left: 0px; bottom: 20px; z-index: 1; }
 
 .idx-info_logo { -webkit-box-flex: 0; -ms-flex: 0 0 115px; flex: 0 0 115px; max-width: 115px; margin-top: 5.09259vh; margin-bottom: 15.27778vh; }
 
-@media all and (max-width: 1024px) { .idx-info_logo { -ms-flex-preferred-size: 80px; flex-basis: 80px; max-width: 80px; } }
+@media all and (max-width: 1024px) { .idx-info_logo { -ms-flex-preferred-size: 50px; flex-basis: 50px; max-width: 50px; } }
 
 .idx-info_content .headline { margin-bottom: 10.67961%; }
+
+@media all and (max-width: 1024px) { .idx-info_content .headline { margin-bottom: 20px; } }
 
 .idx-info_content .headline > * { display: block; line-height: 1; }
 
