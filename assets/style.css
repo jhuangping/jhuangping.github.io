@@ -188,8 +188,6 @@ h1, h2, h3, h4, h5, h6 { display: inline-block; }
 
 .bn--index { max-width: 82.8125vw; width: 100%; position: fixed; top: 0px; right: 0px; background: initial; }
 
-@media all and (max-width: 1024px) { .bn--index { display: none; } }
-
 .bn--index .bn_pic { height: 100vh; }
 
 /* Path */
@@ -359,27 +357,27 @@ footer { width: 100vw; position: fixed; left: 0px; bottom: 20px; z-index: 1; }
 
 @media all and (min-width: 1025px) { .idx-info_bg { -webkit-transform: skewX(-7deg); transform: skewX(-7deg); } }
 
-.idx-info--red .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(rgba(175, 31, 36, 0.5))); background: linear-gradient(to bottom, #212121, rgba(175, 31, 36, 0.5)); }
+.idx-info--red .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(rgba(175, 31, 36, 0.9))); background: linear-gradient(to bottom, #212121, rgba(175, 31, 36, 0.9)); }
 
 @media all and (min-width: 1025px) { .idx-info--red .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#af1f24), to(#f00)); background: linear-gradient(to bottom, #af1f24, #f00); } }
 
-.idx-info--blue .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(rgba(6, 0, 125, 0.5))); background: linear-gradient(to bottom, #212121, rgba(6, 0, 125, 0.5)); }
+.idx-info--blue .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(rgba(6, 0, 125, 0.9))); background: linear-gradient(to bottom, #212121, rgba(6, 0, 125, 0.9)); }
 
 @media all and (min-width: 1025px) { .idx-info--blue .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#06007d), to(#0095eb)); background: linear-gradient(to bottom, #06007d, #0095eb); } }
 
-.idx-info--green .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(rgba(14, 121, 0, 0.5))); background: linear-gradient(to bottom, #212121, rgba(14, 121, 0, 0.5)); }
+.idx-info--green .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(rgba(14, 121, 0, 0.9))); background: linear-gradient(to bottom, #212121, rgba(14, 121, 0, 0.9)); }
 
 @media all and (min-width: 1025px) { .idx-info--green .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#0e7900), to(#56b443)); background: linear-gradient(to bottom, #0e7900, #56b443); } }
 
-.idx-info--gray .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(rgba(52, 52, 52, 0.5))); background: linear-gradient(to bottom, #212121, rgba(52, 52, 52, 0.5)); }
+.idx-info--gray .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(rgba(52, 52, 52, 0.9))); background: linear-gradient(to bottom, #212121, rgba(52, 52, 52, 0.9)); }
 
 @media all and (min-width: 1025px) { .idx-info--gray .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#343434), to(#636363)); background: linear-gradient(to bottom, #343434, #636363); } }
 
-.idx-info--black .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(rgba(15, 15, 15, 0.5))); background: linear-gradient(to bottom, #212121, rgba(15, 15, 15, 0.5)); }
+.idx-info--black .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(rgba(15, 15, 15, 0.9))); background: linear-gradient(to bottom, #212121, rgba(15, 15, 15, 0.9)); }
 
 @media all and (min-width: 1025px) { .idx-info--black .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#0f0f0f), to(#252525)); background: linear-gradient(to bottom, #0f0f0f, #252525); } }
 
-.idx-info--ironman .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#af1f24), to(rgba(243, 200, 96, 0.5))); background: linear-gradient(to bottom, #af1f24, rgba(243, 200, 96, 0.5)); }
+.idx-info--ironman .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#af1f24), to(rgba(243, 200, 96, 0.9))); background: linear-gradient(to bottom, #af1f24, rgba(243, 200, 96, 0.9)); }
 
 @media all and (min-width: 1025px) { .idx-info--ironman .idx-info_bg { background: -webkit-gradient(linear, left top, left bottom, from(#af1f24), to(#F3C860)); background: linear-gradient(to bottom, #af1f24, #F3C860); } }
 /*# sourceMappingURL=style.css.map */
