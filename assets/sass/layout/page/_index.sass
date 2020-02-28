@@ -1,22 +1,127 @@
 /* Index ====================================================================== */
-.stn
-    &-bg
-        pointer-events: none
-        position: absolute
-        top: 0px
-        left: 0px
-        width: 100vw
+.idx
+    &-info
+        max-width: 400px
+        width: 100%
         height: 100vh
-        filter: blur(2px)
-        z-index: -1
-        svg
-            width: 100vw
-            height: 100vh
-        .svg
-            &-sass
-                opacity: .8
+        position: relative
+        +flex($jc: center)
+        padding-left: vw(20)
+        padding-right: vw(20)
 
-            &-pug
-                opacity: .1
-                transform: rotateY(5deg)
-                transform-origin: 0,0
+        +rwdw-max()
+            max-width: 100%
+
+        &_wp
+            +flex($fd: column, $ai: center)
+            position: relative
+            padding-left: 15px
+            padding-right: 15px
+            z-index: 2
+
+            +rwdw-max()
+                align-items: flex-start
+
+        &_logo
+            flex: 0 0 115px
+            max-width: 115px
+            margin-top: vh(55)
+            margin-bottom: vh(165)
+
+            +rwdw-max()
+                flex-basis: 80px
+                max-width: 80px
+
+        &_content
+            .headline
+                margin-bottom: per(55, 515)
+                > *
+                    display: block
+                    line-height: 1
+                &_name
+                    font-family: font(bold)
+                    font-size: rem(36)
+                    margin-bottom: 10px
+                    text-shadow: 0 0 20px rgba(#000, .5)
+
+                    +rwdw-max()
+                        font-size: rem(25)
+
+                &_job
+                    font-size: rem(25)
+                    text-align: right
+
+                    +rwdw-max()
+                        text-align: left
+                        font-size: rem(18)
+            .info
+                &_item
+                    margin-bottom: 5px
+                    padding-left: 25px
+                    position: relative
+                    &::before
+                        opacity: .5
+                        position: absolute
+                        top: 0px
+                        left: 0px
+                        font-family: $icm
+                        content: ''
+                    &--school:before
+                        content: '\e919'
+                    &--mail:before
+                        content: '\e992'
+                    &--add:before
+                        content: '\e993'
+        &_bg
+            position: absolute
+            z-index: 1
+            top: 0px
+            left: 0px
+            width: 100%
+            height: 100%
+            // box-shadow: 0 0 20px rgba(#000, .2)
+
+            +rwdw-min()
+                transform: skewX(-7deg)
+
+        &--red
+            .idx-info_bg
+                +bg-lg(#212121, rgba(#af1f24, .5), to bottom)
+
+                +rwdw-min()
+                    +bg-lg(#af1f24, #f00, to bottom)
+
+        &--blue
+            .idx-info_bg
+                +bg-lg(#212121, rgba(#06007d, .5), to bottom)
+
+                +rwdw-min()
+                    +bg-lg(#06007d, #0095eb, to bottom)
+
+        &--green
+            .idx-info_bg
+                +bg-lg(#212121, rgba(#0e7900, .5), to bottom)
+
+                +rwdw-min()
+                    +bg-lg(#0e7900, #56b443, to bottom)
+
+        &--gray
+            .idx-info_bg
+                +bg-lg(#212121, rgba(#343434, .5), to bottom)
+
+                +rwdw-min()
+                    +bg-lg(#343434, #636363, to bottom)
+        
+        &--black
+            .idx-info_bg
+                +bg-lg(#212121, rgba(#0f0f0f, .5), to bottom)
+
+                +rwdw-min()
+                    +bg-lg(#0f0f0f, #252525, to bottom)
+
+        &--ironman
+            .idx-info_bg
+                +bg-lg(#af1f24, rgba(#F3C860, .5), to bottom)
+
+                +rwdw-min()
+                    +bg-lg(#af1f24, #F3C860, to bottom)              

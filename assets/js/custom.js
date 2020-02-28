@@ -86,6 +86,30 @@ function browser() {
 // var thisBrowser = browser();
 // console.log(thisBrowser);
 
+/* Plug-in ================================================================ */
+var swiper = {
+    index: function () {
+        var idx_bn = new Swiper('.bn-idx_swp', {
+            spaceBetween: 0,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            speed: 2000,
+            effect: 'fade',
+            loop: false,
+            fadeEffect: {
+                crossFade: true,
+            },
+            // navigation: {
+            //     nextEl: '.btn-bnPrev',
+            //     prevEl: '.btn-bnNext',
+            // }
+        });
+
+    },
+}
+
 //  Custom --------------------------------------------------------------------
 function menu() {
     var btn = $('.hd_toggle'),
@@ -119,7 +143,9 @@ var readyFunction = {
         $('footer').load('template/footer.html');
         tableWrap('.edit');
     },
-    index: function () {  }, 
+    index: function () {
+        swiper.index();
+    }, 
 };
 
 $(function () {
