@@ -146,6 +146,9 @@ var readyFunction = {
     index: function () {
         swiper.index();
     }, 
+    making: function () {
+
+    },
 };
 
 $(function () {
