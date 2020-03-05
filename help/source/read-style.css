@@ -420,7 +420,7 @@ footer { width: 100vw; position: fixed; left: 0px; bottom: 0px; z-index: 10; pad
 
 .stn-body .body-ir iframe { position: absolute; top: 0px; left: 0px; width: 100%; height: calc(100% - 38px); }
 
-.stn-info { width: 100%; height: calc(100vh - 38px); padding: 2%; }
+.stn-info { width: 100%; height: calc(100vh - 38px); padding: 2%; overflow-x: hidden; }
 
 @media all and (min-width: 769px) { .stn-info { padding-left: calc(2% + 250px); } }
 /*# sourceMappingURL=read-style.css.map */

@@ -1,0 +1,78 @@
+@import ../../../../assets/sass/config/helpers/variable/_var-setting
+// Media ======================================================================
+//-----------------------------------------------------------------------------
+// PC: 1920x1080, 1680x1050, 1600x900, 1440x900, 1366x800, 1366x768, 1024x768
+// Pad: 800x1280, 768x1024, 600x1024, 600x962
+// Phone: [iPhone 6/7/8 Plus, 414x736] [iPhone 6/7/8, 375x667] [iPhone 5/SE, 320x568]
+//-----------------------------------------------------------------------------
+$rwd: 768 //Menu轉換手機尺寸
+$rwd-pc: 1280 //電腦尺寸
+$rwd-pcs: 1024 //小電腦尺寸
+$rwd-pad: 992 //平板尺寸
+$rwd-pads: 768 //小平板尺寸
+$rwd-phone: 480 //手機尺寸
+$rwd-phones: 320 //小手機尺寸
+
+// Font =======================================================================
+// Font Main  預設 ( Arial, 'Microsoft JhengHei', sans-serif )
+$font-main: 'Quicksand', Arial, 'Microsoft JhengHei', sans-serif !default //主字體
+$font: (bold: 'Righteous',
+line: 'Quicksand')
+
+// Font Awesome Icon
+$FontAwesome: 'Font Awesome 5 Solid','Font Awesome 5 Regular','Font Awesome 5 Brands'
+$FontAwesome-Solid: 'Font Awesome 5 Solid'
+$FontAwesome-Regular: 'Font Awesome 5 Regular'
+$FontAwesome-Brands: 'Font Awesome 5 Brands'
+
+// Icomoon ICON
+$icm: 'icomoon'
+
+// Color ======================================================================
+// Common
+$color: (innerText: #212121,
+hover: #f3c860,
+white: #fff,
+black: #000,
+ir: #AF1F24,
+iy: #f3c860,
+red: #E06666)
+
+// Custom
+$colorCustom: (ci:#000,
+hdBg: #212121)
+
+// Default ====================================================================
+// PC 預設字級 18px, Moblie 預設字級 16px
+$default: (fz: 16, lh: 24)
+
+// Container ==================================================================
+$ctrRange: 1240 // 基本範圍
+$ctrBoth: 15 // 左右間距
+
+// 控制 container----------------------------------------------------------------
+// CustomName: false, true (default: false)
+// [$ctrCustomName: false] 預設: 值 val (class: ctr--w[val])
+// $ctrArry: 1680, 1440, 1366, 1024
+// [$ctrCustomName: true] 自訂: 名稱: 值, name: val (class: ctr--[name][val])
+// $ctrArry: (max1680:1680,max1440:1440,max1366: 1366,max1024:1024)
+// ----------------------------------------------------------------------------
+$ctrCustomName: true
+$ctrArry: (max1680: 1680)
+
+// Grid =======================================================================
+$gridArry: 2, 3, 4
+
+// Banner =====================================================================
+$bnWidth: 1920
+$bnHeight: 300
+$bnMask: false // true, false
+$bnMaskStyle: style01
+
+// Form =======================================================================
+$formCol: 2
+$formSort: row // row , col
+
+// Setting SASS ===============================================================
+@import ../../../../assets/sass/config/helpers/_helpers-setting
+@import ../../../../assets/sass/config/module/_module-setting

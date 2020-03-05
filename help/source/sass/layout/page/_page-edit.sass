@@ -1,0 +1,101 @@
+/* Page Edit ================================================================== */
+#edit
+    ol, ul
+        padding-left: 20px
+    ol
+        list-style-type: decimal
+    ul
+        list-style-type: disc
+        ul
+            list-style-type: circle
+            ul
+                list-style-type: square
+    li
+        list-style: $Dna
+        +mg(tb, 10px)
+    p
+        margin: 0px
+        +mg(tb,1em)
+    hr
+        +mg(tb, 2em)
+        border: none
+        border-bottom: 1px dotted #aaa
+
+    h1, h2, h3, h4, h5, h6
+        display: block
+        position: relative
+
+    @for $i from 1 through 6
+        h#{$i}
+            font-size: rem(30 - $i * 1.5)
+            
+            color: lighten(#282117, $i * 3.5% )
+            // color: lighten(#171E28, $i * 3.5% )
+            // color: lighten(#261717, $i * 3.5% )
+            // color: lighten(#11151B, $i * 3.5%)
+
+    pre
+        color: crc(code-white)
+        background: crc(code-bg)
+        font-size: rem(14)
+        padding: 10px 20px
+        border-radius: 5px
+        position: relative
+        overflow-y: hidden
+        // &::before
+        //     content: 'Copy Code.'
+        //     position: absolute
+        //     top: 15px
+        //     right: 20px
+        //     font-size: rem(12)
+        //     line-height: 1
+        //     color: #333
+        //     background: #ededed
+        //     border-radius: 5px
+        //     padding: 5px 8px
+        //     cursor: pointer
+        //     +trs()
+        //     +rwdw-min()
+        //         &:hover
+        //             opacity: .3
+
+        .tag, .red, .code-r
+            color: crc(code-r)
+        .cls, .green, .code-g
+            color: crc(code-g)
+        .blue, .code-b
+            color: crc(code-b)
+        .gray, .code-gray
+            color: crc(code-gray)
+        .purple, .code-p
+            color: crc(code-p)
+
+    +bs-grid()
+
+    .info
+        p:first-child
+            +mg(t,0px)
+    table
+        +mg(tb, 10px)
+        thead
+            tr
+                +rwdw-min()
+                    &:hover
+                        tr, td, th
+                            color: #fff
+                            background: #333
+            th
+                color: #fff
+                background: #333
+        tr
+            +rwdw-min()
+                &:hover
+                    tr, td, th
+                        color: #fff
+                        background: #666
+        td, th
+            padding: 8px 10px
+            border: 1px solid #ccc
+            +trs()
+        th
+            background: #e0e0e0
