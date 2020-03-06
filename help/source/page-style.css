@@ -84,20 +84,22 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
   100% { height: 100%; } }
 
 /* Button ================================================================= */
-.e-btn { cursor: pointer; display: inline-block; line-height: 1; -webkit-transition: all 0.5s; transition: all 0.5s; }
+.m-btn { cursor: pointer; display: inline-block; line-height: 1; text-align: center; vertical-align: middle; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-transition: all 0.5s; transition: all 0.5s; }
 
-.e-btn_txt, .e-btn_name { color: inherit; }
+.m-btn_txt, .m-btn_name { color: inherit; }
 
-.e-btn { padding: 8px 1em; border-radius: 5px; }
+.m-btn { padding: 8px 1em; border-radius: 5px; }
 
-.e-btn--download { display: inline-block; color: #fff; background: #6AA84F; position: relative; -webkit-transition: all 0.5s; transition: all 0.5s; }
+.m-btn--download { display: inline-block; color: #fff; background: #6AA84F; position: relative; -webkit-transition: all 0.5s; transition: all 0.5s; }
 
-@media all and (min-width: 769px) { .e-btn--download:hover { background: #6AA84F; opacity: 1; -webkit-box-shadow: 0 2px 10px rgba(39, 78, 19, 0.5) inset; box-shadow: 0 2px 10px rgba(39, 78, 19, 0.5) inset; -webkit-transition: all 0.5s; transition: all 0.5s; } }
+@media all and (min-width: 769px) { .m-btn--download:hover { background: #6AA84F; opacity: 1; -webkit-box-shadow: 0 2px 10px rgba(39, 78, 19, 0.5) inset; box-shadow: 0 2px 10px rgba(39, 78, 19, 0.5) inset; -webkit-transition: all 0.5s; transition: all 0.5s; } }
 
 /* ============================================================================ */
 /* Page                                                                         */
 /* ============================================================================ */
 /* Page Edit ================================================================== */
+#edit > *:not(pre) code { background-color: #eee; color: #000; font-size: 1.6rem; font-weight: 400; padding: 2px 6px; border-radius: 2px; border: 1px solid rgba(0, 0, 0, 0.07); }
+
 #edit ol, #edit ul { padding-left: 20px; }
 
 #edit ol { list-style-type: decimal; }
@@ -111,8 +113,6 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 #edit li { list-style: inherit; margin-top: 10px; margin-bottom: 10px; }
 
 #edit p { margin: 0px; margin-top: 1em; margin-bottom: 1em; }
-
-#edit p > code { background-color: #eee; color: #000; font-size: 1.6rem; font-weight: 400; padding: 2px 6px; border-radius: 2px; border: 1px solid rgba(0, 0, 0, 0.07); }
 
 #edit hr { margin-top: 2em; margin-bottom: 2em; border: none; border-bottom: 1px dotted #aaa; }
 
