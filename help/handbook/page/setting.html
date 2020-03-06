@@ -14,8 +14,8 @@
 		<h2>下載 Download</h2>
 		
 		<P>
-			<a href="../../source/upload/file/jhuangping-beta.zip" target="_blank" class="btn btn--download">
-				<span class="btn_txt">JhuangPing Helpers.zip (beta)</span>
+			<a href="../../source/upload/file/jhuangping-beta.zip" target="_blank" class="e-btn e-btn--download">
+				<span class="e-btn_txt">JhuangPing Helpers.zip (beta)</span>
 			</a>
 		</P>
 			
@@ -207,11 +207,11 @@ $font: ()</code></pre>
 						主要控制內容寬度
 					</p>
 <pre><code>$ctrRange: <span class="purple">1024</span> <span class="gray">// 基本範圍</span>
-$ctrBoth: <span class="purple">15</span> <span class="gray">// 左右間距(px)</span></code></pre>
+$wpBoth: <span class="purple">15</span> <span class="gray">// 左右間距(px)</span></code></pre>
 					<h4>設定方式</h4>
 					<p>
 						有兩個模式，1.自行命名。2.預設名稱。<br>
-						因主要採BEM的方式命名，產出的class皆為".ctr--[name]"前方的綴詞是固定的
+						因主要採BEM的方式命名，產出的class皆為".l-wp-[name]"前方的綴詞是固定的
 					</p>
 					<table>
 						<thead>
@@ -223,48 +223,50 @@ $ctrBoth: <span class="purple">15</span> <span class="gray">// 左右間距(px)<
 						</thead>
 						<tbody>
 							<tr>
-								<th>$ctrCustomName</th>
+								<th>$wpCustomName</th>
 								<td>false, true</td>
 								<td>是否自行命名開關</td>
 							</tr>
 							<tr>
-								<th>$ctrArry</th>
+								<th>$wpArry</th>
 								<td>0 ~ 99+</td>
 								<td>陣列(輸入數值即可)</td>
 							</tr>
 						</tbody>
 					</table>
-					<h5>$ctrCustomName: false</h5>
+					<h5>$wpCustomName: false</h5>
 					<p>
-						class: .ctr--w[val]
+						class: .l-wp-[val]
 					</p>
 					<div class="row">
 						<div class="col-6"><b>SASS</b>
-<pre><code>$ctrCustomName: <span class="blue">false</span>
-$ctrArry: <span class="purple">1680</span><span class="gray">,</span> <span class="purple">1440</span></code></pre>
+<pre><code>$wpCustomName: <span class="blue">false</span>
+$wpArry: <span class="purple">1680</span><span class="gray">,</span> <span class="purple">1440</span></code></pre>
 						</div>
 						<div class="col-6"><b>CSS</b>
-<pre><code><span class="green">.ctr--w1680 {</span> <span class="blue">max-width</span>: <span class="purple">1710</span><span class="red">px</span>; <span class="green">}</span>
-<span class="green">.ctr--w1440 {</span> <span class="blue">max-width</span>: <span class="purple">1470</span><span class="red">px</span>; <span class="green">}</span></code></pre>
+<pre><code><span class="green">.l-wp-1680 {</span> <span class="blue">max-width</span>: <span class="purple">1710</span><span class="red">px</span>; <span class="green">}</span>
+<span class="green">.l-wp-1440 {</span> <span class="blue">max-width</span>: <span class="purple">1470</span><span
+	class="red">px</span>; <span class="green">}</span></code></pre>
 						</div>
 					</div>
-					<h5>$ctrCustomName: true</h5>
+					<h5>$wpCustomName: true</h5>
 					<p>
-						class: .ctr--[name][val]
+						class: .l-wp-[name][val]
 					</p>
 					<div class="row">
 						<div class="col-6"><b>SASS</b>
-<pre><code>$ctrCustomName: <span class="blue">true</span>
-$ctrArry: (<span class="blue">max1680</span>:<span class="purple">1680</span><span class="gray">,</span> <span class="blue">max1440</span>:<span class="purple">1440</span>)</code></pre>
+<pre><code>$wpCustomName: <span class="blue">true</span>
+$wpArry: (<span class="blue">max1680</span>:<span class="purple">1680</span><span class="gray">,</span> <span class="blue">max1440</span>:<span class="purple">1440</span>)</code></pre>
 						</div>
 						<div class="col-6"><b>CSS</b>
-<pre><code><span class="green">.ctr--max1680 {</span> <span class="blue">max-width</span>: <span class="purple">1710</span><span class="red">px</span>; <span class="green">}</span>
-<span class="green">.ctr--max1440 {</span> <span class="blue">max-width</span>: <span class="purple">1470</span><span class="red">px</span>; <span class="green">}</span></code></pre>
+<pre><code><span class="green">.l-wp-max1680 {</span> <span class="blue">max-width</span>: <span class="purple">1710</span><span class="red">px</span>; <span class="green">}</span>
+<span class="green">.l-wp-max1440 {</span> <span class="blue">max-width</span>: <span class="purple">1470</span><span
+	class="red">px</span>; <span class="green">}</span></code></pre>
 						</div>
 					</div>
 				</li>
 				<li>
-					<h3>Grid(gd)</h3>
+					<h3>Grid(c-gd)</h3>
 					<p>網格相關設定 (p.s. 已有自適應)</p>
 					<div class="row">
 						<div class="col-6">
@@ -273,11 +275,11 @@ $ctrArry: (<span class="blue">max1680</span>:<span class="purple">1680</span><sp
 						</div>
 						<div class="col-6">
 							<b>CSS</b>
-<pre><code><span class="green">.gd--row2</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">2</span><span class="green">)</span>; <span class="green">}</span>
+<pre><code><span class="green">.c-gd-row2</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">2</span><span class="green">)</span>; <span class="green">}</span>
 
-<span class="green">.gd--row3</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">3</span><span class="green">)</span>; <span class="green">}</span>
+<span class="green">.c-gd-row3</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">3</span><span class="green">)</span>; <span class="green">}</span>
 
-<span class="green">.gd--row4</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">4</span><span class="green">)</span>; <span class="green">}</span></code></pre>
+<span class="green">.c-gd-row4</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">4</span><span class="green">)</span>; <span class="green">}</span></code></pre>
 						</div>
 					</div>
 				</li>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BEM 命名</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
+    <link rel="stylesheet" href="../../source/page-style.css">
+</head>
+<body id="edit">
+    <ol>
+        <li>
+            <h4>BEM</h4>
+            <ul>
+                <li>1-1 BEM 是什麼？</li>
+                <li>1-2 連接符</li>
+                <li>1-3 Block 區塊</li>
+                <li>1-4 Element 元素</li>
+                <li>1-5 Modifier 修飾符</li>
+                <li>1-6 總結</li>
+            </ul>
+        </li>
+        <li>
+            <h4>如何寫 BEM</h4>
+            <ul>
+                <li>2-1 BEM 與 命名空間的結合</li>
+                <li>2-2 Sass 與 BEM</li>
+            </ul>
+        </li>
+        <li>
+            <h4>BEM 會遇到的問題</h4>
+            <ul>
+                <li>3-1 要如何處理 Element 的子元素</li>
+                <li>3-2 嵌套組件的樣式微調</li>
+                <li>3-3 組件會不會最終有無數個 class 名稱</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2>一、BEM</h2>
+    <ul>
+        <li>1-1 BEM 是什麼？</li>
+        <li>1-2 連接符</li>
+        <li>1-3 Block 區塊</li>
+        <li>1-4 Element 元素</li>
+        <li>1-5 Modifier 修飾符</li>
+        <li>1-6 總結</li>
+    </ul>
+
+    <h4>1-1 BEM 是什麼？</h4>
+    <p>
+        <a href="https://en.bem.info/" target="_blank">BEM 是由 Yandex 團隊提出來的一種創新命名 Class 名稱的設計模式。</a>
+    </p>
+    <p>
+        BEM 命名給 CSS 以及 HTML 提供清晰結構，結合命名空間提供更多信息，模組化提高代碼的重用，以達到 CSS 命名語義化、可重用性高、後期維護容易、加載渲染快的要求。
+    </p>
+    <p>
+        BEM 的名稱源於該方法學的三個組成部分英文字首，分别為：
+    </p>
+    <ul>
+        <li>Block 區塊</li>
+        <li>Element 元素</li>
+        <li>Modifier 修飾符</li>
+    </ul>
+    <p>這三個部分的結合稱為 BEM 實體。</p>
+
+    <h4>1-2 連接符</h4>
+    <p>在選擇器中，由以下三種符號來表示擴展的關係：</p>
+    <ul>
+        <li><code>-</code>中線：僅作爲連字符使用，表示某個塊或者某個子元素的多單詞之間的連接記號。</li>
+        <li><code>__</code>雙底線：用來連接塊和塊的子元素。</li>
+        <li><code>--</code>雙中線：用來描述一個塊或者塊的子元素的一種狀態。</li>
+    </ul>
+    <p>BEM 是提供一種規範，而具體命名規則可以根據個人偏好選擇：</p>
+    <h5>駝峰式</h5>
+    <pre><code>.blockName-elementName--modifierName { /* ... */ }</code></pre>
+    <h5>單下底線</h5>
+    <pre><code>.block-name_element-name--modifierName { /* ... */ }</code></pre>
+    <h5>修飾器名用單下底線</h5>
+    <pre><code>.blockName__elementName-modifierName { /* ... */ }</code></pre>
+
+    <h4>1-3 Block 區塊</h4>
+    <p>Block 指的是 Web 應用開發中的模組。每個 Block 在邏輯和功能上都是相互獨立具備自己特有的意義。</p>
+    <p>在大多數情況下，任何獨立的頁面元素（或複雜或簡單）都可以被視作一個區塊。它的 HTML 容器會有一個唯一的 class 名稱，也就是這個區塊的名字。</p>
+    <p>基本原則與說明：</p>
+    <ul>
+        <li>不能使用 CSS 標籤選擇器和 ID 選擇器。</li>
+        <li>Block 名稱需能清晰的表達出，其用途、功能或意義，具有唯一性。</li>
+        <li>Block 名稱前，可以加入一些簡短的前綴來達到命名空間的效果，關於命名空間下面章節會提到。</li>
+        <li>每個塊在邏輯上和功能上都相互獨立，在頁面上不能相依其他 Blocks 或元素。</li>
+        <li>不要定義過多影響所在環境的外部樣式（例如 margin），確保塊在不同地方復用和嵌套時，增加其擴展性。</li>
+        <li>由於塊是獨立的，可以在應用開發中進行復用，從而降低代碼重複並提高開發效率。</li>
+        <li>塊可以放置在頁面上的任何位置，也可以互相嵌套。</li>
+    </ul>
+    <h4>1-4 Element 元素</h4>
+    <p>Element 為 Block 的一部分並且相依於 Block 的意義，簡單來說就是，如果一個區域不能拿到外部單獨使用，那麼就應該作為一個 Element。</p>
+    <p>基本原則與說明：</p>
+    <ul>
+        <li>Element 名稱需能簡單的描述出，其結構、佈局或意義，並且在語義上與 Block 相關聯。</li>
+        <li>不能與 Block 分開單獨使用，並且在頁面上不能相依於其他的 Block 或 Element。</li>
+        <li>Element 始終是 Block 的一部分，而不是另一個 Element。這表示 Element 名稱無法定義層次結構，例如 block__elem1__elem2，之後我們會提到為什麼不行。</li>
+        <li>Block 的內部元素，都被認為是 Block 的子元素。</li>
+        <li>Element 和 Element 之間可以彼此嵌套。</li>
+    </ul>
+
+    <h4>1-5 Modifier 修飾符</h4>
+    <p>Modifier 是定義 Block 和 Element 的外觀、狀態或類型。</p>
+    <p>基本原則與說明：</p>
+    <ul>
+        <li>需能直觀易懂表達出，其外觀、狀態或行為。</li>
+        <li>不能脱離 Block 或 Element 使用。</li>
+        <li>應該改變的是實體的外觀，行為或狀態，而不是替換它。</li>
+        <li>值可以是 Boolean 或 Key-value 形式。</li>
+        <li>不能同時使用兩個具有不同值的相同 Modifier。</li>
+    </ul>
+
+    <h4>1-6 總結</h4>
+    <ol>
+        <li>
+            <h4>切換到 BEM 式 CSS</h4>
+            <ul>
+                <li>把 DOM 模型扔到一邊，學習創造 Block。</li>
+                <li>不要使用 ID 選擇器和標籤選擇器。</li>
+                <li>最小化選擇器嵌套。</li>
+                <li>使用 class 命名約定來避免命名衝突，確保選擇器名稱具備自解釋性。</li>
+                <li>用 Block、Element 和 Modifier 的方式工作。</li>
+                <li>把可能會改變的 CSS 樣式屬性從 Block 挪到 Modifier 裡去。</li>
+                <li>把代碼拆分成獨立的部分從而更容易的使用單獨的 Block。</li>
+                <li>重複使用 Block。</li>
+                <li>注意，不要走火入魔過度模組化，適當拿捏，不然 HTML 會很恐怖。</li>
+            </ul>
+        </li>
+        <li>
+            <h4>BEM 的優缺點</h4><br>
+            <h5>優點</h5>
+            <ul>
+                <li>語義化，此處的語義化並非 HTML 標籤的語義化，對 SEO 可能也沒有任何意義，但閱讀上非常明瞭，可以直接從 HTML 結構就能看出階層關係。</li>
+                <li>減少選擇器層層嵌套，有利於渲染效率。</li>
+                <li>不像 OOCSS 它並不是為了處理關於 CSS 全部的模組化，反倒是像是命名空間的概念，透過 class 名稱建立各自獨立的 CSS 模組，並且不會互相干擾，一定程度上，避免命名的污染。</li>
+            </ul>
+            <h5>缺點</h5>
+            <ul>
+                <li>BEM 的一個槽點是，命名方式長而難看，書寫不雅，很多人討厭 BEM 就是因為 HTML 會很醜。但相比 BEM 格式帶來的便利來說，我們應客觀看待。</li>
+                <li>類名與命名空間互相依賴，命名空間名稱需要重新變更所有類名，但可使用 CSS 預處理器改善這個缺點。</li>
+            </ul>
+        </li>
+        <li>
+            <h4>BEM 解決的問題</h4>
+            <p>由於 CSS 的樣式應用是全局性，沒有作用域可言。</p>
+            <p>考慮以下場景：</p>
+            <ol>
+                <li>開發一個彈窗組件，在現有頁面中測試都沒問題，一段時間後，但之後新增頁面時，彈窗組件中的樣式卻跑版了，查看原因發現頁面樣式與組件樣式互相衝突。</li>
+                <li>承接上文，為了防止衝突，在選擇器加上一些結構邏輯，比如子選擇器、標籤選擇器，借此讓選擇器獨一無二，但之後新增頁面又發生衝突，又繼續層層疊疊，最後使得整個文件失控難以管理。</li>
+            </ol>
+            <p>BEM 解決這一問題的思路在於，由於項目開發中，每個組件都是唯一無二的，其名字也是獨一無二的，組件內部元素的名字都加上組件名，並用元素的名字作為選擇器，自然組件內的樣式就不會與組件外的樣式衝突了。</p>
+        </li>
+    </ol>
+    <hr>
+
+    <h2>二、如何寫 BEM</h2>
+    <ul>
+        <li>2-1 BEM 與 命名空間的結合</li>
+        <li>2-2 Sass 與 BEM</li>
+    </ul>
+    <h4>2-1 BEM 與 命名空間的結合</h4>
+    <p>在 Block 加上命名空間，命名空間可以提升代碼可讀性。</p>
+    <p>每個人使用的命名空間都不同，依個人習慣使用，以下列出常用的：</p>
+    <ul>
+        <li><code>l-</code> Layout</li>
+        <li>
+            <code>o-</code> Objects
+            <ul>
+                <li><code>e-</code> Element</li>
+                <li><code>u-</code> Unit</li>
+            </ul>
+        </li>
+        <li>
+            <code>c-</code> Component
+            <ul>
+                <li><code>m-</code> Module</li>
+            </ul>
+        </li>
+        <li>
+            <code>u-</code> Utility
+            <ul>
+                <li><code>h-</code> Helpers</li>
+                <li><code>f-</code> Fuctions</li>
+            </ul>
+        </li>
+        <li><code>is/has-</code> States</li>
+        <li><code>js-</code> JavaScript hooks</li>
+    </ul>
+    
+</body>
+</html>

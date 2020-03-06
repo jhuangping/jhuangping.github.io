@@ -17,48 +17,48 @@
     <div class="info">
         <h6>Style</h6>
         <ul>
-            <li>.style-none</li>
+            <li>.u-style-none</li>
         </ul>
         <h6>text</h6>
         <ul>
-            <li>.txt-left</li>
-            <li>.txt-center</li>
-            <li>.txt-right</li>
+            <li>.u-txt-left</li>
+            <li>.u-txt-center</li>
+            <li>.u-txt-right</li>
         </ul>
         <h6>scroll</h6>
         <ul>
-            <li>.scroll-no</li>
-            <li>.scroll-x</li>
-            <li>.scroll-y</li>
+            <li>.u-scroll-no</li>
+            <li>.u-scroll-x</li>
+            <li>.u-scroll-y</li>
         </ul>
         <h6>display</h6>
         <ul>
-            <li>.show-pc, .display-pc</li>
-            <li>.show-mobile, .display-mobile</li>
+            <li>.u-show-pc, .u-display-pc</li>
+            <li>.u-show-mobile, .u-display-mobile</li>
         </ul>
     </div>
     <h5>layout</h5>
     <h6>Container</h6>
     <p>
         $ctrRange: 1280 // 基本範圍 <br>
-        $ctrBoth: 5% // 自適應左右間距 (mobile) <br>
+        $wpBoth: 5% // 自適應左右間距 (mobile) <br>
         $ctrMargin: 15 // 自適應左右間距 (pc) <br>
     </p>
     <p>
         // 控制 container <br>
-        // 值: vaal (class: ctr--w[值]) <br>
-        $ctrArry: 1680, 1440, 1366, 1024
+        // 值: vaal (class: l-wp-[值]) <br>
+        $wpArry: 1680, 1440, 1366, 1024
     </p>
 
     <p>
-        // 自訂: 名稱: 值, name: val (class: ctr--[name][val])
-        $ctrArry: (max1680:1680,max1440:1440,max1366: 1366,max1024:1024)
+        // 自訂: 名稱: 值, name: val (class: l-wp-[name][val])
+        $wpArry: (max1680:1680,max1440:1440,max1366: 1366,max1024:1024)
     </p>
 <pre class="code code--html"><code>CustomName: false, true (default: false)
-$ctrCustomName: false] 預設: 值 val (class: ctr--w[val])
-$ctrArry: 1680, 1440, 1366, 1024
-[$ctrCustomName: true] 自訂: 名稱: 值, name: val (class: ctr--[name][val])
-$ctrArry: (max1680:1680,max1440:1440,max1366: 1366,max1024:1024)</code></pre>
+$wpCustomName: false] 預設: 值 val (class: l-wp-[val])
+$wpArry: 1680, 1440, 1366, 1024
+[$wpCustomName: true] 自訂: 名稱: 值, name: val (class: l-wp-[name][val])
+$wpArry: (max1680:1680,max1440:1440,max1366: 1366,max1024:1024)</code></pre>
 
 </body>
 </html>

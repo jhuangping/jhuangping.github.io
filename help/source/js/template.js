@@ -20,8 +20,8 @@ $(function () {
     ]
 
     // 基礎設定 header & footer
-    var header = $('<div class="hd_ctr ctr ctr--max1680"><a href="index.html" class="hd_logo"><img src="../source/img/common/logo.svg" alt=""></a><div class="hd_toggle"></div><div class="menu"><ul class="menu_ctr"></ul></div></div>'),
-        footer = $('<div class="ft_ctr ctr ctr--max1680"><div class="copyright">Copyright© JhuangPing 2019 - All. <span> Design by JhuangPing</span></div></div>');
+    var header = $('<div class="hd_l-wp l-wp-max1680"><a href="index.html" class="hd_logo"><img src="../source/img/common/logo.svg" alt=""></a><div class="hd_toggle"></div><div class="menu"><ul class="menu_ctr"></ul></div></div>'),
+        footer = $('<div class="ft_l-wp l-wp-max1680"><div class="copyright">Copyright© JhuangPing 2019 - All. <span> Design by JhuangPing</span></div></div>');
     // $('header').append(header);
     $('footer').append(footer);
 

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>簡述 Depiction</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
+    <link rel="stylesheet" href="../../source/page-style.css">
+</head>
+<body id="edit">
+    <h3>主要命名規則</h3>
+    <p>採BEM + 空間命名OOCSS</p>
+    <p>
+        原生 <code>B__E--M</code> 為雙底連接塊和塊的子元素，再此簡化為單底連接。<br />
+        雙中線依舊用來描述狀態
+    </p>
+    <p>
+        U單元 unit-B區塊 block_E元素 element--M修飾 Modifier
+    </p>
+    <p>大致如下：</p>
+    <ol>
+        <li>
+            <code>B_E--M</code>
+        </li>
+        <li>
+            <code>U-B_E--M</code>
+        </li>
+        <li>
+            <code>U-B-depiction_E--M</code>
+        </li>
+        <li>
+            <code>U-B_component</code>
+        </li>
+    </ol>
+    <hr>
+    <h4>空間命名OOCSS</h4>
+    <p>
+        這裡只選用 <code>l-</code> <code>e-</code> <code>c-</code> <code>u-</code> <code>is/has-</code> <code>js-</code>
+    </p>
+    <ul>
+        <li>
+            <p><code>l-</code> Layout 佈局</p>
+        </li>
+        <li>
+            <p>3擇1 [ 選用 <code>e-</code> ]</p>
+
+            <ul>
+                <li>
+                    <p><code>o-</code> Objects 物件</p>
+                </li>
+                <li>
+                    <p><code>e-</code> Element 元素</p>
+                </li>
+                <li>
+                    <p><code>u-</code> Unit 零件</p>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>2擇1 [ 選用 <code>c-</code> ]</p>
+            <ul>
+                <li>
+                    <p><code>c-</code> Component 組件</p>
+                </li>
+                <li>
+                    <p><code>m-</code> Module 模塊</p>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>3擇1 [ 選用 <code>u-</code> ]</p>
+            <ul>
+                <li>
+                    <p><code>u-</code> Utility 實用工具</p>
+                </li>
+                <li>
+                    <p><code>h-</code> Helpers 幫手</p>
+                </li>
+                <li>
+                    <p><code>f-</code> Fuctions 功能</p>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><code>is/has-</code> States 狀態</p>
+        </li>
+        <li>
+            <p><code>js-</code> JavaScript hooks</p>
+        </li>
+    </ul>
+    <h5>Layout</h5>
+    <p>綴詞加上 <code>l-</code>。# 沒有綴詞視為獨立 block or element</p>
+    <ol>
+        <li>wrap 包裹 <code>l-wp</code></li>
+        <li>content 內容 or container 容器 <code>l-ctr</code> </li>
+        <li>section 部分 <code>l-stn</code></li>
+        <li>block 塊 <code>l-bk</code></li>
+        <li>box 框 <code>l-bx</code></li>
+        <li>inner 內 <code>l-ir</code></li>
+    </ol>
+    <p>
+        wrap > content > section > block > box > inner
+    </p>
+    
+</body>
+</html>
