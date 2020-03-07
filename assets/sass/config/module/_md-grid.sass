@@ -1,18 +1,34 @@
 // Grid Mixin -----------------------------------------------------------------
-@mixin grid-mg($both: 15,$mg: 30)
-    margin-left: vw(-$both)
-    margin-right: vw(-$both)
-    & > *
-        padding-right: vw($both)
-        padding-left: vw($both)
-        margin-bottom: px($mg)
+@mixin md-gd($val, $both, $mgb: 30px)
+    $percent: 100% / $val
+
+    +flex($fw: wp, $ai: stretch)
+    margin-left: vw(-$both/2)
+    margin-right: vw(-$both/2)
+
+    > *
+        flex-basis: $percent
+        max-width: $percent
+        padding-left: vw($both/2)
+        padding-right: vw($both/2)
+        margin-bottom: $mgb
+        display: inline-block
+
+@mixin md-m-gd($both: 30,$mgb: 30px)
+    &.m-gd, &.m-grid
+        margin-left: vw(-$both/2)
+        margin-right: vw(-$both/2)
+        & > *
+            padding-right: vw($both/2)
+            padding-left: vw($both/2)
+            margin-bottom: $mgb
 // Grid SASS ------------------------------------------------------------------
 @mixin md-grid()
-    /* Grid */
-    .gd,.grid
+    /* Grid =================================================================== */
+    .m-gd,.m-grid
         +flex($fw: wrap)
         @each $val in $gridArry
-            &--row#{$val}
+            &-row#{$val}
                 > *
                     width: calc(100%/#{$val})
                     @if $val <= 2

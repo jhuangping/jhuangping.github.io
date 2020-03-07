@@ -10,16 +10,6 @@ var $window = $(window),
 /* Element ================================================================ */
 // Common -----------------------------------------------------------------
 
-// clear sylte
-function clearStyle(ele) {
-    $(ele).attr('style', '');
-}
-
-// Edit
-function tableWrap(ele) {
-    $(ele).find('table').wrap('<div class="scroll-y"></div>')
-}
-
 // 判斷是否為 IE
 function browser() {
     var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串 
@@ -89,21 +79,21 @@ function browser() {
 /* Plug-in ================================================================ */
 var swiper = {
     index: function () {
-        var idx_bn = new Swiper('.bn-idx_swp', {
+        var idx_bn = new Swiper('.m-bn-idx_swp', {
             spaceBetween: 0,
             autoplay: {
-                delay: 3000,
+                delay: 5000,
                 disableOnInteraction: false,
             },
-            speed: 2000,
+            speed: 3000,
             effect: 'fade',
             loop: false,
             fadeEffect: {
                 crossFade: true,
             },
             // navigation: {
-            //     nextEl: '.btn-bnPrev',
-            //     prevEl: '.btn-bnNext',
+            //     nextEl: '.swiper-button-prev',
+            //     prevEl: '.swiper-button-next',
             // }
         });
 
@@ -124,9 +114,6 @@ function menu() {
 var readyFunction = {
     checkFunction: function checkFunction() {
 
-        //共用函數呼叫
-        readyFunction.common();
-
         //擷取body id
         var functionName = $('body').data('id');
         // console.log(functionName);
@@ -135,6 +122,9 @@ var readyFunction = {
             //呼叫函數( 如果 id = home 輸出的結果為 readyFunction.home(); )
             eval("readyFunction." + functionName + "();");
         }
+
+        //共用函數呼叫
+        readyFunction.common();
     },
     common: function () {
         $('header').load('template/header.html',function () {

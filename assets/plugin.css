@@ -194,4 +194,4 @@ button.swiper-pagination-bullet { border: none; margin: 0; padding: 0; -webkit-b
 .swiper-container-flip .swiper-slide-shadow-bottom, .swiper-container-flip .swiper-slide-shadow-left, .swiper-container-flip .swiper-slide-shadow-right, .swiper-container-flip .swiper-slide-shadow-top { z-index: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 
 .swiper-container-coverflow .swiper-wrapper { -ms-perspective: 1200px; }
-/*# sourceMappingURL=plug-in.css.map */
+/*# sourceMappingURL=plugin.css.map */

@@ -1,4 +1,17 @@
 /* JhuangPing Tool ============================================================ */
+// judge IE
+function browserIE() {
+    var browser = navigator.userAgent;
+    var browserVerify = browser.toLowerCase().match(/rv:([\d.]+)\) like gecko/);
+    var bie = browserVerify;
+    // console.log('ans: ' + bie);
+
+    if (bie != null){
+        $('body').addClass('is-ie11');
+    }
+
+    return bie;
+}
 // dataFun
 var dataFun = {
     href: function () {
@@ -28,7 +41,7 @@ var dataFun = {
             // console.log(judge);
 
             function imgBg(name) {
-                $this.css('background-image', 'url("' + src + '")').addClass('js-img--' + name + ' js-img--config');
+                $this.css('background-image', 'url("' + src + '")').addClass('is-img-' + name + ' is-img-config');
                 img.hide();
             }
             imgBg(judge);
@@ -86,10 +99,11 @@ function clearStyle(ele) {
 
 // Edit
 function tableWrap(ele) {
-    $(ele).find('table').wrap('<div class="scroll-y"></div>')
+    $(ele).find('table').wrap('<div class="u-scroll-y"></div>')
 }
 
 $(document).ready(function () {
+    browserIE();
     dataFun.all();
     svg();
 });

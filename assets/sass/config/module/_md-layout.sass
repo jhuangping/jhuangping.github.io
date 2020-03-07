@@ -1,40 +1,48 @@
 // Layout ===================================================================== 
 @mixin md-layout_main()
-    /* main */
+    /* main =================================================================== */
     .main,main
         @content
 
-// Container SASS ------------------------------------------------------------------
-@mixin md-layout_ctr()
-    /* container */
-    .ctr,.container
+// Wrap SASS ------------------------------------------------------------------
+@mixin md-layout_l-wp($custom: $wpCustomName,$both: $wpBoth)
+    /* Wrap ============================================================== */
+    %wpBoth
         margin: 0 auto
-        width: 100%
-        max-width: $ctrRange + px
-        +md-ctr($ctrRange)
+        width: calc(100% - #{$both * 2 +px})
+        // +pd(rl, $both + px)
 
-        @each $name,$val in $ctrArry
-            &--#{$name}
-                max-width: $val + px
-                +md-ctr($val)
+    .l-wp, .l-wrap
+        +md-l-wp($ctrRange)
 
-        &--full,&--max
+        @if $custom == true
+            @each $name,$val in $wpArry
+                &-#{$name}
+                    +md-l-wp($val)
+        @else
+            @each $val in $wpArry
+                &-#{$val}
+                    +md-l-wp($val)
+
+        &--no-center
+            +mg(rl, $Re)
+
+        &-full,&-max
+            width: 100%
             max-width: 100%
-            padding-left: 0px
-            padding-right: 0px
-        &--html
+        &-html
+            width: 100%
             max-width: 100%
             min-width: 320px
-            padding-left: 0px
-            padding-right: 0px
             overflow: hidden
-            +md-layout_ctr--html()
         @content
 
-@mixin md-layout_ctr--html()
-    @content
-// Container Mixin -----------------------------------------------------------------
-@mixin md-ctr($size: $ctrRange, $mg: $ctrMargin * 2,$both: $ctrBoth)
-	@media all and (max-width: $size + $mg + px)
-		padding-left: $both
-		padding-right: $both
+// Wrap Mixin -----------------------------------------------------------------
+@mixin md-l-wp($w: $ctrRange,$both: $wpBoth)
+    max-width: $w + px
+    @extend %wpBoth
+
+@mixin md-wp($w: $ctrRange,$both: $wpBoth)
+    margin: 0 auto
+    width: calc(100% - #{$both * 2 +px})
+    max-width: $w + px

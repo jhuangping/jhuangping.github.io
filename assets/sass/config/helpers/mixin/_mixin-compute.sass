@@ -1,0 +1,38 @@
+// Position
+@mixin pos-center()
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+// Percentage Height
+@mixin per-h($h: 9, $w: 16, $patch: 0)
+  // 16:9 (youtube: 1280:720) youtube 56.25%  
+
+  // (height / width)
+  padding-bottom: percentage($h / $w)
+  @if $patch != 0
+    padding-top: $patch + px
+
+// Table Width Percentage
+@mixin tab-w($td,$tab)
+	width: $td / $tab * 100%
+
+// Scrollbar
+@mixin scrollbar($bar: #00f,$bg: #f00,$w: 5)
+  &::-webkit-scrollbar
+    width: $w + px
+    background: $bg
+
+  &::-webkit-scrollbar-track
+    background: $bg
+
+  &::-webkit-scrollbar-thumb
+    background: $bar
+  
+// Arrow (border, ::before, ::after)
+@mixin arrow($w: 25px,$h: 25px,$path: top,$cr: #f00)
+  border-style: solid
+  border-width: $w $h
+  border-color: transparent
+  border-#{$path}-color: $cr

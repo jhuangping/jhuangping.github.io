@@ -5,11 +5,11 @@
     & > *
         padding-right: vw($both)
         padding-left: vw($both)
-        margin-bottom: px($mg)
+        margin-bottom: rem($mg)
 
 // Form SASS ------------------------------------------------------------------
 @mixin md-form()
-    /* Form Input */
+    /* Form Input ============================================================= */
     .inpt
         &-select
             position: relative
@@ -31,7 +31,7 @@
                 border-style: solid
                 border-color: #333 $colorRe $colorRe $colorRe
             select
-                font-size: px(16)
+                font-size: rem(16)
                 border-style: solid
                 border-width: 1px 
                 border-color: #B6B7B7
@@ -47,7 +47,7 @@
                 outline: none
                 &::-ms-expand
                     display: none
-    /* Form */
+    /* Form =================================================================== */
     .fm,.form
         +flex($fw: wrap)
         @each $val in $formCol
@@ -78,7 +78,7 @@
                             width: 100%
 
         input[type="text"],input[type="tel"],input[type="email"],input[type="password"],textarea
-            font-size: px(16)    
+            font-size: rem(16)    
             border-style: solid
             border: none
             background: rgba(#fff,.35)
@@ -91,12 +91,12 @@
             width: 100%
             max-width: 100%
             min-height: 100px
-            padding: px(10)
+            padding: rem(10)
             border: 1px solid #DADADA
 
         &-td,&-th
             +flex($ai: center)
-            padding-bottom: px(10)
+            padding-bottom: rem(10)
             // border-bottom: 1px solid #DADADA
             position: relative
             &::before
@@ -114,7 +114,7 @@
             &_name
                 white-space: nowrap
                 margin-right: vw(15)
-                font-size: px(20)
+                font-size: rem(20)
                 font-weight: bold
                 color: #014099
                 +rwdw-max($rwd-phone)
@@ -137,10 +137,10 @@
                 +rwdw-max($rwd-phone)
                     flex-direction: column
                     > *:not(:last-child)
-                        margin-bottom: px(20)
+                        margin-bottom: rem(20)
                 &::before
                     display: none
-                .btn
+                .m-btn
                     width: 115px
                     height: 45px
                     +rwdw-min()
@@ -148,7 +148,7 @@
                             input
                                 box-shadow: 0 0 10px #000 inset
                     input
-                        font-size: px(18)
+                        font-size: rem(18)
                         color: #fff
                         text-align: center
                         width: 100%

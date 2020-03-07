@@ -1,31 +1,24 @@
 // Common =====================================================================
 @mixin md-common()
-    /* style */
-    .style
+    /* Common ================================================================= */
+    /* style ------------------------------------------------------------------ */
+    .u-style
         &-none
             margin: 0
             padding: 0
             list-style: none
 
-    /* txt */
-    .txt
-        &-left
-            text-align: left
-        &-center
-            text-align: center
-        &-right
-            text-align: right
-
-    /* scroll */
-    .scroll
+    /* scroll ----------------------------------------------------------------- */
+    .u-scroll
         &-no
             overflow: hidden
         &-x
             overflow-y: hidden
         &-y
             overflow-x: hidden
-    /* display */
-    .show,.display
+
+    /* display ---------------------------------------------------------------- */
+    .u-show,.u-display
         +rwdw-max($rwd-pad)
             &-pc
                 display: none !important

@@ -1,0 +1,49 @@
+// Color system
+
+$white: #fff !default
+$gray-100: #f8f9fa !default
+$gray-200: #e9ecef !default
+$gray-300: #dee2e6 !default
+$gray-400: #ced4da !default
+$gray-500: #adb5bd !default
+$gray-600: #6c757d !default
+$gray-700: #495057 !default
+$gray-800: #343a40 !default
+$gray-900: #212529 !default
+$black: #000 !default
+
+$c-main: #2f2f81 !default
+$c-sub: #f8cc5e !default
+$c-success: #28a745 !default
+$c-info: #17a2b8 !default
+$c-warning: #ffc107 !default
+$c-danger: #dc3545 !default
+$c-light: $gray-100 !default
+$c-dark: $gray-800 !default
+
+$c-font-white: $white 
+$c-font-grey: $gray-700 
+
+
+$grays: () !default
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map-merge(("100": $gray-100, 
+"200": $gray-200, 
+"300": $gray-300, 
+"400": $gray-400, 
+"500": $gray-500,
+"600": $gray-600, 
+"700": $gray-700, 
+"800": $gray-800, 
+"900": $gray-900), $grays)
+
+$theme-colors: () !default
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(("main": $c-main, 
+"sub": $c-sub, 
+"success": $c-success, 
+"info": $c-info, 
+"warning": $c-warning, 
+"danger": $c-danger, 
+"light": $c-light, 
+"dark": $c-dark ),$theme-colors )

@@ -2,7 +2,7 @@
 // Reset ======================================================================
 // Base -----------------------------------------------------------------------
 @mixin md-reset()
-	/* Reset */
+	/* Reset ================================================================== */
 	*
 		box-sizing: border-box
 
@@ -52,8 +52,9 @@
 		color: inherit
 		text-decoration: none 
 		transition: all .5s
-		&:active,&:hover
+		&:active,&:hover,&:focus
 			outline: 0
+			text-decoration: none
 
 	*:focus, input, input:focus, textarea, textarea:focus, button, select
 		outline: none

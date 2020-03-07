@@ -14,72 +14,81 @@
   <link href="assets/img/common/favicon.ico" rel="icon" type="image/x-icon"/>
   <link rel="stylesheet" href="assets/fonts/icon/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
-  <link rel="stylesheet" href="assets/plugin-in.css"/>
+  <link rel="stylesheet" href="assets/plugin.css"/>
   <link rel="stylesheet" href="assets/style.css"/>
 </head>
 
 <body data-id="index">
-  <div class="ctr ctr--html">
-    <header></header>
+  <div class="l-wp-html">
+    <header class="hd"></header>
     <main class="main">
       
-        <section class="idx-info idx-info--black">
+        <section class="idx-info idx-info--red">
           <div class="idx-info_wp">
             <figure class="idx-info_logo">
               <img src="assets/img/common/logo.svg">
             </figure>
             <div class="idx-info_content">
-              <div class="headline">
-                <h1 class="headline_name">JhuangPing．Hati</h1>
-                <h2 class="headline_job">Front-end Engineer</h2>
+              <div class="idx-info_headline">
+                <h1 class="idx-info_headline-name">JhuangPing．Hati</h1>
+                <h2 class="idx-info_headline-job">Front-end Engineer</h2>
               </div>
-              <ul class="info">
-                <li class="info_item info_item--school">建國科技大學 / 數位媒體設計</li>
-                <li class="info_item info_item--mail"><a href="mailto:jhuangping9981@gmail.com" target="_blank">jhuangping9981@gmail.com</a></li>
-                <li class="info_item info_item--add">現居 台中市 (Taichung,TW)</li>
+              <ul class="idx-info_depiction">
+                <li class="idx-info_depiction-item idx-info_depiction-item--school">建國科技大學 / 數位媒體設計</li>
+                <li class="idx-info_depiction-item idx-info_depiction-item--mail"><a href="mailto:jhuangping9981@gmail.com" target="_blank">jhuangping9981@gmail.com</a></li>
+                <li class="idx-info_depiction-item idx-info_depiction-item--add">現居 台中市 (Taichung,TW)</li>
               </ul>            
             </div>
           </div>
           <div class="idx-info_bg"></div>
         </section>
-
-      <div class="bn bn--index">
-        <div class="bn_ctr">
-          <div class="bn-idx_swp swiper-container">
+      
+      <div class="m-bn m-bn--index">
+        <div class="m-bn_ctr">
+          <div class="m-bn-idx_swp swiper-container">
               <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="bn_pic" data-img="full">
-                      <img src="assets/img/banner/pic01_1590x1080.png" alt="">
+
+                  <div v-for="val in bn" class="swiper-slide">
+                    <div class="m-bn_pic" data-img="full">
+                      <img v-bind:src="val.pic" alt="">
                     </div>
                   </div>
+
+
               </div>
+              
           </div>
         
           <!-- <div class="bn_txt"></div> -->
         </div>
       </div>
     </main>
-    <footer></footer>
+    <footer class="ft"></footer>
   </div>
 </body>
 
 <!-- jquery 版本-->
 <script src="assets/js/plug-in/jquery/jquery-3.3.1.min.js"></script>
+<!-- Vue -->
+<script src="assets/js/plug-in//vue/vue.min.js"></script>
+<script>
+  new Vue({
+    el: '.l-wp-html',
+      data: {
+      bn: [
+        {
+          pic: 'assets/img/banner/pic02_1590x1080.png',
+        },
+        {
+          pic: 'assets/img/banner/pic01_1590x1080.png',
+        },
+      ]
+    }
+  });
+</script>
 <!-- Vendor 外部js-->
-<!-- <script src="assets/js/plug-in//vue/vue.min.js"></script> -->
 <script src="assets/js/plug-in/swiper/swiper.min.js"></script>
 <!-- 自訂的 js-->
 <script src="assets/js/jhuangping.tool.js"></script>
 <script src="assets/js/custom.js"></script>
-<!-- <script>
-  new Vue({
-    el: '.ctr--html',
-      data: {
-        bn: [{
-          pic: 'pic01_1250x1080.png',
-        },
-      ]
-    }
-  })
-</script> -->
 </html>

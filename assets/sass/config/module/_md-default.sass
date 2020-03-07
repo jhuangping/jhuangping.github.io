@@ -11,11 +11,11 @@
 		// 		font-size: 8.88889px
 	body 
 		font-family: $font-main
-		font-size: px($defaultFz)
-		line-height: lh($defaultFz,24)
+		font-size: rem(map-get($default, fz))
+		line-height: lh()
 		letter-spacing: 1px
-		color: cr(inner)
+		color: cr(innerText)
 		overflow-x: hidden
 		opacity: 0
-		animation: opacity_in 1s both
+		animation: c-opacity_in 1s both
 		@content

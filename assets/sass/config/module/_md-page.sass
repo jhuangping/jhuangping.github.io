@@ -1,12 +1,46 @@
+@mixin md-pagination()
+    /* pagination ============================================================= */
+    .pagination
+        width: 100%
+        +mg(b, #{per(120)})
+        +flex-center()
+        &_items
+            +flex-center()
+            +mg(rl, -5px)
+            li:not([class^="pagination_"])
+                +pd(rl, 5px)
+                +rwdw-min()
+                    &:hover
+                        a
+                            box-shadow: 0 0 31px rgba(#000, .15)
+                &.active
+                    pointer-events: none
+                    a
+                        color: #fff
+                        background: cr(red)
+                                
+            a
+                +flex-center()
+                width: 40px
+                height: 40px
+            [class^="pagination_"]
+                +pd(rl, 10px)
+                +rwdw-min()
+                    &:hover
+                        a
+                            color: cr(red)
+        &_prev
+        &_next
+
 @mixin md-page()
-    /* page */
+    /* page =================================================================== */
     .page
         max-width: 875px
         margin: 0 auto
         +flex-center()
         a
             +flex-center()
-            font-size: px(16px)
+            font-size: rem(16px)
             padding: 5px
             color: #7e8fb5
             cursor: pointer
@@ -43,13 +77,13 @@
             +rwdw-min()
                 &:hover 
                     opacity: .5 
-    .page-btn
+    .pagm-btn
         width: 100%
         padding: vh(55) 0 vh(45) 0
         /* p: 55px 0 45px 0 */
         position: relative
 
-        .btn-arrow-top
+        .m-btn-arrow-top
             +flex-center()
             position: absolute
             width: 50px
@@ -57,7 +91,7 @@
             top: -20px
             left: calc(50% - 25px)
             border-radius: 100%
-            font-size: px(25)
+            font-size: rem(25)
             line-height: 0
             &::before
                 margin-top: -16px

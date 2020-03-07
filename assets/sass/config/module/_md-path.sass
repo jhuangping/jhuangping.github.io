@@ -1,12 +1,12 @@
 // path =======================================================================
 @mixin md-path()
-    /* Path */
+    /* Path =================================================================== */
     .path_list
         +flex($fw: wrap)
-        font-size: px(14)
-        color: cr(inner)
-        padding-top: px(16)
-        margin-bottom: px(38)
+        font-size: rem(14)
+        color: cr(innerText)
+        padding-top: rem(16)
+        margin-bottom: rem(38)
 
         &::before
 
@@ -23,7 +23,7 @@
                 display: inline-block
 
         a 
-            color: cr(inner)
+            color: cr(innerText)
             +rwdw-min()
                 &:hover
                     color: cr(hover)

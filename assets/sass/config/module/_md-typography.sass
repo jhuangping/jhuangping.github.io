@@ -1,8 +1,7 @@
 @mixin md-typography()
-    /* Typography */
+    /* Typography ============================================================= */
     a
         cursor: pointer
-        text-decoration: none
         
         +rwdw-min()
             &[href^="tel:"]
@@ -12,15 +11,39 @@
                 // opacity: .5
 
     p:not(:last-child)
-        // margin-bottom: 20px
+        margin-bottom: 1em
 
     h1, h2, h3, h4, h5, h6
         display: inline-block
+
+    /* font size -------------------------------------------------------------- */
+    .u-fz
+        @each $var in $fzArry
+            &-#{$var}
+                font-size: rem($var)
+                @if $var >= 30
+                    +rwdw-max($rwd-phone)
+                        font-size: rem($var - 10)
+                @else if $var >= 20
+                    +rwdw-max($rwd-pad)
+                        font-size: rem($var - 10)
+                    +rwdw-max($rwd-phone)
+                        font-size: rem($var - 10)
+
+    /* txt -------------------------------------------------------------------- */
+    .u-txt
+        &-left
+            text-align: left
+        &-center
+            text-align: center
+        &-right
+            text-align: right
+
     @content
 
 @mixin md-edit()
     /* eidt */
-    .edit
+    .m-edit
         +noRest()
         +bs-grid()
         

@@ -1,36 +1,66 @@
-//電腦
-@mixin rwdw-pc()
-	@media all and (min-width: $rwd-pc + px)
-		@content
+// Media max-width
+@mixin rwdw-max($media: $rwd)
+	@if $media == phones
+		// Phones
+		@media all and (max-width: $rwd-phones + px)
+			@content
+	@else if $media == phone
+		// Phone
+		@media all and (max-width: $rwd-phone + px)
+			@content
+	@else if $media == pads
+		// Pads
+		@media all  and (max-width: $rwd-pads + px) 
+			@content
+	@else if $media == pad
+		// Pad
+		@media all and (max-width: $rwd-pad + px)
+			@content
+		// Netbook
+	@else if $media == netbook
+		@media all and (min-width: $rwd-pc + px)
+			@content
+	@else if $media == pc
+		@media all and (min-width: $rwd-pc + px)
+			@content
+	@else
+		// Custom
+		@media all and (max-width: $media + px)
+			@content
 
-//平板
-@mixin rwdw-pad()
-	@media all and (min-width: $rwd-pad + px) and (max-width: $rwd-pc + px)
-		@content
-
-//小平板
-@mixin rwds-small-pad($min-size: $rwd-phone, $max-size: $rwd-pads)
-	@media all and (min-width: $min-size + px) and (max-width: $max-size + px) 
-		@content
-
-//手機
-@mixin rwdw-phone($size: $rwd-phones)
-	@media all and (max-width: $size + px)
-		@content
-
-// 自訂 Max-width
-@mixin rwdw-max($size: $rwd)
-	@media all and (max-width: $size + px)
-		@content
-
-// 自訂 min-width
-@mixin rwdw-min($size: $rwd)
-	@media all and (min-width: $size + 1 +px)
-		@content
+// Media min-width
+@mixin rwdw-min($media: $rwd)
+	@if $media == phones
+		// Phones
+		@media all and (min-width: $rwd-phones + 1 + px)
+			@content
+	@else if $media == phone
+		// Phone
+		@media all and (min-width: $rwd-phone + 1 + px)
+			@content
+	@else if $media == pads
+		// Pads
+		@media all and (min-width: $rwd-pads + 1 + px)
+			@content
+	@else if $media == pad
+		// Pad
+		@media all and (min-width: $rwd-pad + 1 + px)
+			@content
+		// Netbook
+	@else if $media == netbook
+		@media all and (min-width: $rwd-pc + 1 + px)
+			@content
+	@else if $media == pc
+		@media all and (min-width: $rwd-pc + 1 + px)
+			@content
+	@else
+		// Custom
+		@media all and (min-width: $media + 1 + px)
+			@content
 
 // 自訂 range-width
 @mixin rwdw-range($max: 1920, $min: $rwd)
-	@media screen and (min-width: $min + 1 + px) and (max-width: $max + px)
+	@media all and (min-width: $min + 1 + px) and (max-width: $max + px)
 		@content
 
 // 自訂 Max-height

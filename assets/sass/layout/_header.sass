@@ -73,7 +73,7 @@ header
     +flex($fd: column)
     margin-top: 10px
     font-family: font(bold)
-    font-size: px(20)
+    font-size: rem(20)
     text-transform: capitalize
 
     &_item
@@ -81,7 +81,7 @@ header
         text-align: right
 
     +rwdw-min()
-        a:hover
+        &_link:hover
             color: #fff
             opacity: .5      
             
@@ -100,7 +100,7 @@ header
         &_item
             margin-bottom: 0px
             text-align: center
-        a
+        &_link
             display: block
             padding: 15px 8px
             background: #212121

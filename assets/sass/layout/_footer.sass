@@ -13,17 +13,17 @@ footer
 .community
     +flex($jc: end)
     margin: 10px -5px
-    font-size: px(22)
+    font-size: rem(22)
 
-    a
+    &_link
         margin: 0 5px
-    +rwdw-min()
-        a:hover
-            color: #fff
-            opacity: .5
+        +rwdw-min()
+            &:hover
+                color: #fff
+                opacity: .5
 
 .copyright
     text-align: right
-    font-size: px(14)
-    span
+    font-size: rem(14)
+    &_txt-design
         opacity: .5
