@@ -30,6 +30,14 @@ $(function () {
     //     var list = $('<li class="menu_item" data-open="' + val.link + '.html">' + val.name + '</li>');
     //     $('.menu_ctr').append(list);
     // });
+
+    function menu(){
+        var btn = $('.hd_toggle');
+        btn.click(function(){
+            $(this).parents('header').toggleClass('is-active')
+        });
+    }
+    menu();
     
     function openPage(){
         var ctrIr = $('.body-ir'),
@@ -37,6 +45,8 @@ $(function () {
             ctrClose = $('.body-close')
     
         $('.menu_item').click(function () { 
+            $('header').removeClass('is-active');
+            
             var thisOpen = $(this).data('import');
             var inner = $('<iframe src="' + thisOpen + '" frameborder="0"></iframe>')
             ctrIr.stop(false, true).fadeOut(500);

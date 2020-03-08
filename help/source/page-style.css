@@ -41,12 +41,22 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 
 .u-scroll-y { overflow-x: hidden; }
 
+/* margin ----------------------------------------------------------------- */
+.u-mg--clear { margin: inherit; }
+
+/* padding ---------------------------------------------------------------- */
+.u-pd--clear { padding: inherit; }
+
 /* display ---------------------------------------------------------------- */
+.u-hide { display: none !important; }
+
+.u-show { display: initial; }
+
 @media all and (max-width: 992px) { .u-show-pc, .u-display-pc { display: none !important; } }
 
 @media all and (min-width: 993px) { .u-show-mobile, .u-display-mobile { display: none !important; } }
 
-/* Javascript =============================================================0 */
+/* Javascript ============================================================= */
 /* Javascript href -------------------------------------------------------- */
 [data-href] { cursor: pointer; }
 
@@ -60,35 +70,45 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 .is-img-config { background-position: center; }
 
 /* Keyframes ============================================================== */
-@-webkit-keyframes c-opacity_in { 0% { }
+@-webkit-keyframes m-opacity_in { 0% { }
   100% { opacity: 1; } }
-@keyframes c-opacity_in { 0% { }
+@keyframes m-opacity_in { 0% { }
   100% { opacity: 1; } }
 
-@-webkit-keyframes c-opacity_out { 0% { }
+@-webkit-keyframes m-opacity_out { 0% { }
   100% { opacity: 0; } }
 
-@keyframes c-opacity_out { 0% { }
+@keyframes m-opacity_out { 0% { }
   100% { opacity: 0; } }
 
-@-webkit-keyframes c-w100 { 0% { }
+@-webkit-keyframes m-w100 { 0% { }
   100% { width: 100%; } }
 
-@keyframes c-w100 { 0% { }
+@keyframes m-w100 { 0% { }
   100% { width: 100%; } }
 
-@-webkit-keyframes c-h100 { 0% { }
+@-webkit-keyframes m-h100 { 0% { }
   100% { height: 100%; } }
 
-@keyframes c-h100 { 0% { }
+@keyframes m-h100 { 0% { }
   100% { height: 100%; } }
 
 /* Button ================================================================= */
+.m-btn-group { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+.m-btn-group--u-align-left { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
+
+.m-btn-group--u-align-center { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+.m-btn-group--u-align-right { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
+
 .m-btn { cursor: pointer; display: inline-block; line-height: 1; text-align: center; vertical-align: middle; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-transition: all 0.5s; transition: all 0.5s; }
 
 .m-btn_txt, .m-btn_name { color: inherit; }
 
 .m-btn { padding: 8px 1em; border-radius: 5px; }
+
+.m-btn--st-gotop { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; position: fixed; z-index: 10; top: 120px; right: 0px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; width: 35px; height: 35px; font-size: 1.4rem; color: #fff; background: #0066cc; -webkit-box-shadow: 0 0 32px rgba(0, 0, 0, 0.2); box-shadow: 0 0 32px rgba(0, 0, 0, 0.2); }
 
 .m-btn--download { display: inline-block; color: #fff; background: #6AA84F; position: relative; -webkit-transition: all 0.5s; transition: all 0.5s; }
 
@@ -97,9 +117,20 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 /* ============================================================================ */
 /* Page                                                                         */
 /* ============================================================================ */
-/* Page Edit ================================================================== */
-#edit > *:not(pre) code { background-color: #eee; color: #000; font-size: 1.6rem; font-weight: 400; padding: 2px 6px; border-radius: 2px; border: 1px solid rgba(0, 0, 0, 0.07); }
+/* Inside ===================================================================== */
+.outline_inpt { display: none; }
 
+.outline_inpt:checked + .outline_content { right: 0px; z-index: 11; }
+
+.outline_content { position: fixed; z-index: 9; right: calc(-26.04167vw + 35px); top: 80px; max-width: 26.04167vw; width: 100%; max-height: 7.40741vh; height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-transition: all 0.5s; transition: all 0.5s; }
+
+@media all and (max-width: 768px) { .outline_content { right: calc(-90vw + 35px); max-width: 90vw; } }
+
+.outline_content::before { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; color: #fff; font-size: 1.4rem; line-height: 1; content: 'list'; -webkit-box-flex: 0; -ms-flex: 0 0 35px; flex: 0 0 35px; height: 35px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; background: #6AA84F; }
+
+.outline_menu { min-height: 50vh; height: 100%; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; background: #fff; -webkit-box-shadow: 0 0 32px rgba(0, 0, 0, 0.2); box-shadow: 0 0 32px rgba(0, 0, 0, 0.2); padding: 15px 10px; border-radius: 3px; }
+
+/* Page Edit ================================================================== */
 #edit ol, #edit ul { padding-left: 20px; }
 
 #edit ol { list-style-type: decimal; }
@@ -130,7 +161,11 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 
 #edit h6 { font-size: 2.1rem; color: #6c593e; }
 
+#edit code { background-color: #eee; color: #000; font-size: 1.4rem; font-weight: 400; padding: 2px 6px; border-radius: 2px; border: 1px solid rgba(0, 0, 0, 0.07); }
+
 #edit pre { color: #fff; background: #272822; font-size: 1.4rem; padding: 10px 20px; border-radius: 5px; position: relative; overflow-y: hidden; }
+
+#edit pre code { color: inherit; background-color: transparent; font-weight: normal; padding: 0px; border-radius: 0px; border: none; }
 
 #edit pre .tag, #edit pre .red, #edit pre .code-r { color: #EB2658; }
 
@@ -222,6 +257,8 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 
 #edit .row--under { -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
 
+#edit .info > *:last-child { margin-bottom: 1.5rem; }
+
 #edit .info p:first-child { margin-top: 0px; }
 
 #edit table { margin-top: 10px; margin-bottom: 10px; }
@@ -229,8 +266,6 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 @media all and (min-width: 769px) { #edit table thead tr:hover tr, #edit table thead tr:hover td, #edit table thead tr:hover th { color: #fff; background: #333; } }
 
 #edit table thead th { color: #fff; background: #333; }
-
-@media all and (min-width: 769px) { #edit table tr:hover tr, #edit table tr:hover td, #edit table tr:hover th { color: #fff; background: #666; } }
 
 #edit table td, #edit table th { padding: 8px 10px; border: 1px solid #ccc; -webkit-transition: all 0.5s; transition: all 0.5s; }
 

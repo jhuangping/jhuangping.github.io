@@ -12,8 +12,11 @@
     <link rel="stylesheet" href="../../source/page-style.css">
 </head>
 <body id="edit">
+    <a href="#edit" class="m-btn m-btn--st-gotop">
+        <span class="btn_name">Top</span>
+    </a>
     <h3>主要命名規則</h3>
-    <p>採BEM + 空間命名OOCSS</p>
+    <p>採BEM + 空間命名</p>
     <p>
         原生 <code>B__E--M</code> 為雙底連接塊和塊的子元素，再此簡化為單底連接。<br />
         雙中線依舊用來描述狀態
@@ -33,11 +36,17 @@
             <code>U-B-depiction_E--M</code>
         </li>
         <li>
-            <code>U-B_component</code>
+            <code>U-B_E-depiction--M</code>
+        </li>
+        <li>
+            <code>U-B_module</code>
+        </li>
+        <li>
+            <code>U-B_E module</code>
         </li>
     </ol>
     <hr>
-    <h4>空間命名OOCSS</h4>
+    <h4>空間命名</h4>
     <p>
         這裡只選用 <code>l-</code> <code>m-</code> <code>u-</code> <code>is/has-</code> <code>js-</code>
     </p>
@@ -46,7 +55,7 @@
             <p><code>l-</code> Layout 佈局</p>
         </li>
         <li>
-            <p>3擇1 [ 選用 <code>m-</code> ]</p>
+            <p>3擇1</p>
 
             <ul>
                 <li>
@@ -61,7 +70,7 @@
             </ul>
         </li>
         <li>
-            <p>2擇1</p>
+            <p>2擇1 [ 選用 <code>m-</code> ]</p>
             <ul>
                 <li>
                     <p><code>c-</code> Component 組件</p>
