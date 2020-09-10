@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Module</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
+    <link rel="stylesheet" href="../src/page.css">
+</head>
+<body id="edit">
+    <a href="#edit" class="m-btn m-btn--st-gotop">
+        <span class="btn__name">Top</span>
+    </a>
+    <h1>Module 模組</h1>
+    <h5>setting</h5>
+    <h5>reset</h5>
+    <h5>default</h5>
+    <h5>common</h5>
+    <div class="info">
+        <h6>Style</h6>
+        <ul>
+            <li>.u-style-none</li>
+        </ul>
+        <h6>text</h6>
+        <ul>
+            <li>.u-txt-left</li>
+            <li>.u-txt-center</li>
+            <li>.u-txt-right</li>
+        </ul>
+        <h6>scroll</h6>
+        <ul>
+            <li>.u-scroll-no</li>
+            <li>.u-scroll-x</li>
+            <li>.u-scroll-y</li>
+        </ul>
+        <h6>display</h6>
+        <ul>
+            <li>.u-show-pc, .u-display-pc</li>
+            <li>.u-show-mobile, .u-display-mobile</li>
+        </ul>
+    </div>
+    <h5>layout</h5>
+    <h6>Wrap</h6>
+    <p>
+        $wpRange: 1280 // 基本範圍 <br>
+        $wpBoth: 5% // 自適應左右間距 (mobile) <br>
+        $wpMargin: 15 // 自適應左右間距 (pc) <br>
+    </p>
+    <p>
+        // 控制 wrap <br>
+        // 值: vaal (class: l-wp-[值]) <br>
+        $wpArray: 1680, 1440, 1366, 1024
+    </p>
+
+    <p>
+        // 自訂: 名稱: 值, name: val (class: l-wp-[name][val])
+        $wpArray: (max1680:1680,max1440:1440,max1366: 1366,max1024:1024)
+    </p>
+<pre class="code code--html"><code>CustomName: false, true (default: false)
+$wpCustomName: false] 預設: 值 val (class: l-wp-[val])
+$wpArray: 1680, 1440, 1366, 1024
+[$wpCustomName: true] 自訂: 名稱: 值, name: val (class: l-wp-[name][val])
+$wpArray: (max1680:1680,max1440:1440,max1366: 1366,max1024:1024)</code></pre>
+
+</body>
+</html>

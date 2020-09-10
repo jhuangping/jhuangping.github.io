@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Setting</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
+	<link rel="stylesheet" href="../src/page.css">
+</head>
+<body>
+	<div id="edit">
+		<div class="tool">
+			<div class="outline">
+				<input class="outline__inpt" type="checkbox" name="" id="outline">
+				<label class="outline__content" for="outline">
+					<div class="outline__menu u-scroll-y">
+						<ul>
+							<li><a href="#h-1">設定 Setting</a></li>
+							<li><a href="#h-2">結構 Skeleton</a></li>
+							<li><a href="#e1">config</a>
+								<ul>
+									<li><a href="#n1">Setting Variable</a></li>
+									<li><a href="#n2">Media 斷點</a></li>
+									<li><a href="#n6">Default</a></li>
+									<li><a href="#n3">Font</a></li>
+									<li><a href="#n4">Font Size</a></li>
+									<li><a href="#n5">Color</a></li>
+									<li><a href="#n7">Wrap(l-wp)</a></li>
+									<li><a href="#n8">Grid(l-gd)</a></li>
+									<li><a href="#display">Display(u-display)</a></li>
+									<li><a href="#margin">Margin(u-m)</a></li>
+									<li><a href="#padding">Padding(u-p)</a></li>
+									<li><a href="#n9">Setting SASS</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</label>
+			</div>
+			<a href="#edit" class="m-btn m-btn--st-gotop">
+				<span class="btn__name">Top</span>
+			</a>
+		</div>
+		<h4 id="h-1">設定 Setting</h4>
+		<div class="info">
+			<b>步驟</b>
+			<ol>
+				<li>下載 JhuangPing Heplers</li>
+				<li>將config資料夾放入sass(scss)內</li>
+			</ol>
+		</div>
+<pre><code><span class="gray">// Config</span>
+<span class="red">@import</span> <span class="blue">config/_config</span>
+
+<span class="gray">// layout</span>
+<span class="red">@import</span> <span class="blue">layout/_module</span>
+<span class="red">@import</span> <span class="blue">layout/_header</span>
+<span class="red">@import</span> <span class="blue">layout/_footer</span>
+
+<span class="gray">// page</span>
+<span class="red">@import</span> <span class="blue">layout/page/_index</span></code></pre>
+		<hr>
+		<h5 id="h-2">結構 Skeleton</h5>
+<pre><code>config/
+├─ helpers/
+│  ├─ function/
+│  ├─ mixin/
+│  └─ variable/
+└─ module/
+</code></pre>
+
+	</div>
+	<div class="skeleton" style="display: none;">
+		<div class="inner">
+			<ul>
+				<li><h3>SASS</h3>
+					<ul>
+						<li><h3>config</h3> <span>JhuangPing 設定</span>
+							<ul>
+								<li><h3>helpers</h3><span>助手</span>
+									<ul>
+										<li>
+											<h3>function</h3><span>功能</span>
+										</li>
+										<li>
+											<h3>mixin</h3><span>函式</span>
+										</li>
+										<li>
+											<h3>variable</h3><span>變數</span>
+										</li>
+										<li>_helpers-setting.sass<span>助手設定檔</span></li>
+									</ul>
+								</li>
+								<li><h3>module</h3><span>模組</span>
+									<ul>
+										<li>_module-setting.sass <span>模組設定檔</span></li>
+										<li>_md-reset.sass <span>初始化</span></li>
+										<li>_md-default.sass<span>HTML 預設值</span></li>
+										<li>_md-font.sass<span>文字,icon設定</span></li>
+										<li>_md-layout.sass <span>佈局</span></li>
+										<li>_md-keyframes.sass <span>影格</span></li>
+										<li>_md-typography.sass<span>文字標籤</span></li>
+										<li>_md-button.sass<span>按鈕</span></li>
+										<li>_md-grid.sass<span>網格</span></li>
+										<li>_md-banner.sass<span>廣告</span></li>
+										<li>_md-path.sass<span>麵包屑</span></li>
+										<li>_md-page.sass<span>分頁</span></li>
+										<li>_md-form.sass<span>表單</span></li>
+										<li>_md-table.sass<span>表格樣式</span></li>
+										<li>_md-utility.sass<span>共用工具</span></li>
+										<li>_md-javascript.sass<span>javascritp 相關</span></li>
+									</ul>
+								</li>
+								<li>_config.sass <span>設定</span></li>
+							</ul>
+						</li>
+						<li><h3>layout</h3> <span>排版</span>
+							<ul>
+								<li><h3>page</h3> <span>內頁</span></li>
+								<li>_module.sass <span>共用模組</span></li>
+								<li>_footer.sass <span>頁腳</span></li>
+								<li>_header.sass <span>選單</span></li>
+							</ul>
+						</li>
+						<li>style.sass</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="edit">
+		<hr>
+		<div id="n1" class="info">
+			<h5>Setting Variable</h5>
+			<p>
+				匯入輔助變數
+			</p>
+<pre><code><span class="red">@import</span> <span class="purple">helpers/variable/_var-setting</span></code></pre>
+		</div>
+		<hr>
+		<div id="n2" class="info">
+			<h5>Media 斷點</h5>
+			<p>
+				可自行設定斷點值
+			</p>
+<pre><code>$xl: <span class="purple">1200</span>
+$lg: <span class="purple">992</span>
+$md: <span class="purple">768</span>
+$sm: <span class="purple">575</span>
+
+$rwd: <span class="purple">1200</span> <span class="gray">//Menu轉換手機尺寸</span>
+$rwd-pc: <span class="purple">1366</span> <span class="gray">//電腦尺寸</span>
+$rwd-pcs: $xl <span class="gray">//小電腦尺寸</span>
+$rwd-pad: $lg <span class="gray">//平板尺寸</span>
+$rwd-pads: $md <span class="gray">//小平板尺寸</span>
+$rwd-phone: $sm <span class="gray">//手機尺寸</span>
+$rwd-phones: <span class="purple">320</span> <span class="gray">//小手機尺寸</span></code></pre>
+			<p>
+				<b>參考尺寸</b>
+			</p>
+			<div class="u-scroll-x">
+				<table>
+					<tr>
+						<th>裝置</th>
+						<th>尺寸</th>
+					</tr>
+					<tr>
+						<th>PC</th>
+						<td>1920x1080, 1680x1050, 1600x900, 1440x900, 1366x800, 1366x768, 1024x768</td>
+					</tr>
+					<tr>
+						<th>Pad</th>
+						<td>800x1280, 768x1024, 600x1024, 600x962</td>
+					</tr>
+					<tr>
+						<th>Phone</th>
+						<td>[iPhone 6/7/8 Plus, 414x736] [iPhone 6/7/8, 375x667] [iPhone 5/SE, 320x568]</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<hr>
+		<div id="n6" class="info">
+			<h5>Default</h5>
+			<p>
+				module default, 預設字級 <code>16px</code> 行高 <code>24px</code>
+			</p>
+<pre><code>$default: (<span class="blue">htmlFz</span>: <span class="purple">10</span><span class="gray">,</span> <span class="blue">bodyFz</span>: <span class="purple">16</span><span class="gray">,</span> <span class="blue">bodyLh</span>: <span class="purple">24</span><span class="code-gray">,</span> <span class="blue">bodyCr</span>: <span class="purple">#333</span>)</code></pre>
+		</div>
+		<hr>
+		<div id="n3" class="info">
+			<h5>Font</h5>
+			<p>
+				Attributes: <code>font( name )</code>
+			</p>
+			<p>
+				文字字體、icon 等相關設定。
+			</p>
+			<div class="u-scroll-x">
+				<table>
+					<tr>
+						<th>$font-main</th>
+						<td>主要字體設定</td>
+					</tr>
+					<tr>
+						<th>$font</th>
+						<td>外嵌字體設定，使用方式參考helpers <code>font( name )</code></td>
+					</tr>
+				</table>
+			</div>
+<pre><code><span class="gray">// Font Main  預設 ( Arial, 'Microsoft JhengHei', sans-serif )</span>
+$font-main: <span class="blue">Arial</span><span class="gray">,</span> <span class="yellow">'Microsoft JhengHei'</span><span class="gray">,</span> <span class="blue">sans-serif</span> <span class="red">!default</span>
+
+<span class="gray">// import font</span>
+$font: ()</code></pre>
+			<h4>Plugin 擴充</h4>
+			<h5>Font Awesome Icon</h5>
+			<ul>
+				<li><code>$fa</code> 'Font Awesome 5 Solid','Font Awesome 5 Regular','Font Awesome 5 Brands'</li>
+				<li><code>$fas</code> 'Font Awesome 5 Solid'</li>
+				<li><code>$far</code> 'Font Awesome 5 Regular'</li>
+				<li><code>$fab</code> 'Font Awesome 5 Brands'</li>
+			</ul>
+			<h5>Icomoon ICON</h5>
+			
+				<ul>
+					<li><code>$icon</code> 'icomoon'</li>
+				</ul>
+			
+		</div>
+		<hr>
+		<div id="n4" class="info">
+			<h5>Font Size (u-fz)</h5>
+			<p>Class: <code>u-fz-[val]</code></p>
+			<p>
+				設定文字大小
+			</p>
+			<div class="row">
+				<div class="col-md-6"><b>SASS</b>
+					<pre><code>$fzArray: <span class="code-p">30, 20, 18, 16, 14, 12</span></code></pre>
+				</div>
+				<div class="col-md-6"><b>CSS</b>
+<pre><code><span class="code-g">.u-fz-30 {</span> <span class="code-b">font-size</span>: <span class="code-p">30</span><span class="code-r">px</span>; <span class="code-g">}</span>
+<span class="code-g">.u-fz-20 {</span> <span class="code-b">font-size</span>: <span class="code-p">20</span><span class="code-r">px</span>; <span class="code-g">}</span>
+<span class="code-g">.u-fz-18 {</span> <span class="code-b">font-size</span>: <span class="code-p">18</span><span class="code-r">px</span>; <span class="code-g">}</span>
+<span class="code-g">.u-fz-16 {</span> <span class="code-b">font-size</span>: <span class="code-p">16</span><span class="code-r">px</span>; <span class="code-g">}</span>
+<span class="code-g">.u-fz-14 {</span> <span class="code-b">font-size</span>: <span class="code-p">14</span><span class="code-r">px</span>; <span class="code-g">}</span>
+<span class="code-g">.u-fz-12 {</span> <span class="code-b">font-size</span>: <span class="code-p">12</span><span class="code-r">px</span>; <span class="code-g">}</span> </code></pre>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div id="n5" class="info">
+			<h5>Color</h5>
+			<p>Attributes: <code>cr( name )</code> , <code>crc( name )</code></p>
+			<p>
+				常用顏色相關設定。(參照boostorp 色碼)。<br>
+				使用方式參考helpers <code>cr( name )</code> , <code>crc( name )</code>
+			</p>
+			<div class="u-scroll-x">
+				<table>
+					<tr>
+						<th>$color: ()</th>
+						<td>基礎共用顏色</td>
+					</tr>
+					<tr>
+						<th>$colorCustom()</th>
+						<td>自訂CIS顏色</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<hr>
+		<div id="n7" class="info">
+			<h5>Wrap(l-wp)</h5>
+			<p>Class: <code>.l-wp-[val]</code> || <code>.l-wp-[name]</code></p>
+			<p>
+				module layout, Wrap 相關設定。<br>
+				主要控制內容寬度
+			</p>
+<pre><code>$wpRange: <span class="purple">1024</span> <span class="gray">// 基本範圍</span>
+$wpBoth: <span class="purple">15</span> <span class="gray">// 左右間距(px)</span>
+$wpCustomName: <span class="blue">false</span>
+$wpArray: <span class="purple">1680</span><span class="gray">,</span> <span class="purple">1440</span><span class="gray">,</span> <span class="purple">1366</span><span class="gray">,</span> <span class="purple">1024</span></code></pre>
+			<b>設定方式</b>
+			<p>
+				有兩個模式，1.自行命名。2.預設名稱。<br>
+				因主要採BEM的方式命名，產出的class皆為".l-wp-[name]"前方的綴詞是固定的
+			</p>
+			<div class="u-scroll-x">
+				<table>
+					<thead>
+						<tr>
+							<th>變數</th>
+							<th>值</th>
+							<th>說明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>$wpCustomName</th>
+							<td>false, true</td>
+							<td>是否自行命名開關</td>
+						</tr>
+						<tr>
+							<th>$wpArray</th>
+							<td>0 ~ 99+</td>
+							<td>陣列(輸入數值即可)</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<h6>$wpCustomName: false</h6>
+			<p>
+				Class: <code>.l-wp-[val]</code>
+			</p>
+			<div class="row">
+				<div class="col-md-6"><b>SASS</b>
+<pre><code>$wpCustomName: <span class="blue">false</span>
+$wpArray: <span class="purple">1680</span><span class="gray">,</span> <span class="purple">1440</span></code></pre>
+						</div>
+						<div class="col-md-6"><b>CSS</b>
+<pre><code><span class="green">.l-wp-1680 {</span> <span class="blue">max-width</span>: <span class="purple">1680</span><span class="red">px</span>; <span class="green">}</span>
+<span class="green">.l-wp-1440 {</span> <span class="blue">max-width</span>: <span class="purple">1440</span><span
+	class="red">px</span>; <span class="green">}</span></code></pre>
+				</div>
+			</div>
+			<h6>$wpCustomName: true</h6>
+			<p>
+				Class: <code>.l-wp-[name]</code>
+			</p>
+			<div class="row">
+				<div class="col-md-6"><b>SASS</b>
+<pre><code>$wpCustomName: <span class="blue">true</span>
+$wpArray: (<span class="blue">max1680</span>:<span class="purple">1680</span><span class="gray">,</span> <span class="blue">max1440</span>:<span class="purple">1440</span>)</code></pre>
+				</div>
+				<div class="col-md-6"><b>CSS</b>
+<pre><code><span class="green">.l-wp-max1680 {</span> <span class="blue">max-width</span>: <span class="purple">1680</span><span class="red">px</span>; <span class="green">}</span>
+<span class="green">.l-wp-max1440 {</span> <span class="blue">max-width</span>: <span class="purple">1440</span><span class="red">px</span>; <span class="green">}</span></code></pre>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div id="n8" class="info">
+			<h5>Grid(l-gd)</h5>
+			<p>Class: <code>.l-gd-row[val]</code></p>
+			<p>網格相關設定 (p.s. 已有自適應)</p>
+			<div class="row">
+				<div class="col-md-6">
+					<b>SASS</b>
+<pre><code>$gridAarry: <span class="purple">2</span><span class="gray">,</span> <span class="purple">3</span><span class="gray">,</span> <span class="purple">4</span></code></pre>
+				</div>
+				<div class="col-md-6">
+					<b>CSS</b>
+<pre><code><span class="green">.l-gd-row2</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">2</span><span class="green">)</span>; <span class="green">}</span>
+
+<span class="green">.l-gd-row3</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">3</span><span class="green">)</span>; <span class="green">}</span>
+
+<span class="green">.l-gd-row4</span> <span class="red">> *</span> <span class="green">{</span> <span class="blue">width</span>: <span class="blue">calc(</span><span class="purple">100%</span><span class="red">/</span><span class="purple">4</span><span class="green">)</span>; <span class="green">}</span></code></pre>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div id="display" class="info">
+			<h5>Display(u-display)</h5>
+			<p>Class: <code>.u-display-[val]</code>, <code>.u-display-[size]-[val]</code></p>
+			<p>display 顯示 & 隱藏設定</p>
+			<table>
+				<tr>
+					<th>$displaySwitch</th>
+					<td>各載具自適應開關<br><code>t: 開啟, f: 關閉</code></td>
+					<td><code>sm, md, lg, xl</code>尺寸設定在<code><a href="#n2">Media</a></code></td>
+				</tr>
+			</table>
+			<pre><code>$displaySwitch: (<span class="blue">sm</span>: <span class="blue">f</span><span class="gray">,</span> <span class="blue">md</span>: <span class="blue">f</span><span class="gray">,</span> <span class="blue">lg</span>: <span class="blue">f</span><span class="gray">,</span> <span class="blue">xl</span>: <span class="blue">f</span>)</code></pre>
+		</div>
+		<hr>
+		<div id="margin" class="info">
+			<h5>Margin(u-m)</h5>
+			<p>Class: <code>.u-m-[val]</code>, <code>.u-m-[size]-[val]</code></p>
+			<p>外距輔助工具設定</p>
+			<table>
+				<tr>
+					<th>$mgUnit</th>
+					<td>單位設定<br>預設: <code>rem</code></td>
+					<td><code>px, em, rem, vw, %</code></td>
+				</tr>
+				<tr>
+					<th>$mgSwitch</th>
+					<td>各載具自適應開關<br><code>t: 開啟, f: 關閉</code></td>
+					<td>base預設為開啟, <code>sm, md, lg, xl</code>尺寸設定在<code><a href="#n2">Media</a></code></td>
+				</tr>
+				<tr>
+					<th>$mgArray</th>
+					<td>設定方向&數值</td>
+					<td>
+						<ul>
+							<li>l: left</li>
+							<li>r: right</li>
+							<li>t: top</li>
+							<li>b: bottom</li>
+							<li>x: left & right</li>
+							<li>y: top & bottom</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+
+			<pre><code>$mgUnit: <span class="blue">rem</span>
+$mgSwitch: (<span class="blue">base</span>: <span class="blue">t</span><span class="gray">, </span><span class="blue">sm</span>: <span class="blue">f</span><span class="gray">,</span> <span class="blue">md</span>: <span class="blue">f</span><span class="gray">,</span> <span class="blue">lg</span>: <span class="blue">f</span><span class="gray">,</span> <span class="blue">xl</span>: <span class="blue">f</span>)
+$mgArray: (<span class="blue">l</span>: <span class="purple">10</span><span class="gray">, </span><span class="blue">r</span>: <span class="purple">10</span><span class="gray">, </span><span class="blue">t</span>: <span class="purple">10</span><span class="gray">, </span><span class="blue">b</span>: <span class="purple">10</span><span class="gray">, </span><span class="blue">x</span>: <span class="purple">10</span><span class="gray">, </span><span class="blue">y</span>: <span class="purple">10</span>)</code></pre>
+
+		</div>
+		<hr>
+		<div id="padding" class="info">
+			<h5>Padding(u-p)</h5>
+			<p>Class: <code>.u-p-[val]</code>, <code>.u-p-[size]-[val]</code></p>
+			<p>內距輔助工具設定</p>
+			<table>
+				<tr>
+					<th>$pdUnit</th>
+					<td>單位設定<br>預設: <code>rem</code></td>
+					<td><code>px, em, rem, vw, %</code></td>
+				</tr>
+				<tr>
+					<th>$pdSwitch</th>
+					<td>各載具自適應開關<br><code>t: 開啟, f: 關閉</code></td>
+					<td>base預設為開啟, <code>sm, md, lg, xl</code>尺寸設定在<code><a href="#n2">Media</a></code></td>
+				</tr>
+				<tr>
+					<th>$pdArray</th>
+					<td>設定方向&數值</td>
+					<td>
+						<ul>
+							<li>l: left</li>
+							<li>r: right</li>
+							<li>t: top</li>
+							<li>b: bottom</li>
+							<li>x: left & right</li>
+							<li>y: top & bottom</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			
+			<pre><code>$pdUnit: <span class="blue">rem</span>
+$pdSwitch: (<span class="blue">base</span>: <span class="blue">t</span><span class="gray">, </span><span class="blue">sm</span>: <span class="blue">f</span><span class="gray">,</span> <span class="blue">md</span>: <span class="blue">f</span><span class="gray">,</span> <span class="blue">lg</span>: <span class="blue">f</span><span class="gray">,</span> <span class="blue">xl</span>: <span class="blue">f</span>)
+$pdArray: (<span class="blue">l</span>: <span class="purple">10</span><span class="gray">, </span><span class="blue">r</span>: <span class="purple">10</span><span class="gray">, </span><span class="blue">t</span>: <span class="purple">10</span><span class="gray">, </span><span class="blue">b</span>: <span class="purple">10</span><span class="gray">, </span><span class="blue">x</span>: <span class="purple">10</span><span class="gray">, </span><span class="blue">y</span>: <span class="purple">10</span>)</code></pre>
+
+		</div>
+		<hr>
+		<div id="n9" class="info">
+			<h5>Setting SASS</h5>
+			<p>匯入<code>helpers-setting</code> <code>extend-setting</code> <code>module-setting</code> 位置</p>
+<pre><code><span class="red">@import</span> <span class="purple">helpers/_helpers-setting</span>
+<span class="red">@import</span> <span class="purple">extend/_extend-setting</span>
+<span class="red">@import</span> <span class="purple">module/_module-setting</span></code></pre>
+		</div>
+	</div>
+</body>
+</html>

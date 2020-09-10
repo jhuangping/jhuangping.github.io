@@ -10,36 +10,23 @@
     <meta name="keywords" content="web design,網頁設計,web,網頁,網站,設計,前端"/>
     <meta name="copyright" content="JhuangPing"/>
     <link rel="canonical" href="網址" itemprop="url"/>
-    <link href="../source/img/common/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link href="../src/img/common/favicon.ico" rel="icon" type="image/x-icon"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
-    <link rel="stylesheet" href="../source/read-style.css">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160289800-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-160289800-1');
-    </script>
+    <link rel="stylesheet" href="../src/read-style.css">
 </head>
 <body>
     <div class="l-wp-html">
         <header>
-            <div class="hd_l-wp l-wp-max1680">
-                <a href="index.html" class="hd_logo"><img src="../source/img/common/logo.svg" alt=""></a>
-                <div class="hd_toggle">
-                    <span class="hd_toggle-bar"></span>
-                    <span class="hd_toggle-bar"></span>
-                    <span class="hd_toggle-bar"></span>
+            <div class="hd__l-wp l-wp-max1680">
+                <a href="index.html" class="hd__logo"><img src="../src/img/common/logo.svg" alt=""></a>
+                <div class="hd__toggle">
+                    <span class="hd__toggle-bar"></span>
+                    <span class="hd__toggle-bar"></span>
+                    <span class="hd__toggle-bar"></span>
                 </div>
                 <div class="menu">
-                    <ul class="menu_ctr">
-                        <li v-for="val in menu" class="menu_item" v-bind:data-import="val.link">{{val.name}}</li>
+                    <ul class="menu__ctr">
+                        <li v-for="val in menu" class="menu__item" v-bind:data-import="val.link">{{val.name}}</li>
                     </ul>
                 </div>
             </div>
@@ -60,10 +47,10 @@
         </main>
         <footer></footer>
     </div>
-    <script src="../../assets/js/plug-in/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../../assets/js/plug-in/vue/vue.min.js"></script>
-    <script src="../../assets//js/jhuangping.tool.js"></script>
-    <script src="../source/js/template.js"></script>
+    <script src="../../src/js/plugin/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../../src/js/plugin/vue/vue.min.js"></script>
+    <script src="../../src/js/jhuangping.tool.js"></script>
+    <script src="../src/js/template.js"></script>
     <script>
         new Vue({
             el: '.l-wp-html',
@@ -71,24 +58,24 @@
                 menu: [
                     {
                         name: 'Depiction 簡述',
-                        link: 'page/depiction.html'
+                        link: 'depiction.html'
                     },
                     {
-                        name: 'Getting Started 入門',
-                        link: 'page/setting.html'
+                        name: 'Config 設定',
+                        link: 'setting.html'
                     },
                     {
                         name: 'Helpers 助手',
-                        link: 'page/helpers.html'
+                        link: 'helpers.html'
                     },
                     {
                         name: 'Module 模組',
-                        link: 'page/module.html'
+                        link: 'module.html'
                     },
-                    {
-                        name: 'Download 下載',
-                        link: 'page/download.html'
-                    }
+                    // {
+                    //     name: 'Download 下載',
+                    //     link: 'page/download.html'
+                    // }
                 ]
             }
         })

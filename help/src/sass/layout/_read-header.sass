@@ -1,0 +1,75 @@
+/* Header ===================================================================== */
+header
+    width: 250px
+    height: 100vh
+    position: fixed
+    top: 0px
+    left: 0px
+    z-index: 10000
+    padding: 20px 0
+    background: crc(hdBg)
+    box-shadow: 0 0 10px cr(black)
+    +trs()
+    +rwdw-max()
+        transform: translateX(-100%)
+    
+    &.is-active
+        transform: translateX(0px)
+
+        .hd__toggle-bar
+            &:first-child
+                transform: translateY(0px) rotate(45deg)
+            &:nth-child(2)
+                opacity: 0
+            &:last-child
+                transform: translateY(0px) rotate(-45deg)
+.hd
+    &__l-wp
+        +flex($fd: column, $ai: center)
+    &__logo
+        flex: 0 0 70px
+        max-width: 70px
+        width: 100%
+        svg
+            width: 100%
+            height: auto
+    &__toggle
+        position: fixed
+        top: 0px
+        left: 100%
+        width: 40px
+        height: 45px
+        background: #212121
+        // border-top-right-radius: 3px
+        // border-bottom-right-radius: 3px
+        box-shadow: 0 0 10px rgba(#000, .3)
+        +rwdw-min()
+            display: none
+
+        &-bar
+            display: block
+            position: absolute
+            top: 50%
+            left: 20%
+            width: 60%
+            height: 2px
+            background: #ccc
+            +trs()
+            &:first-child
+                transform: translateY(-5px)
+            &:last-child
+                transform: translateY(5px)
+.menu
+    +flex($fd: column)
+    margin-top: 10px
+    font-family: font(bold)
+    text-transform: capitalize
+
+    &__item
+        color: #fff
+        margin-bottom: 5px
+        cursor: pointer
+        +trs()
+        +rwdw-min()
+            &:hover
+                color: cr(iy)

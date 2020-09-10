@@ -1,0 +1,74 @@
+/* Index ====================================================================== */
+.stn
+    &-body
+        +flex($jc: center,$ai: end)
+        position: fixed
+        top: 0px
+        right: 0px
+        z-index: 2
+        width: calc(100% - 250px)
+        height: 100vh
+        overflow: hidden
+        opacity: 0
+        transform: translateX(100px)
+        pointer-events: none
+        +trs(.8)
+        +rwdw-max()
+            width: 100%
+        &.is-show
+            opacity: 1
+            transform: translateX(0px)
+            pointer-events: auto
+        .body
+            &-close
+                position: absolute
+                z-index: 10
+                top: 0px
+                right: 20px
+                width: 30px
+                height: 30px
+                border-bottom-left-radius: 3px
+                background: cr(red)
+                cursor: pointer
+                +trs()
+                &::before, &::after
+                    content: ''
+                    display: block
+                    position: absolute
+                    top: 50%
+                    left: 20%
+                    width: 60%
+                    height: 1px
+                    background: #fff
+                &::before
+                    transform: rotate(45deg)
+                &::after
+                    transform: rotate(-45deg)
+                +rwdw-min()
+                    &:hover
+                        opacity: .7
+                +rwdw-max()
+                    right: 0px
+            &-ir
+                position: relative
+                width: 100%
+                height: 100%
+                background: cr(white)
+                iframe
+                    position: absolute
+                    top: 0px
+                    left: 0px
+                    width: 100%
+                    height: calc(100% - 38px)
+                    +rwdw-max()
+                        top: 50px
+                        height: calc(100% - 38px - 50px)
+    &-info
+        width: 100%
+        height: calc(100vh - 38px)
+        padding: 2%
+        overflow-x: hidden
+        +rwdw-min()
+            padding-left: calc(2% + 250px)
+        +rwdw-max()
+            padding-top: 80px

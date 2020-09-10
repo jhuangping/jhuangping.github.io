@@ -1,0 +1,238 @@
+@charset 'utf-8'
+@import ../../../src/sass/config/_config
+
+$default: (htmlFz: 10, bodyFz: 16, bodyLh: 24, bodyCr: #212121)
+
+$fontDefault: 'Quicksand', Arial, 'Microsoft JhengHei', sans-serif //主字體
+$font: (bold: 'Righteous',
+line: 'Quicksand')
+
+$color: (hover: #f3c860,
+white: #fff,
+black: #000,
+ir: #AF1F24,
+iy: #f3c860,
+red: #E06666,
+blue: #007bff,
+code-bg: #272822,
+code-g: #A6E22E,
+code-r: #EB2658,
+code-b: #66D9EF,
+code-y: #E6DB74,
+code-p: #AE81FF,
+code-white: #fff,
+code-gray: #75715E)
+
+/* Reset ====================================================================*/
+*
+    box-sizing: border-box;
+body, div, menu, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, button, textarea, th, td, figure 
+    margin: 0
+    padding: 0
+img 
+    max-width: 100%
+    height: auto
+    border: 0
+h1, h2, h3, h4, h5, h6
+    font-size: 100%
+    font-weight: normal
+    display: inline-block
+
+input, button, textarea, select, optgroup, option
+    font-family: inherit
+    font-size: inherit
+    font-style: inherit
+    font-weight: inherit
+table 
+    border-collapse: collapse
+    border-spacing: 0
+input, button, textarea, select 
+    *font-size: 100%
+ol, ul, li, menu
+    list-style: none
+a
+    text-decoration: none
+    transition: all .5s
+input, textarea
+    outline: none
+section, article, aside, footer, header, nav, main
+    display: block
+
+/* Default ==================================================================== */
++md-default()
+    font-family: $fontDefault
+    font-size: 1.6rem
+    line-height: 1.5
+    letter-spacing: 0px
+    overflow-x: hidden
+    color: #666
+    padding-top: 20px
+    padding-left: 35px
+    padding-bottom: 8.16667%
+    padding-right: 45px
+    opacity: 1
+    animation: $re
+    +rwdw-max()
+        +pd(x, 15px)
+
+/* Main (l-wp-main) =========================================================== */
++md-main()
+
+/* Wrap (l-wp) ================================================================ */
+$wpCustomName: false // [false, true]
+$wpArray: 1680, 1440, 1366, 1280, 1024, 960, 720, 540
++md-wrap()
+
+/* Width (l-w) ================================================================ */ 
+$wCustomName: false // [false, true]
+$wArray: 1680, 1440, 1366, 1140, 1024, 960, 720, 540
++md-w()
+
+/* Bootstrap-Grid ============================================================= */
++bootstrap-grid()
+
+/* Card (m-card) ============================================================== */
++md-card()
+
+/* Button (m-btn) ============================================================= */
++md-button()
+    .m-btn
+        padding: 8px 1em
+        border-radius: 5px
+    .m-btn--st
+        &-gotop
+            +flex-center()
+            position: fixed
+            z-index: 10
+            bottom: 50px
+            right: 0px
+            border-top-left-radius: 3px
+            border-bottom-left-radius: 3px
+            border-top-right-radius: 0px
+            border-bottom-right-radius: 0px
+            width: 35px
+            height: 35px
+            font-size: rem(14)
+            color: #fff
+            background: rgb(0, 102, 204)
+            box-shadow: 0 0 32px rgba(#000, .2)
+    .m-btn--download
+        display: inline-block
+        color: #fff
+        background: #6AA84F
+        position: relative
+        +trs()
+        +rwdw-min()
+            &:hover
+                background: #6AA84F
+                opacity: 1
+                box-shadow: 0 2px 10px rgba(#274E13, .5) inset
+                +trs()
+
++m-btn-circle()
+
++m-btn-semicircle()
+    
+/* Module Utillity <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* Style (u-style) ============================================================ */
++u-style()
+
+/* Scroll (u-scroll) ========================================================== */
++u-scroll()
+
+/* Font (u-ff, u-fs, u-fw, u-ta, u-ls, u-lh) ================================== */
+$FontSwitch: (base: f, sm: t, md: t, lg: t, xl: t)
+
+// Font Family (u-ff)
++u-ff()
+
+// Font Size (u-fs)
+$fsArray: 12, 14, 16, 18, 20, 25, 30, 35, 40, 45, 50, 55, 60
++u-fs()
+
+// Text Align (u-ta)
++u-ta()
+
+// Font Color (u-fc)
+$fcArray: (black: #000,
+blue: #007bff,
+indigo: #6610f2,
+purple: #6f42c1,
+pink: #e83e8c,
+red: #dc3545,
+orange: #fd7e14,
+yellow: #ffc107,
+green: #28a745,
+teal: #20c997,
+cyan: #17a2b8,
+white: #fff,
+gray: #6c757d,
+gray-dark: #343a40,
+primary: #007bff,
+secondary: #6c757d,
+success: #28a745,
+info: #17a2b8,
+warning: #ffc107,
+danger: #dc3545,
+light: #f8f9fa,
+dark: #343a40,
+blue2: #f00)
++u-fc()
+
+// Letter Spacing (u-ls) [plus +, negative -, dot .]
+$lsArray: (n1d5: 1.5, n1: -1, 1: 1,1d5: 1.5, 2: 2)
++u-ls()
+
+// Line Height (u-lh) [plus +, negative -, dot .]
+$lhArray: (0: 0, 1: lh(16, 16))
++u-lh()
+
+/* Display (u-display) ======================================================== */
+$displaySwitch: (sm: t, md: t, lg: t, xl: t)
++u-display()
+
+/* Flex Layout (u-fl, u-jc, u-ai, u-ac, u-as) ================================= */
+$flexSwitch: (sm: t, md: t, lg: t, xl: t)
++u-flex()
+
+/* Margin (u-m) =============================================================== */
+$mgUnit: vw
+$mgSwitch: (sm: t, md: t, lg: t, xl: t)
+$mgDetail: f
+$mgArray: 50, 40, 30, 20, 10, auto, clear
+// $mgDetail: t [ true ]
+// $mgArray: (all: (50, 40, 30, 20, 10),
+// t: (50, 40, 30, 20, 10),
+// b: (50, 40, 30, 20, 10),
+// l: (50, 40, 30, 20, 10),
+// r: (50, 40, 30, 20, 10),
+// x: (50, 40, 30, 20, 10),
+// y: (50, 40, 30, 20, 10))
++u-margin()
+
+/* Padding (u-p) ============================================================== */
+$pdUnit: vw
+$pdSwitch: (sm: t, md: t, lg: t, xl: t)
+$pdDetail: f
+$pdArray: 50, 40, 30, 20, 10, auto, clear
+// $pdDetail: t [ true ]
+// $pdArray: (all: (50, 40, 30, 20, 10),
+// t: (50, 40, 30, 20, 10),
+// b: (50, 40, 30, 20, 10),
+// l: (50, 40, 30, 20, 10),
+// r: (50, 40, 30, 20, 10),
+// x: (50, 40, 30, 20, 10),
+// y: (50, 40, 30, 20, 10))
++u-padding()
+
+/* Other ====================================================================== */
++u-other()
+
+/* Javascript ================================================================= */
++md-javascript()
+
+/* Layout <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+// page
+@import layout/page/_page-inside
+@import layout/page/_page-edit
+@import layout/page/_page-skeleton

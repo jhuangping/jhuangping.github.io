@@ -1,0 +1,55 @@
+/* Inside ===================================================================== */
+.outline
+    &__inpt
+        display: none
+        &:checked + 
+            .outline__content
+                right: 0px
+                z-index: 11
+    &__content
+        position: fixed
+        z-index: 9
+        right: calc(#{vw(-500)} + 35px)
+        bottom: 80px
+        max-width: vw(500)
+        width: 100%
+        max-height: vh(80)
+        height: 100%
+        +flex()
+        +trs()
+        +rwdw-max()
+            right: calc(-90vw + 35px)
+            max-width: 90vw
+        &::before
+            +flex-center()
+            color: #fff
+            font-size: rem(14)
+            line-height: 1
+            content: 'list'
+            flex: 0 0 35px
+            height: 35px
+            border-top-left-radius: 3px
+            border-bottom-left-radius: 3px
+            background: #6AA84F
+    &__menu
+        position: absolute
+        right: 0px
+        bottom: 10px
+        min-width: 256px
+        width: calc(100% - 35px)
+        min-height: 50vh
+        height: 100%
+        flex-grow: 1
+        background: #fff
+        box-shadow: 0 0 32px rgba(#000, .2)
+        padding: 8px 10px
+        border-radius: 3px
+        font-size: rem(12)
+        ul
+            padding-left: 15px !important
+        a
+            display: block
+            color: #666
+            +rwdw-min()
+                &:hover
+                    color: cr(red)
