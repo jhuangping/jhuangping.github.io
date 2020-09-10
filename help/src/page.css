@@ -513,13 +513,51 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 
 .u-fc-black { color: #000; }
 
-.u-fc-ir { color: #AF1F24; }
-
-.u-fc-iy { color: #f3c860; }
-
 .u-fc-red { color: #E06666; }
 
 .u-fc-blue { color: #007bff; }
+
+.u-fc-indigo { color: #6610f2; }
+
+.u-fc-purple { color: #6f42c1; }
+
+.u-fc-pink { color: #e83e8c; }
+
+.u-fc-red-base { color: #dc3545; }
+
+.u-fc-orange { color: #fd7e14; }
+
+.u-fc-yellow { color: #ffc107; }
+
+.u-fc-green { color: #28a745; }
+
+.u-fc-teal { color: #20c997; }
+
+.u-fc-cyan { color: #17a2b8; }
+
+.u-fc-gray { color: #6c757d; }
+
+.u-fc-gray-dark { color: #343a40; }
+
+.u-fc-primary { color: #007bff; }
+
+.u-fc-secondary { color: #6c757d; }
+
+.u-fc-success { color: #28a745; }
+
+.u-fc-info { color: #17a2b8; }
+
+.u-fc-warning { color: #ffc107; }
+
+.u-fc-danger { color: #dc3545; }
+
+.u-fc-light { color: #f8f9fa; }
+
+.u-fc-dark { color: #343a40; }
+
+.u-fc-ir { color: #AF1F24; }
+
+.u-fc-iy { color: #f3c860; }
 
 .u-fc-code-bg { color: #272822; }
 
@@ -536,6 +574,53 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 .u-fc-code-white { color: #fff; }
 
 .u-fc-code-gray { color: #75715E; }
+
+/* background color */
+.u-bgc-hover { background: #007bff; }
+
+.u-bgc-black { background: #000; }
+
+.u-bgc-blue { background: #007bff; }
+
+.u-bgc-indigo { background: #6610f2; }
+
+.u-bgc-purple { background: #6f42c1; }
+
+.u-bgc-pink { background: #e83e8c; }
+
+.u-bgc-red { background: #dc3545; }
+
+.u-bgc-orange { background: #fd7e14; }
+
+.u-bgc-yellow { background: #ffc107; }
+
+.u-bgc-green { background: #28a745; }
+
+.u-bgc-teal { background: #20c997; }
+
+.u-bgc-cyan { background: #17a2b8; }
+
+.u-bgc-white { background: #fff; }
+
+.u-bgc-gray { background: #6c757d; }
+
+.u-bgc-gray-dark { background: #343a40; }
+
+.u-bgc-primary { background: #007bff; }
+
+.u-bgc-secondary { background: #6c757d; }
+
+.u-bgc-success { background: #28a745; }
+
+.u-bgc-info { background: #17a2b8; }
+
+.u-bgc-warning { background: #ffc107; }
+
+.u-bgc-danger { background: #dc3545; }
+
+.u-bgc-light { background: #f8f9fa; }
+
+.u-bgc-dark { background: #343a40; }
 
 /* letter-spacing */
 .u-ls-n1d5 { letter-spacing: 1.5px; }
@@ -1602,7 +1687,7 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 
 #edit .pic { margin-top: 1em; margin-bottom: 1em; }
 
-#edit .pic_img { text-align: center; margin-bottom: 10px; }
+#edit .pic_img { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin-bottom: 10px; }
 
 #edit .pic_info { font-size: 1.4rem; text-align: center; }
 

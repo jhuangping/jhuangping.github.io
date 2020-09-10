@@ -13,14 +13,27 @@
     <meta name="copyright" content="JhuangPing" />
     <link rel="canonical" href="網址" itemprop="url" />
     <link href="../src/img/common/favicon.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
     <link rel="stylesheet" href="../src/read-style.css">
 </head>
 
 <body>
     <div class="l-wp-html">
-        <header></header>
+        <header>
+            <div class="hd__l-wp l-wp-max1680">
+                <a href="index.html" class="hd__logo"><img src="../src/img/common/logo.svg" alt=""></a>
+                <div class="hd__toggle">
+                    <span class="hd__toggle-bar"></span>
+                    <span class="hd__toggle-bar"></span>
+                    <span class="hd__toggle-bar"></span>
+                </div>
+                <div class="menu">
+                    <ul class="menu__ctr">
+                        <li v-for="val in menu" class="menu__item" v-bind:data-import="val.link">{{val.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
         <main class="l-wp-main">
             <div class="stn-body">
                 <div class="body-close"></div>
@@ -39,6 +52,54 @@
     <script src="../../src/js/plugin/vue/vue.min.js"></script>
     <script src="../../src/js/jhuangping.tool.js"></script>
     <script src="../src/js/template.js"></script>
+    <script>
+        new Vue({
+            el: '.l-wp-html',
+            data: {
+                menu: [{
+                        name: 'Adobe XD',
+                        link: 'adobe_XD.html'
+                    },
+                    {
+                    name: 'Design Atomic-Design',
+                    link: 'design_atomic-design.html'
+                    },
+                    {
+                        name: 'CSS animation',
+                        link: 'css_animation.html'
+                    },
+                    {
+                        name: 'CSS Input',
+                        link: 'css_input.html'
+                    },
+                    {
+                        name: 'CSS mix-blend-mode',
+                        link: 'css_mix-blend-mode.html'
+                    },
+                    {
+                        name: 'IOS',
+                        link: 'ios.html'
+                    },
+                    {
+                        name: 'Git',
+                        link: 'git.html'
+                    },
+                    {
+                        name: 'Npm',
+                        link: 'npm.html'
+                    },
+                    {
+                        name: 'Gulp',
+                        link: 'gulp.html'
+                    },
+                    {
+                        name: 'Bower',
+                        link: 'bower.html'
+                    },
+                ]
+            }
+        })
+    </script>
 </body>
 
 </html>
