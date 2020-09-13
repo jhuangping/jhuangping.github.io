@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Git</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
+    <link rel="stylesheet" href="../src/page.css">
+</head>
+<body id="edit">
+    <div class="l-wp-1360">
+        <ul>
+            <li>
+                <h3>安裝git for windows</h3>
+                <p>
+                    安裝檔下載網址: <a href="https://git-for-windows.github.io" target="_blank">https://git-for-windows.github.io/</a><br>
+                    安裝過程使用預設選項即可。<br>
+                    <span class="u-fw-bold u-fc-gray u-fs-14"><b>ps: </b>版本更新頻繁，但不會自動更新。最好可以不定時到上述網址下載新的安裝檔，直接執行安裝即可更新版本。</span>
+                </p>
+                <hr>
+            </li>
+            <li>
+                <h3>Git 執行環境</h3>
+                <p>
+                    如果是按預設選項安裝的話，git可以在cmd(命令提示字元)執行，也可以在git bash執行。前者透過「開始」/「執行」輸入cmd再按確定後即可顯示，而git<br>
+                    bash一般可以在屬於檔案環境的任一位置，透過滑鼠右鍵選單的 <code>git bash here</code><br>
+                    呼叫執行環境，而且預設路徑即是當時的路徑，例如在桌面按下滑鼠右鍵並執行 <code>git bash here</code> ，彈出的git bash的路徑就是目前使用者的桌面路徑。
+                </p>
+                <div class="row">
+                    <div class="col-md-2"><img src="../src/img/note/git/1-1.png" alt="" srcset=""></div>
+                    <div class="col-md-4"><img src="../src/img/note/git/1-2.png" alt="" srcset=""></div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <h3>設定</h3>
+                <ul>
+                    <li>
+                        <h6>基本設定</h6>
+                        <p><code>git config --global user.name {yourname}</code> // 使用者名稱</p>
+                        <p><code>git config --global user.email {youremail}</code> // 使用者E-mail</p>
+                        <div class="row">
+                            <div class="col-md-4"><img src="../src/img/note/git/2-1.png" alt="" srcset=""></div>
+                        </div>
+                        <p class="u-fw-bold u-fc-gray u-fs-14"><b>ps: </b>{yourname}及{youremail}請輸出你的內容</p>
+                    </li>
+                    <li>
+                        <h6>編碼設定</h6>
+                        <p><code>git config --global gui.encoding utf-8</code> // 使用者界面文字編碼</p>
+                        <p><code>git config --global i18n.commitencoding utf-8</code> // 提交訊息文字編碼</p>
+                        <p><code>git config --global i18n.logoutputencoding utf-8</code> // git log顯示文字編碼</p>
+                        <p>除了上述設定之外，實際的檔案編碼也需要以utf-8編碼。</p>
+    
+                        <p class="u-fw-bold u-fc-gray u-fs-14"><b>ps: </b>要看完整的設定項目，可下 git config --help，會跳出瀏覽器畫面顯示可供設定的選項說明。</p>
+                    </li>
+                    <li>
+                        <h6>建立SSH Key</h6>
+                        <p>請參考: <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank">https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/</a></p>
+                        <p>SSH Key的作用在提供SSH連線認證。產生的Key會放在使用者目錄下的.ssh/id_rsa(私鑰)及.ssh/id_rsa.pub (公鑰)</p>
+                        <p>公鑰會提供給要連線的另一端，私鑰則是存在自己的電腦上，透過公鑰及私鑰的運算來判斷使用者的身份，所以私鑰絕對不可以提供給其他人，而為了提高安全性，私鑰還可以再加密，也就是在產生金鑰的過程裡的passphrase，這個步驟可以留空跳過，也可以指定，而指定後每次需要驗證的時候會需要再輸入passphrase來解密私鑰，算是另一組密碼。</p>
+                        <p>只是每次驗證都要輸入passphrase還蠻煩人的，所以可以參考:</p>
+                        <p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent" target="_blank">https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent</a></p>
+                        <p>，使用ssh agent來記錄私鑰，這樣只要輸入一次passphrase即可。</p>
+                        <p>不過產生ssh agent的指令也還蠻長的，可以直接將ssh agent的指令寫在.bashrc (放在使用者目錄下)，這樣一來，每次開啟 bash時會自動產生ssh</p>
+                        <p>agent，僅需輸入一次passphrase即可。不過若是關掉bash後再開bash，還是需要再輸入一次passphrase。</p>
+                    </li>
+                </ul>
+                <hr>
+            </li>
+            <li>
+                <h3>建立專案</h3>
+                <ul>
+                    <li>
+                        <h6>初始化專案</h6>
+                        <p>git專案是以資料夾為單位，資料夾下的所有檔案及其子資料夾都是git追蹤的項目。使用git追蹤專案前需要先對資料夾初始化，初始化專案可以在資料夾內執行，也可以在資料夾外執行。<br>
+                        例如，目標資料夾為 <code>C:\Users\user\Desktop\test</code>，底下列表兩種作法：</p>
+                        <p>
+                            資料夾內執行<br>
+                            位置 <code>C:\Users\user\Desktop\test</code>，指令 <code>git init</code>
+                        </p>
+                        <p>
+                            資料夾外執行<br>
+                            位置 <code>C:\Users\user\Desktop\</code>，指令 <code>git init test</code>
+                        </p>
+                    </li>
+                    <li>
+                        <h6>複製專案</h6>
+                        <p>上述初始化專案是針對完全沒做過git的項目執行。如果要針對已利用git追蹤並已上傳至遠端儲存庫的專案，可透過複製專案的方式來產生工作資料夾。指令如下：<br>
+                        <code>git clone {儲存庫路徑}</code> [{新資料夾名稱}]</p>
+                        <p><b>{儲存庫路徑}</b>支援多種格式，例如ssh , https或檔案路徑 <code>d:\test</code> 或 <code>..\test</code>。<br>
+                        實際範例如下:</p>
+                        <ul>
+                            <li>
+                                <b>ssh</b> <code>git clone git@github.com:git-ftp/git-ftp.git</code>
+                            </li>
+                            <li>
+                                <b>https</b> <code>git clone https://github.com/git-ftp/git-ftp.git</code>
+                            </li>
+                            <li>
+                                <b>檔案路徑</b> <code>git clone //amg-file-server/amg-p/cms.git cms</code>
+                            </li>
+                        </ul>
+                        <p>
+                            執行 <code>git clone</code> 時，如果只帶儲存庫路徑，預設會產生和儲存庫路徑同名的資料夾(不帶.git)，若是帶新資料夾名稱，則會依此產生新資料夾。
+                        </p>
+                    </li>
+                </ul>
+                <hr>
+            </li>
+            <li>
+                <h3>提交</h3>
+                <h6>加入追蹤檔案</h6>
+                <p>要讓git追蹤檔案需兩個步驟<br>
+                    <ol>
+                        <li><code>git add [ . | {實際檔名}]</code></li>
+                        <li><code>git commit</code></li>
+                    </ol>
+                </p>
+                <p>前者是將檔案暫存為待提交清單，此時如果下<code>git status</code>，會看到<code>git add</code>的檔案變成綠色的。</p>
+                <ul>
+                    <li><code>git add .</code>是代表要加入所有的檔案</li>
+                    <li><code>git add {實際檔名}</code>則是要加入指定的檔案，{實際檔案}的位置可加入多個檔名，以空格區隔即可。</li>
+                </ul>
+                <p>
+                    另外，指令git add -p可以逐次選擇要加入的修改。例如：
+                </p>
+                <div class="row">
+                    <div class="col-md-4"><img src="../src/img/note/git/3-1.png" alt="" srcset=""></div>
+                </div>
+    
+                <p>
+                    如果是要加入的修改就按<code>y</code>，不要的就按<code>n</code>。如果一次顯示的行數太多，可以按<code>s</code>，<code>git</code>會以未修改的行數來切割顯示的內容。另外，<code>a</code>是加入目前檔案的所有修改，<code>e</code>是編輯要加入的修改，主要是針對連續的修改要拆解成不同提交時使用，算是進階的操作。另外更多的操作可按<code>?</code>查看。<br>
+                    上述操作之後，檔案的修改就會被暫存起來，之後還需要<code>git commit</code>才會完成一個版本的記錄，也就是一個提交。每個提交都可以對應到<b>一個40個字數的hash碼</b>。<br>
+                    通常提交時會下<code>git commit -m</code> “提交訊息”，若不帶<code>-m</code>，則git會呼叫預設的訊息編輯器(vim)。
+                </p>
+                <div class="row">
+                    <div class="col-md-4"><img src="../src/img/note/git/3-2.png" alt="" srcset=""></div>
+                </div>
+                <p>
+                    出現vim畫面時，若要開始編輯訊息時，請先按<code>i</code>，之後便可開始編輯訊息內容。完成後先按<code>esc</code>鍵，接著再按<code>:wq</code> <span class="u-fs-14 u-fc-gray">(是冒號+wq，其中w是寫入，q是離開)</span>，再按<code>enter</code>即可完成提交訊息。<br>
+                    如果需要變更編輯訊息的工具，可以下<code>git config core.editor {工具名}</code>，例如<code>git config core.editor</code> notepad便會改用記事本做為編輯工具。<br>
+                    請注意，此設定方式是專案層級的設定，如果換到其他資料夾，上述設定並不會有作用。如果要設定所有資料夾皆可套用的設定，請加上<code>--global參數</code>，例如<code>git config --global core.editor</code> notepad。
+                </p>
+                <hr>
+            </li>
+            <li>
+                <h3>分支</h3>
+                <p>
+                    分支是指一連串提交的名字。當初始化一個git資料夾後，預設會產生一個名為<code>master</code>的分支。分支的建立很容易，而且沒有限制，你可以隨時在任何提交上建立新的分支，也可以隨意切換為分支，需要的話也可以隨時刪除任意分支，只是因為為了保護辛苦的提交，在刪除尚未合併的分支時會提示警告，並要求改用其他刪除方法。<br>
+                    使用分支的最重要的特點是分支裡的任何修改都不會影響、干擾其他分支。<br>
+                    分支構成的最小單位是提交，而所謂提交是指檔案的修改記錄，除了第一個提交之外，每一個提交都以上一個提交為基礎來修改，所以是一個提交接著一個提交，就像是鋪設鐵軌一樣。現實生活中，鋪設鐵軌可能因為規劃而產生支線，就像是建立新分支一樣，它代表著一個新的方向，以撰寫程式為例，可以建立新的分支來撰寫一個新的功能；以設計為例，可以建立新的分支來設計一種新的風格。
+                </p>
+                <ul>
+                    <li>
+                        <h6>建立分支</h6>
+                        <p>
+                            建立分支有兩種常用的方法：一個是建立分支後就跳到新分支，一個是建立分支後仍留在原來的分支。另外，你可以指定在目前分支(或提交)上建立新分支，也可以指定其他分支(或提交)建立新分支。
+                        </p>
+    
+                        <ul>
+                            <li>
+                                <b>在目前分支建立新分支</b>
+                                <p>建立分支後就跳到新分支 <code>git checkout -b {新分支名}</code></p>
+                                <p>建立分支後仍留在原來的分支 <code>git branch {新分支名}</code></p>
+                            </li>
+                            <li>
+                                <b>指定其他分支建立新分支</b>
+                                <p>建立分支後就跳到新分支 <code>git checkout {其他分支名} -b {新分支名}</code></p>
+                                <p>建立分支後仍留在原來的分支 <code>git branch {新分支名} {其他分支名}</code></p>
+                            </li>
+                            <li>
+                                <b>指定某個提交建立新分支</b>
+                                <p>建立分支後就跳到新分支 <code>git checkout {提交hash} -b {新分支名}</code></p>
+                                <p>建立分支後仍留在原來的分支 <code>git branch {新分支名} {提交hash}</code></p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h6>合併分支</h6>
+                        不同分支可透過合併<b>(git merge)</b>將內容整合在一起。例如有<b>A</b>、<b>B</b>兩分支，其中<b>A</b>分支需要<b>B</b>分支的內容，首先需要將分支切換到<b>A</b>分支，接著下指令<code>git merge</code>
+                        <b>B</b>分支，即可將<b>B</b>分支合併到<b>A</b>分支。合併後的兩個分支仍然是各自獨立的狀況，<b>B</b>分支做的任何修改都不會即時套用到<b>A</b>分支上，反過來也是。
+                        <code>git merge</code> 其他分支
+                    </li>
+                    <li>
+                        <h6>刪除分支</h6>
+                        <p>刪除已合併分支 <code>git branch -d {分支名}</code></p>
+                        <p>強制刪除分支 <code>git branch -D {分支名}</code></p>
+                    </li>
+                    <li>
+                        <h6>改變分支基點</h6>
+                        <p>
+                            git的歷程是一個又一個提交的累積，每個提交都是在上一個提交的基礎下所做的修改。實際上git還允許改變分支的基點。請注意，這個操作將會改變提交的歷程。說明如下：
+                        </p>
+                        <p>當前的分支重新立基在A分支上。 <code>git rebase A分支</code></p>
+                        <p>A分支重新立基在B分支上。 <code>git rebase B分支 A分支</code></p>
+                        <p>將當前分支的最新提交一直數到{提交hash }前一個提交(也就是不包括{提交hash})之間的所有提交重新立基在B分支上。<br> <code>git rebase --onto B分支</code> 提交 <code>hash</code></p>
+                        <p>{分支名稱}的最新提交一直數到{提交hash }前一個提交(也就是不包括{提交hash})之間的所有提交重新立基在B分支上。重新立基後會自動切換到{分支名稱}<br> <code>git rebase --onto B分支</code> 提交 <code>hash 分支名稱</code></p>
+                        
+                    </li>
+                </ul>
+                <hr>
+            </li>
+            <li>
+                <h3>工作目錄狀態</h3>
+                <p>在git專案資料夾下做的任何檔案變更(新增、修改)，git都會告訴你，可以下 <code>git status</code></p>
+                <div class="row">
+                    <div class="col-md-4"><img src="../src/img/note/git/4-1.png" alt="" srcset=""></div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <h3>檢視歷史記錄</h3>
+                <ul>
+                    <li>
+                        <p>在git bash裡顯示提交歷程 <code>git log</code></p>
+                        <div class="row">
+                            <div class="col-md-4"><img src="../src/img/note/git/5-1.png" alt="" srcset=""></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>圖型工具，顯示所有分支的歷程，參數也指定分支名稱，而且也設多組，也可搭配--all選項顯示所有的分支。 <code>gitk</code></p>
+                        <p>指令:</p>
+                        <ul>
+                            <li><code>gitk</code> 顯示目前分支歷程</li>
+                            <li><code>gitk {branchA} ...</code> 顯示指定分支歷程</li>
+                            <li><code>gitk --all</code> 顯示所有分支歷程</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-md-4"><img src="../src/img/note/git/5-2.png" alt="" srcset=""></div>
+                        </div>
+                    </li>
+                </ul>
+                <hr>
+            </li>
+            <li>
+                <h3>比較差異 </h3>
+                <p>
+                    以{基礎分支或提交}為基礎，顯示{比對分支或提交}與之相差的修改。{比對分支或提交}可省略，省略時則代表用目前分支做為比對分支。<br>
+                    <code>git diff {基礎分支或提交} {比對分支或提交}</code>
+                </p>
+                <div class="row">
+                    <div class="col-md-4"><img src="../src/img/note/git/6-1.png" alt="" srcset=""></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"><img src="../src/img/note/git/6-2.png" alt="" srcset=""></div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <h3>Git</h3>
+                <p>
+                    每個git專案下都有個名為 <code>.git</code> 的隱藏資料夾，git所有的物件及專案層級的設定都在裡面。此資料夾極為重要，也是依此資料夾來識別一個資料夾是否為git專案，若將此資料夾刪除，則此資料夾所在目錄將不再是git專案，而所有先前已記錄的版本也都將消失。
+                </p>
+                <div class="row">
+                    <div class="col-md-4"><img src="../src/img/note/git/7-1.png" alt="" srcset=""></div>
+                </div>
+    
+                <p>
+                    <h6>指令列表</h6>
+                </p>
+                <ul>
+                    <li>
+                        <b>基本設定</b>
+                        <ul>
+                            <li><code>git config --global user.name {your name}</code> # 使用者名稱</li>
+                            <li><code>git config --global user.email {your email}</code> # 使用者E-mail</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>編碼設定</b>
+                        <ul>
+                            <li><code>git config --global gui.encoding utf-8</code> # 使用者界面文字編碼</li>
+                            <li><code>git config --global i18n.commitencoding utf-8</code> # 提交訊息文字編碼</li>
+                            <li><code>git config --global i18n.logoutputencoding utf-8</code> # git log顯示文字編碼</li>
+                            <li><code>git config core.editor {工具名}</code> # 設定{工具名}為提交訊息編輯器</li>
+                            <li><code>git config core.editor notepad</code> # 設定notepad為提交訊息編輯器</li>
+                            <li><code>git config --global core.editor notepad</code> # 設定notepad為提交訊息編輯器，所有案子都有作用</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>初始化專案</b>
+                        <ul>
+                            <li><code>git init</code> # 初始化當前資料夾為git專案</li>
+                            <li><code>git init test</code> # 初始化test資料夾為git專案</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>複製專案</b>
+                        <ul>
+                            <li><code>git clone git@github.com:git-ftp/git-ftp.git [新資料夾]</code> # ssh</li>
+                            <li><code>git clone https://github.com/git-ftp/git-ftp.git [新資料夾]</code> # https</li>
+                            <li>
+                                <p># 檔案路徑</p>
+                                <p><code>git clone //amg-file-server/amg-p/cms.git [新資料夾]</code></p>
+                                <p><code>git clone ../cms [新資料夾]</code></p>
+                                
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>加入追蹤檔案</b>
+                        <ul>
+                            <li><code>git add .</code> # 加入所有檔案</li>
+                            <li><code>git add -A</code> # 加入所有檔案，含刪除的項目</li>
+                            <li><code>git add 檔名…</code> # 加入指定的檔案</li>
+                            <li><code>git add -p</code> # 以行為單位逐次加入修改</li>
+                            <li><code>git commit [-m “提交訊息”]</code> # 提交</li>
+                            <li><code>git push -u origin 專案名稱</code> # 建立分支時第一次push</li>
+                            <li><code>git push</code> # 推送 </li>
+                            <li><code>git branch {新分支名}</code> # 依目前分支建立新分支，完成後留在原來的分支</li>
+                            <li><code>git branch {新分支名} {其他分支名}</code> # 依{其他分支名}建立新分支，完成後留在原來的分支</li>
+                            <li><code>git branch {新分支名} {提交hash}</code> # 依{提交hash}建立新分支，完成後留在原來的分支</li>
+                            <li><code>git branch -r</code> # 查分支</li>
+                            <li><code>git branch -d 分支名稱</code> # 刪除暫存分支</li>
+                            <li><code>git checkout "分支"</code> # 呼叫分支</li>
+                            <li><code>git checkout -b {新分支名}</code> # 依目前分支建立新分支，完成後跳到新分支</li>
+                            <li><code>git checkout ###### -b</code> # 已目前狀態建立新分支</li>
+                            <li><code>git checkout {其他分支名} -b {新分支名}</code> # 依{其他分支名}建立新分支，完成後就跳到新分支</li>
+                            <li><code>git checkout {提交hash} -b {新分支名}</code> # 依{提交hash}建立新分支，完成後就跳到新分支</li>
+                            <li><code>git merge {其他分支}</code> # 合併{其他分支}到目前分支</li>
+                            <li><code>git log</code> # 檢視提交記錄</li>
+                            <li><code>gitk</code> # 提交記錄圖型化工具，檢視目前分支</li>
+                            <li><code>gitk --all</code> # 提交記錄圖型化工具，檢視所有分支</li>
+                            <li><code>git diff {某個提交}</code> # 檢視目前分支和某個提交間差異</li>
+                            <li><code>git diff {比對分支或提交} {基礎分支或提交}</code> # 檢視{比對分支或提交}和{基礎分支或提交}的差異</li>
+                            <li><code>git status</code> # 檢視目前修改狀態</li>
+                            <li><code>git fetch</code> # 獲取更新git資料庫</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>其他</b>
+                        <ul>
+                            <li><code>git stash</code> # 儲藏</li>
+                            <li><code>git stash save "儲藏名稱"</code></li>
+                            <li><code>git stash list</code> # 呼叫儲藏列表</li>
+                            <li><code>git stash apply</code> # 呼叫儲藏</li>
+                            <li><code>git stash drop stash@{#}</code> # 刪除儲藏</li>
+                            <li><code>git stash show -p stash@{#}|git apply -R</code> # 還原儲藏</li>
+                        </ul><br>
+                        <ul>
+                            <li><code>git config --global alias.名稱 '!git [指令]'</code> # 設定git全域巨集</li>
+                        </ul><br>
+                        <ul>
+                            <li><code>git revert head</code> # 回復用</li>
+                            <li><code>git cherry-pick "commit ID"</code> # 撿其他分支的commit</li>
+                        </ul>
+
+                        <!-- :wq 合併衝突
+
+
+                        /* 沒做到git ftp catchup -s 的時候用 */
+                        1.回到之前的狀態
+                        到gitk→回到要上傳的檔案前一支→到SHA1ID拷貝最少7碼貼到[ git checkout ######## -b 暫存分支名 ]
+                        2.git ftp catchup -s 名稱
+                        3.回到最新的狀態 git checkout 分支名
+                        4.git ftp push -s 分支名
+                        5.git branch -d 暫存分支名 (刪除暫存分支) -->
+                    </li>
+                    <li>
+                        <b>Git FTP</b>
+                        <ul>
+                            <li><code>git config.git-ftp user ######</code> # 設定git-ftp 帳號</li>
+                            <li><code>git config.git-ftp password ######</code> # 設定git-ftp密碼</li>
+                            <li><code>git config.git-ftp.名稱 url ###########</code> # 設定git-ftp路徑</li>
+                        </ul>
+                        <ul>
+                            <li><code>git ftp catchup -s 名稱</code> # 推送log</li>
+                            <li><code>git ftp push -s 名稱</code> # 推送修改好的檔案</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

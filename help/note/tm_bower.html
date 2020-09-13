@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bower</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
+    <link rel="stylesheet" href="../src/page.css">
+</head>
+<body id="edit">
+    <div class="l-wp-1360">
+        <h1>前端套件管理，Bower 的運用</h1>
+        <h2>Bower 環境(Windows 安裝 Node.js)</h2>
+        <ul>
+            <li>Twitter 團隊開發的<b>前端</b>開發套件管理工具</li>
+            <li>管理/安裝 前端開發所需要的package (css/javascript)</li>
+            <li>自動依套件相依性安裝</li>
+            <li>
+                以往開發很常遇到的情境：
+                <p>
+                    專案使用了許多外部工具(例如 jquery, bootstrap ...)<br>
+                    每隔一陣子想更新到最新版，就要分別下載更新<br>
+                    並且可能會有相容性問題要處理
+                </p>
+            </li>
+            <li>
+                bower 可以解決以上問題
+            </li>
+        </ul>
+        <hr>
+        <h3>Bower 相關指令</h3>
+        <ul>
+            <li>
+                <code>bower -v</code> // 查詢當前bower的版本
+            </li>
+            <li>
+                <code>npm install bower -g</code> // 全域安裝 bower
+            </li>
+            <li>
+                <code>bower install</code> // 查專案安裝套件
+            </li>
+            <li>
+                <code>bower list</code> // 查詢專案目前安裝的套件
+            </li>
+            <li>
+                <code>bower update</code> // 更新套件
+            </li>
+            <li>
+                <code>bower search</code> // 搜尋套件
+            </li>
+        </ul>
+        
+        <hr>
+        <h3>Bower 安裝步驟</h3>
+        <ol>
+            <li>
+                <p>
+                    安裝 <a href="http://nodejs.org/download/" target="_blank">Node.js</a>
+                    <span>
+                        <p>
+                            安裝 node.js 也會順便把 npm 安裝進去，接著就是使用 windows 的 cmd 或 Mac 的 Termial 來安裝 Bower，首先我們先輸入以下的指令，把
+                            Bower安裝到全域的環境。( 在 Mac 要記得加 sudo 不然會裝不進去 )
+                        </p>
+                        <p>依作業系統選擇Node.js版本</p>
+                    </span>
+                </p>
+            </li>
+            <li>
+                首先要透過npm 全域安裝 bower<br>
+                <code>npm install bower -g</code>
+            </li>
+            <li>
+                創建bower設定檔 <span class="u-fs-14">// 第一次建立</span><br>
+                <code>bower init</code>
+            </li>
+        </ol>
+        <hr>
+    </div>
+</body>
+</html>

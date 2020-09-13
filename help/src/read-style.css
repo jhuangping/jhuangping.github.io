@@ -889,6 +889,8 @@ header.is-active .hd__toggle-bar:last-child { -webkit-transform: translateY(0px)
 
 @media all and (min-width: 769px) { .menu__item:hover { color: #f3c860; } }
 
+.menu__item--sub { font-size: 13px; font-weight: normal; color: #A6A6A6; }
+
 /* Footer ===================================================================== */
 footer { width: 100vw; position: fixed; left: 0px; bottom: 0px; z-index: 10; padding: 10px 0; background: #333; color: #fff; }
 

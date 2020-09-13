@@ -6,28 +6,41 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JhuangPing 信件格式</title>
+    <title>JhuangPing File</title>
     <meta name="title" content="JhuangPing" />
     <meta name="description" content="" />
     <meta name="keywords" content="web design,網頁設計,web,網頁,網站,設計,前端" />
     <meta name="copyright" content="JhuangPing" />
     <link rel="canonical" href="網址" itemprop="url" />
     <link href="../src/img/common/favicon.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
     <link rel="stylesheet" href="../src/read-style.css">
 </head>
 
 <body>
     <div class="l-wp-html">
-        <header></header>
+        <header>
+            <div class="hd__l-wp l-wp-max1680">
+                <a href="index.html" class="hd__logo"><img src="../src/img/common/logo.svg" alt=""></a>
+                <div class="hd__toggle">
+                    <span class="hd__toggle-bar"></span>
+                    <span class="hd__toggle-bar"></span>
+                    <span class="hd__toggle-bar"></span>
+                </div>
+                <div class="menu">
+                    <ul class="menu__ctr">
+                        <li v-for="val in menu" class="menu__item" v-bind:data-import="val.link">{{val.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
         <main class="l-wp-main">
             <div class="stn-body">
                 <div class="body-close"></div>
                 <div class="body-ir"></div>
             </div>
             <div class="stn-info m-edit">
-                <h4>JhuangPing 文件格式</h4>
+                <h4>JhuangPing File</h4>
                 <p>
                     個人輔助切版用
                 </p>
@@ -35,10 +48,27 @@
         </main>
         <footer></footer>
     </div>
-    <script src="../../src/js/plug-in/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../../src/js/plug-in/vue/vue.min.js"></script>
+    <script src="../../src/js/plugin/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../../src/js/plugin/vue/vue.min.js"></script>
     <script src="../../src//js/jhuangping.tool.js"></script>
     <script src="../src/js/template.js"></script>
+    <script>
+        new Vue({
+            el: '.l-wp-html',
+            data: {
+                menu: [
+                    {
+                        name: 'Rename',
+                        link: 'rename.html'
+                    },
+                    {
+                        name: 'Design Considerations',
+                        link: 'design-considerations.html'
+                    },
+                ]
+            }
+        })
+    </script>
 </body>
 
 </html>

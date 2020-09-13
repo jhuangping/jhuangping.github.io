@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JhuangPing 信件格式</title>
+    <title>JhuangPing Note</title>
     <meta name="title" content="JhuangPing" />
     <meta name="description" content="" />
     <meta name="keywords" content="web design,網頁設計,web,網頁,網站,設計,前端" />
@@ -29,7 +29,7 @@
                 </div>
                 <div class="menu">
                     <ul class="menu__ctr">
-                        <li v-for="val in menu" class="menu__item" v-bind:data-import="val.link">{{val.name}}</li>
+                        <li v-for="val in menu" class="menu__item" :class="'menu__item--' + val.cls" v-bind:data-import="val.link">{{val.name}}</li>
                     </ul>
                 </div>
             </div>
@@ -40,9 +40,9 @@
                 <div class="body-ir"></div>
             </div>
             <div class="stn-info m-edit">
-                <h4>JhuangPing 文件格式</h4>
+                <h4>JhuangPing 隨手筆記</h4>
                 <p>
-                    個人輔助切版用
+                    Edit ...
                 </p>
             </div>
         </main>
@@ -57,44 +57,99 @@
             el: '.l-wp-html',
             data: {
                 menu: [{
-                        name: 'Adobe XD',
-                        link: 'adobe_XD.html'
+                        name: 'Adobe',
+                        link: 'adobe.html',
+                        cls: 'null'
                     },
                     {
-                    name: 'Design Atomic-Design',
-                    link: 'design_atomic-design.html'
+                        name: '# Photoshop',
+                        link: 'adobe_PS.html',
+                        cls: 'sub'
                     },
                     {
-                        name: 'CSS animation',
-                        link: 'css_animation.html'
+                        name: '# Illustrator',
+                        link: 'adobe_AI.html',
+                        cls: 'sub'
                     },
                     {
-                        name: 'CSS Input',
-                        link: 'css_input.html'
+                        name: '# After Effects',
+                        link: 'adobe_AE.html',
+                        cls: 'sub'
                     },
                     {
-                        name: 'CSS mix-blend-mode',
-                        link: 'css_mix-blend-mode.html'
+                        name: '# XD',
+                        link: 'adobe_XD.html',
+                        cls: 'sub'
                     },
                     {
-                        name: 'IOS',
-                        link: 'ios.html'
+                        name: 'Design',
+                        link: 'design.html',
+                        cls: 'null'
                     },
                     {
-                        name: 'Git',
-                        link: 'git.html'
+                        name: '# Atomic Design',
+                        link: 'design_atomic-design.html',
+                        cls: 'sub'
                     },
                     {
-                        name: 'Npm',
-                        link: 'npm.html'
+                        name: 'CSS',
+                        link: 'css.html',
+                        cls: 'null'
                     },
                     {
-                        name: 'Gulp',
-                        link: 'gulp.html'
+                        name: '# Animation',
+                        link: 'css_animation.html',
+                        cls: 'sub'
                     },
                     {
-                        name: 'Bower',
-                        link: 'bower.html'
+                        name: '# Input',
+                        link: 'css_input.html',
+                        cls: 'sub'
+                    },
+                    {
+                        name: '# mix-blend-mode',
+                        link: 'css_mix-blend-mode.html',
+                        cls: 'sub'
+                    },
+                    {
+                        name: '# IOS',
+                        link: 'css_ios.html',
+                        cls: 'sub'
+                    },
+                    {
+                        name: 'Javascript',
+                        link: 'js.html',
+                        cls: ''
+                    },
+                    {
+                        name: 'Vue',
+                        link: 'vue.html',
+                        cls: ''
+                    },
+                    {
+                        name: 'Task Management',
+                        link: 'task-management.html',
+                        cls: 'null'
+                    },
+                    {
+                        name: '# Git',
+                        link: 'tm_git.html',
+                        cls: 'sub'
+                    },
+                    {
+                        name: '# NPM',
+                        link: 'tm_npm.html',
+                        cls: 'sub'
+                    },
+                    {
+                        name: '# Bower',
+                        link: 'tm_bower.html',
+                        cls: 'sub'
+                    },
+                    {
+                        name: '# Gulp',
+                        link: 'tm_gulp.html',
+                        cls: 'sub'
                     },
                 ]
             }

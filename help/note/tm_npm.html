@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NPM 套件管理 & 常用開發 - 工具介紹</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Righteous&display=swap&subset=latin-ext,vietnamese">
+    <link rel="stylesheet" href="../src/page.css">
+</head>
+<body id="edit">
+    <div class="l-wp-1360">
+        <h1>NPM 套件管理 & 常用開發 - 工具介紹</h1>
+        <h2>Node.js</h2>
+        <ul>
+            <li>以往javascript 只能在瀏覽器上運行</li>
+            <li>Node.js不是一種程式語言，也不是javascript</li>
+            <li>它是javascript 運行平台</li>
+            <li>使用 Google Chrome V8 JavaScript execution engine</li>
+            <li><a href="https://nodejs.org/download/" target="_blank">下載安裝</a></li>
+        </ul>
+        <hr>
+        <h2>NPM(Node Package Manager)</h2>
+        <ul>
+            <li>Node 模組套件管理器</li>
+            <li>安裝Node.js 會連帶安裝NPM</li>
+            <li>NPM建立了Node.js的生態圈
+                <ul><li>開發者可以透過NPM 上傳/下載 模組</li></ul>
+            </li>
+            <li>在NPM官網可以查到目前有哪些模組
+                <ul><li><a href="https://www.npmjs.com/" target="_blank">官網</a></li></ul>
+            </li>
+        </ul>
+        <hr>
+        <h2>NPM常用旨令</h2>
+        <ul>
+            <li>
+                #<b>安裝</b>套件 -g 代表全域安裝，完成後可以用在指令列<br>
+                <code>npm install -g</code><br>
+                #將套件安裝在目前目錄的專案中<br>
+                <code>npm install</code>
+            </li>
+            <li>
+                #<b>移除</b>全域套件<br>
+                <code>npm uninstall -g</code><br>
+                #移除專案裡的套件
+                <code>npm uninstall</code>
+            </li>
+            <li>
+                #<b>搜尋</b>套件<br>
+                <code>npm search</code>
+            </li>
+            <li>
+                #<b>列出</b>全域套件<br>
+                <code>npm ls -g</code><br>
+                #列出專案使用的套件<br>
+                <code>npm ls</code>
+            </li>
+            <li>
+                #<b>更新</b>全域套件<br>
+                <code>npm update -g</code><br>
+                #更新專案套件<br>
+                <code>npm update</code>
+            </li>
+        </ul>
+        <hr>
+        <h2>package.json</h2>
+        <ul>
+            <li>管理專案套件相依性以及所使用到的模組套件</li>
+            <li>放在專案根目錄下</li>
+            <li>參考<a href="https://docs.npmjs.com/files/package.json" target="_blank" class="u-fs-14">LINK</a></li>
+            <li>
+                npm 相關指令
+                # 產生package.json,只有版本和名字是必填<br>
+                <code>npm init</code><br>
+                # 根據package.json內容替專案安裝相關模組套件<br>
+                <code>npm install</code>
+            </li>
+        </ul>
+        <hr>
+        <h2>package.json範例</h2>
+<pre><code>{
+    "name": "projName",
+    "version":"1.0.0",
+    "description":"test",
+    "main":"index.js",
+    "scripts":{
+        "test":echo\"Error: no test specified\" && exit 1"
+    },
+    "author":"",
+    "license":"ISC",
+    "dependencies":{//套件相依
+    },
+    "devDependencies":{//關發套件相依
+        "gulp":"^3.8.11"
+    }
+}</code></pre>
+        <hr>
+        <h2>Bower <a href="bower.html" class="u-fs-14">bower 詳細說明...</a></h2>
+        <ul>
+            <li>Twitter 團隊開發的<b>前端</b>開發套件管理工具</li>
+            <li>管理/安裝 前端開發所需要的package (css/javascript)</li>
+            <li>自動依套件相依性安裝</li>
+            <li>
+                以往開發很常遇到的情境：
+                <p>
+                    專案使用了許多外部工具(例如 jquery, bootstrap ...)<br>
+                    每隔一陣子想更新到最新版，就要分別下載更新<br>
+                    並且可能會有相容性問題要處理
+                </p>
+            </li>
+            <li>
+                bower 可以解決以上問題
+            </li>
+        </ul>
+        <hr>
+        <h2>Bower 相關指令</h2>
+        <ul>
+            <li>
+                #首先要透過npm 全域安裝 bower<br>
+                <code>npm install bower -g</code>
+            </li>
+            <li>
+                #查專案安裝套件<br>
+                <code>bower install</code>
+            </li>
+            <li>
+                #查詢專案目前安裝的套件<br>
+                <code>bower list</code>
+            </li>
+            <li>
+                #更新套件<br>
+                <code>bower update</code>
+            </li>
+            <li>
+                # 搜尋套件
+                <code>bower search</code>
+            </li>
+        </ul>
+        <hr>
+        <h2>Grunt</h2>
+        <ul>
+            <li>Task Runner,任務自動化管理工具</li>
+            <li>簡化、自動化 繁瑣事務
+                <ul>
+                    <li>壓縮/編譯/單元測試/linting/部署...</li>
+                </ul>
+            </li>
+            <li>
+                Gruntfile.js
+                <ul>
+                    <li>放在專案根目錄下</li>
+                    <li>用來設定任務與載入Grunt外掛</li>
+                    <li>實際要做的自動化任睥，都在這裡定義</li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h2>Grunt 相關指令</h2>
+        <ul>
+            <li>
+                #透過npm 安裝 cli<br>
+                <code>npm install -g grunt-cli</code>
+            </li>
+            <li>
+                #專案安裝grunt 並加進package.json的devDependencies<br>
+                <code>npm install grunt --save-dev</code>
+            </li>
+            <li>
+                #執行Grunt default 任務列表<br>
+                <code>grunt</code>
+            </li>
+            <li>
+                #執行套件任務列表<br>
+                <code>grunt < taskName > </code>
+            </li>
+            <li>
+                #執行套件任務特定目標<br>
+                <code>grunt < taskName >:< targetName ></code>
+            </li>
+        </ul>
+        <hr>
+        <h2>Gulp <a href="gulp.html" class="u-fs-14">gulp 詳細說明...</a></h2>
+        <ul>
+            <li>和grunt一樣,也是任務自動化管理工具</li>
+            <li>gulpfile.js
+                <ul>
+                    <li>放在專案根目錄下</li>
+                    <li>以往javascript語法撰寫任務內容</li>
+                </ul>
+            </li>
+            <li>
+                提供四個function
+                <ul>
+                    <li>task</li>
+                    <li>src</li>
+                    <li>dest</li>
+                    <li>watch</li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h2>參考文章</h2>
+        <ol>
+            <li>
+                <a href="https://www.slideshare.net/wantingj/npm-46801372">https://www.slideshare.net/wantingj/npm-46801372</a>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
