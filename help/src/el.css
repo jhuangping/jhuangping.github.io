@@ -169,6 +169,8 @@ footer.elft { width: 100vw; position: fixed; left: 0px; bottom: 0px; z-index: 10
 
 #el .ad-item-class::before { content: 'Class:'; }
 
+#el .ad-item-emmet::before { content: 'Emmet:'; }
+
 #el .ad-item-iconname::before { content: 'Icon Name:'; }
 
 #el .ad-item-fontname::before { content: 'Font Name:'; }
@@ -302,6 +304,10 @@ footer.elft { width: 100vw; position: fixed; left: 0px; bottom: 0px; z-index: 10
 #el .ad-ff, #el .ad-fs { padding: 20px; margin-top: 0.9375rem; margin-bottom: 0.9375rem; }
 
 #el .ad-ff:not(:last-child), #el .ad-fs:not(:last-child) { border-bottom: 1px dotted #e0e0e0; }
+
+#el .ad-layout .row:not(:last-child) { border-bottom: 1px dotted #e0e0e0; padding-top: 0.625rem; padding-bottom: 0.625rem; margin-bottom: 0.625rem; }
+
+#el .ad-layout [class*="col-"] { margin-top: 5px; margin-bottom: 5px; }
 
 #el .ad-media { margin-bottom: 1.25rem; }
 

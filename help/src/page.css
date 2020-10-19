@@ -1691,15 +1691,33 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 
 #edit .pic_info { font-size: 1.4rem; text-align: center; }
 
-#edit .c-remark, #edit .remark { color: #444; font-size: 1.4rem; position: relative; padding-left: 20px; }
+#edit a.c-link, #edit a.link, #edit a.c-download, #edit a.downloaad { color: #999; }
 
-#edit .c-remark::before, #edit .c-remark::after, #edit .remark::before, #edit .remark::after { content: ''; position: absolute; top: 1px; }
+#edit a.c-link::before, #edit a.link::before, #edit a.c-download::before, #edit a.downloaad::before { display: inline-block; margin-right: 5px; font-weight: bold; }
 
-#edit .c-remark::before, #edit .remark::before { left: 5px; width: 12px; height: 15px; background: #FED700; border-radius: 2px; }
+#edit a.c-remark, #edit a.remark { color: #444; font-size: 1.4rem; position: relative; padding-left: 20px; }
 
-#edit .c-remark::after, #edit .remark::after { left: 11px; width: 0px; height: 0px; border-style: solid; border-width: 3px; border-color: #fff #fff #444444 #444444; }
+#edit a.c-remark::before, #edit a.c-remark::after, #edit a.remark::before, #edit a.remark::after { content: ''; position: absolute; top: 1px; }
 
-@media all and (min-width: 1201px) { #edit .c-remark:hover, #edit .remark:hover { opacity: .5; } }
+#edit a.c-remark::before, #edit a.remark::before { left: 5px; width: 12px; height: 15px; background: #FED700; border-radius: 2px; }
+
+#edit a.c-remark::after, #edit a.remark::after { left: 11px; width: 0px; height: 0px; border-style: solid; border-width: 3px; border-color: #fff #fff #444444 #444444; }
+
+#edit a.c-link::before, #edit a.link::before { content: '\2139'; color: #007bff; }
+
+#edit a.c-download::before, #edit a.downloaad::before { content: '\2913'; color: #20c997; }
+
+@media all and (min-width: 1201px) { #edit a[class*="c-"]:hover { opacity: .5; } }
+
+#edit i[class*="c-"] { font-style: normal; margin-right: 5px; }
+
+#edit i.c-check::before { color: #ccc; font-weight: bold; }
+
+#edit i.c-check::before::before { content: '\2610'; }
+
+#edit i.c-check--yes::before, #edit i.c-check--ok::before { content: '\2611'; color: #333; }
+
+#edit i.c-check--no::before, #edit i.c-check--unok::before { content: '\2610'; }
 
 .skeleton { line-height: 2; }
 
