@@ -1711,9 +1711,7 @@ body { font-family: "Quicksand", Arial, "Microsoft JhengHei", sans-serif; font-s
 
 #edit i[class*="c-"] { font-style: normal; margin-right: 5px; }
 
-#edit i.c-check::before { color: #ccc; font-weight: bold; }
-
-#edit i.c-check::before::before { content: '\2610'; }
+#edit i.c-check::before { color: #ccc; font-weight: bold; content: '\2610'; display: inline-block; }
 
 #edit i.c-check--yes::before, #edit i.c-check--ok::before { content: '\2611'; color: #333; }
 
