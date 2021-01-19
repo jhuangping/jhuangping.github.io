@@ -1,0 +1,131 @@
+/* Page Edit ================================================================== */
+#edit
+    > * 
+
+    ol, ul
+        &:not([class*="u-"])
+            padding-left: 20px
+    ol:not([class*="u-"])
+        list-style-type: decimal
+    ul:not([class*="u-"])
+        list-style-type: disc
+        ul:not([class*="u-"])
+            list-style-type: circle
+            ul:not([class*="u-"])
+                list-style-type: square
+    li:not([class*="u-"])
+        list-style: $u-dna
+        +mg(y, 10px)
+
+    p:not([class*="u-"])
+        margin: 0px
+        +mg(y,1em)
+
+    hr
+        +mg(y, 2em)
+        border: none
+        border-bottom: 1px dotted #aaa
+
+    h1, h2, h3, h4, h5, h6
+        &:not([class*="u-"])
+            display: block
+            position: relative
+
+    @for $i from 1 through 6
+        h#{$i}:not([class*="u-"])
+            font-size: rem(30 - $i * 1.5)
+            
+            color: lighten(#282117, $i * 3.5% )
+            // color: lighten(#171E28, $i * 3.5% )
+            // color: lighten(#261717, $i * 3.5% )
+            // color: lighten(#11151B, $i * 3.5%)
+    
+    code
+        font-family: $fontDefault
+        background-color: #eee
+        color: #000
+        font-size: rem(14)
+        font-weight: 400
+        padding: 2px 6px
+        border-radius: 2px
+        border: 1px solid rgba(0,0,0,0.07)
+
+    pre
+        color: #fff
+        background: cr(code-bg)
+        font-size: rem(14)
+        padding: 10px 20px
+        border-radius: 5px
+        position: relative
+        overflow-y: hidden
+        // &::before
+        //     content: 'Copy Code.'
+        //     position: absolute
+        //     top: 15px
+        //     right: 20px
+        //     font-size: rem(12)
+        //     line-height: 1
+        //     color: #333
+        //     background: #ededed
+        //     border-radius: 5px
+        //     padding: 5px 8px
+        //     cursor: pointer
+        //     +trs()
+        //     +rwdw-min()
+        //         &:hover
+        //             opacity: .3
+        code
+            color: $u-dna
+            background-color: $re-color
+            font-weight: normal
+            padding: 0px
+            border-radius: 0px
+            border: none
+
+        .tag, .red, .code-r
+            color: cr(code-r)
+        .cls, .green, .code-g
+            color: cr(code-g)
+        .blue, .code-b
+            color: cr(code-b)
+        .gray, .code-gray
+            color: cr(code-gray)
+        .purple, .code-p
+            color: cr(code-p)
+        .code-y, .y, .yellow
+            color: cr(code-y)
+
+    .info
+        > *
+            &:last-child
+                margin-bottom: rem(15)
+        p:first-child
+            +mg(t,0px)
+        
+    table
+        +mg(y, 10px)
+        thead
+            tr
+                +rwdw-min()
+                    &:hover
+                        tr, td, th
+                            color: #fff
+                            background: #333
+            th
+                color: #fff
+                background: #333
+        td, th
+            padding: 8px 10px
+            border: 1px solid #ccc
+            +trs()
+        th
+            background: #e0e0e0
+
+    .pic
+        +mg(y, 1em)
+        &_img
+            +flex-center()
+            margin-bottom: 10px
+        &_info
+            font-size: rem(14)
+            text-align: center

@@ -1,0 +1,94 @@
+/* Common ===================================================================== */ 
+// body
+body
+    &:not(#edit)
+        overflow: hidden
+        .l-wp-main, main
+            width: 100vw
+            height: 100vh
+
+    &#edit, &.c-editPage
+        font-family: $fontDefault
+        font-size: 1.6rem
+        line-height: 1.5
+        letter-spacing: 0px
+        overflow-x: hidden
+        color: #666
+        padding-top: 20px
+        padding-left: 35px
+        padding-bottom: 8.16667%
+        padding-right: 45px
+        opacity: 1
+        animation: $re
+        +rwdw-max()
+            +pd(x, 15px)
+
+// Link a taag
+%icon
+    color: #999
+    &::before
+        display: inline-block
+        margin-right: 5px
+        font-weight: bold
+
+a
+
+    &.c-remark, &.remark
+        color: #444
+        font-size: rem(14)
+        position: relative
+        padding-left: 20px
+        &::before, &::after
+            content: ''
+            position: absolute
+            top: 1px
+        &::before
+            left: 5px
+            width: 12px
+            height: 15px
+            background: #FED700
+            border-radius: 2px
+        &::after
+            left: 5 + 6 + px
+            width: 0px
+            height: 0px
+            border-style: solid
+            border-width: 3px
+            border-color: #fff #fff #444444 #444444
+
+    &.c-link, &.link
+        @extend %icon
+        &::before
+            content: '\2139'
+            color: cr(blue)
+
+    &.c-download, &.downloaad
+        @extend %icon
+        &::before
+            content: '\2913'
+            color: cr(teal)
+
+
+    +rwdw-min()
+        &[class*="c-"]:hover
+            opacity: .5
+
+// List i tag
+i
+    &[class*="c-"]
+        font-style: normal
+        margin-right: 5px
+    &.c-check
+        &::before
+            color: #ccc
+            font-weight: bold
+            content: '\2610'
+            display: inline-block
+
+        &--yes, &--ok
+            &::before
+                content: '\2611'
+                color: #333
+        &--no, &--unok
+            &::before
+                content: '\2610'

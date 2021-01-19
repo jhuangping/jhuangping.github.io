@@ -1,5 +1,5 @@
 /* //////////////////////////////////////////////////////////////////////////// */
-/* JhuangPing v.1.5.2 [07.31.2020]                                              */
+/* JhuangPing v.1.5.3                                                           */
 /* Github: https://jhuangping.github.io                                         */
 /* //////////////////////////////////////////////////////////////////////////// */
 /* Reset ====================================================================== */
@@ -177,13 +177,17 @@ h1, h2, h3, h4, h5, h6 { display: inline-block; }
 
 .l-wp-1280 { max-width: 1280px; }
 
-.l-wp-1140 { max-width: 1140px; }
-
 .l-wp-1024 { max-width: 1024px; }
+
+.l-wp-992 { max-width: 992px; }
 
 .l-wp-960 { max-width: 960px; }
 
+.l-wp-768 { max-width: 768px; }
+
 .l-wp-720 { max-width: 720px; }
+
+.l-wp-575 { max-width: 575px; }
 
 .l-wp-540 { max-width: 540px; }
 
@@ -198,13 +202,17 @@ h1, h2, h3, h4, h5, h6 { display: inline-block; }
 
 .l-w-1280 { max-width: 1280px; }
 
-.l-w-1140 { max-width: 1140px; }
-
 .l-w-1024 { max-width: 1024px; }
+
+.l-w-992 { max-width: 992px; }
 
 .l-w-960 { max-width: 960px; }
 
+.l-w-768 { max-width: 768px; }
+
 .l-w-720 { max-width: 720px; }
+
+.l-w-575 { max-width: 575px; }
 
 .l-w-540 { max-width: 540px; }
 
@@ -615,9 +623,9 @@ textarea { width: 100%; max-width: 100%; min-height: 100px; padding: 0.625rem; b
 
 .m-btn_txt, .m-btn_name { color: inherit; }
 
-.m-btn--circle, [class*="m-btn-circle"] { border-radius: 100%; }
+.m-btn--circle, [class*="m-btn--circle"] { border-radius: 100%; }
 
-.m-btn--semicircle, [class*="m-btn-semicircle"] { border-radius: 50px; }
+.m-btn--semicircle, [class*="m-btn--semicircle"] { border-radius: 50px; }
 
 /* Card (m-card) ============================================================== */
 .m-crd_pic, .m-crd_video { position: relative; }

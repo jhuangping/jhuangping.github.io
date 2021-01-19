@@ -1,0 +1,41 @@
+/* Button (m-btn) ============================================================= */
++md-button()
+.m-btn
+    padding: 8px 1em
+    border-radius: 5px
+.m-btn--st
+    &-gotop
+        +flex-center()
+        position: fixed
+        z-index: 10
+        bottom: 50px
+        right: 0px
+        border-top-left-radius: 3px
+        border-bottom-left-radius: 3px
+        border-top-right-radius: 0px
+        border-bottom-right-radius: 0px
+        width: 35px
+        height: 35px
+        font-size: rem(14)
+        color: #fff
+        background: rgb(0, 102, 204)
+        box-shadow: 0 0 32px rgba(#000, .2)
+        .m-btn
+            &_name
+                color: #fff
+.m-btn--download
+    display: inline-block
+    color: #fff
+    background: #6AA84F
+    position: relative
+    +trs()
+    +rwdw-min()
+        &:hover
+            background: #6AA84F
+            opacity: 1
+            box-shadow: 0 2px 10px rgba(#274E13, .5) inset
+            +trs()
+
++m-btn-circle()
+
++m-btn-semicircle()

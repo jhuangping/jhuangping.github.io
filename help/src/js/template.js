@@ -20,8 +20,8 @@ $(function () {
     ]
 
     // 基礎設定 header & footer
-    var header = $('<div class="hd__l-wp l-wp-max1680"><a href="index.html" class="hd__logo"><img src="../src/img/common/logo.svg" alt=""></a><div class="hd__toggle"></div><div class="menu"><ul class="menu__ctr"></ul></div></div>'),
-        footer = $('<div class="ft__l-wp l-wp-max1680"><div class="copyright">Copyright© JhuangPing 2019 - All. <span> Design by JhuangPing</span></div></div>');
+    var header = $('<div class="hd_wp l-wp-1680"><a href="index.html" class="hd_logo"><img src="../src/img/common/logo.svg" alt=""></a><div class="hd_toggle"></div><div class="menu"><ul class="menu_ctr"></ul></div></div>'),
+        footer = $('<div class="ft_wp l-wp-1680"><div class="copyright">Copyright© JhuangPing 2019 - All. <span> Design by JhuangPing</span></div></div>');
     // $('header').append(header);
     $('footer').append(footer);
 
@@ -32,7 +32,7 @@ $(function () {
     // });
 
     function menu(){
-        var btn = $('.hd__toggle');
+        var btn = $('.hd_toggle');
         btn.click(function(){
             $(this).parents('header').toggleClass('is-active')
         });
@@ -44,7 +44,7 @@ $(function () {
             ctrStn = $('.stn-body'),
             ctrClose = $('.body-close')
     
-        $('.menu__item').click(function () { 
+        $('.menu_item').click(function () { 
             $('header').removeClass('is-active');
             
             var thisOpen = $(this).data('import');

@@ -121,7 +121,12 @@
                     <li><code>gulp.dest('folder')</code> //檔案的存檔路徑</li>
                     <li><code>.pipe(/*do something*/)</code></li>
                     <li><code>gulp.watch(glob,fn)</code> //監控資料來源 <a href="#gulpWatch" class="c-remark">補充說明</a></li>
-                </ul>
+                </ul><br>
+                <b>gulp 4.0 新增 <a href="#gulpUp" class="c-remark">升級說明</a></b>
+                <ul>
+                    <li><code>gulp.parallel(fn)</code> //同時執行</li>
+                    <li><code>gulp.series(fn)</code> //依序執行</li>
+                </ul><br>
                 <h5>Pipe 串接概念</h5>
                 <div>
                     <h6>來源</h6>
@@ -371,6 +376,39 @@ console.log(options);</code></pre>
     .pipe($.if(option.env === 'production', $.minifyCss() ))
 <span class="gray">// ...</span></code></pre>
                 </div>
+                <hr>
+
+                <h5 id="gulpUp">確認任務完成的方法</h5>
+
+                <p>錯誤說明：Did you forget to signal async completion</p>
+                <p>由於這個任務沒有辦法明確知道什麼時候全部完成，因此解法有以下幾種</p>
+                <ol>
+                    <li>加入 <span class="u-fc-red">callback function</span>
+<pre><code>gulp.task('imageMin', function(done) {
+    gulp
+        .src('./source/images/*')
+        // ...
+      done(); // 在函式參數傳入一個 callback function，並在最後方調用
+});</code></pre>
+                        
+                        <p><code>done();</code> 是作為任務結束執行的callback在此不加上不會影響運作但在4.x版都建議加上非同步完成的回調</p>
+                    </li>
+                    <li>轉為 <span class="u-fc-red">async function</span>，讓 gulp 以同步方式處理
+<pre><code>gulp.task('imageMin', async function() {
+    gulp
+        .src('./source/images/*')
+        // ...
+});</code></pre>
+                    </li>
+                    <li>gulp 任務補上 <span class="u-fc-red">return</span>
+<pre><code>gulp.task('imageMin', function() {
+    return gulp
+        .src('./source/images/*')
+        // ...
+});</code></pre>
+                    </li>
+                </ol>
+                <p>Gulp 4.0的模組化手法： <a href="../src/upload/note/gulp/gulp-demo-feature-v4.zip" target="_blank" class="c-download">範例連結</a></p>
                 <hr>
 
             </li>
