@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .browser-develop{
+            position: fixed;
+            left:20px;
+            bottom: 20px;
+            padding: 20px 30px;
+            margin: 0px;
+            list-style: none;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,.3);
+            background: #ededed;
+        }
+        .hinit{
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: '微軟正黑體';
+            text-align: center;
+        }
+        .hinit span{
+            color: #666;
+            font-size: 16px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="hinit">
+        檢查瀏覽器小幫手 ~<br>
+        <span>請幫我把畫面截下來，並回傳給我們喔</span>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <script>
+        (function () {
+
+            "use strict";
+
+            function uaMatch(ua) {
+                if (ua === undefined) {
+                    ua = window.navigator.userAgent;
+                }
+                ua = ua.toLowerCase();
+                var match = /(edge)\/([\w.]+)/.exec(ua) ||
+                    /(opr)[\/]([\w.]+)/.exec(ua) ||
+                    /(chrome)[ \/]([\w.]+)/.exec(ua) ||
+                    /(iemobile)[\/]([\w.]+)/.exec(ua) ||
+                    /(version)(applewebkit)[ \/]([\w.]+).*(safari)[ \/]([\w.]+)/.exec(ua) ||
+                    /(webkit)[ \/]([\w.]+).*(version)[ \/]([\w.]+).*(safari)[ \/]([\w.]+)/.exec(ua) ||
+                    /(webkit)[ \/]([\w.]+)/.exec(ua) ||
+                    /(opera)(?:.*version|)[ \/]([\w.]+)/.exec(ua) ||
+                    /(msie) ([\w.]+)/.exec(ua) ||
+                    ua.indexOf("trident") >= 0 && /(rv)(?::| )([\w.]+)/.exec(ua) ||
+                    ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec(ua) ||
+                    [];
+                var platform_match = /(ipad)/.exec(ua) ||
+                    /(ipod)/.exec(ua) ||
+                    /(windows phone)/.exec(ua) ||
+                    /(iphone)/.exec(ua) ||
+                    /(kindle)/.exec(ua) ||
+                    /(silk)/.exec(ua) |
+                    /(android)/.exec(ua) ||
+                    /(win)/.exec(ua) ||
+                    /(mac)/.exec(ua) ||
+                    /(linux)/.exec(ua) ||
+                    /(cros)/.exec(ua) ||
+                    /(playbook)/.exec(ua) ||
+                    /(bb)/.exec(ua) ||
+                    /(blackberry)/.exec(ua) ||
+                    [];
+                var browser = {},
+                    matched = {
+                        browser: match[5] || match[3] || match[1] || "",
+                        version: match[2] || match[4] || "0",
+                        versionNumber: match[4] || match[2] || "0",
+                        platform: platform_match[0] || ""
+                    };
+                if (matched.browser) {
+                    browser[matched.browser] = true;
+                    browser.version = matched.version;
+                    browser.versionNumber = parseInt(matched.versionNumber, 10);
+                }
+                if (matched.platform) {
+                    browser[matched.platform] = true;
+                }
+                if (browser.android || browser.bb || browser.blackberry || browser.ipad || browser.iphone ||
+                    browser.ipod || browser.kindle || browser.playbook || browser.silk || browser["windows phone"]) {
+                    browser.mobile = true;
+                }
+                if (browser.cros || browser.mac || browser.linux || browser.win) {
+                    browser.desktop = true;
+                }
+                if (browser.chrome || browser.opr || browser.safari) {
+                    browser.webkit = true;
+                }
+                if (browser.chrome) {
+                    var chrome = "Chrome"
+                    matched.browser = chrome
+                    browser[chrome] = true;
+                }
+                if (browser.msie) {
+                    var ie = "IE";
+                    matched.browser = ie;
+                    browser[ie] = true;
+                }
+                if (browser.rv || browser.iemobile) {
+                    var ie = "IE";
+                    matched.browser = ie;
+                    browser[ie] = true;
+                }
+                if (browser.edge) {
+                    delete browser.edge;
+                    var msedge = "Edge";
+                    matched.browser = msedge;
+                    browser[msedge] = true;
+                }
+                if (browser.safari && browser.blackberry) {
+                    var blackberry = "blackberry";
+                    matched.browser = blackberry;
+                    browser[blackberry] = true;
+                }
+                if (browser.safari && browser.playbook) {
+                    var playbook = "playbook";
+                    matched.browser = playbook;
+                    browser[playbook] = true;
+                }
+                if (browser.bb) {
+                    var bb = "blackberry";
+                    matched.browser = bb;
+                    browser[bb] = true;
+                }
+                if (browser.opr) {
+                    var opera = "Opera";
+                    matched.browser = opera;
+                    browser[opera] = true;
+                }
+                if (browser.safari && browser.android) {
+                    var android = "Android";
+                    matched.browser = android;
+                    browser[android] = true;
+                }
+                if (browser.safari && browser.kindle) {
+                    var kindle = "kindle";
+                    matched.browser = kindle;
+                    browser[kindle] = true;
+                }
+                if (browser.safari && browser.silk) {
+                    var silk = "silk";
+                    matched.browser = silk;
+                    browser[silk] = true;
+                }
+                browser.name = matched.browser;
+                browser.platform = matched.platform;
+                return browser;
+            }
+            window.Browser = uaMatch(window.navigator.userAgent);
+            return window.Browser;
+        })();
+        ;(function (Browser) {
+            var url = location.href
+            function runWebTool() {
+                function catchSize() {
+                    var showWidth = document.documentElement.clientWidth
+                    var showHeight = document.documentElement.clientHeight
+                    documentSizeDiv.innerText = showWidth + 'px × ' + showHeight + 'px'
+                }
+                var mainDiv = document.createElement('div')
+                var documentSizeDiv = document.createElement('div')
+                var browser = document.createElement('div')
+                mainDiv.setAttribute('style',
+                    [
+                        'font-family: 微軟正黑體',
+                        'border-radius: 5px',
+                        'background-color: rgba(0, 0, 0, 0.3)',
+                        'position: fixed',
+                        'top: 30px',
+                        'right: 30px',
+                        'font-size: 14px',
+                        'color: white',
+                        'padding: 10px',
+                        'border-radius: 5px',
+                        'z-index: 9999999',
+                        'box-shadow: 0 0 5px rgba(white,0.5)',
+                        'user-select: none',
+                        'cursor: pointer'
+                    ].join(';')
+                )
+                browser.innerText = '目前的瀏覽器為：' + Browser.name + ' ( ' + Browser.version + ' ) '
+                mainDiv.addEventListener('click', function () {
+                })
+                catchSize()
+                mainDiv.appendChild(browser)
+                mainDiv.appendChild(documentSizeDiv)
+                document.body.appendChild(mainDiv)
+                window.addEventListener('resize', catchSize)
+            }
+            if (url.indexOf('?') !== -1) {
+                var urlArray = url.split('?')[1].split('&'),
+                    l = urlArray.length
+                for (var i = 0; i < l; i++) {
+                    var obj = urlArray[i]
+                    obj.split('=')[0] === 'webtool' && obj.split('=')[1] === 'true' && runWebTool()
+                }
+            }
+
+            runWebTool();
+        })(window.Browser);
+
+        // let info = window.Browser;    
+        // console.log(info);
+        // function ReSize() {
+        //     var w = $(window).width();
+        //     var h = $(window).height();
+        //     $('body').html("<ul class='browser-develop'> \
+        //         <li>" + info.name + " " + info.version + "</li> \
+        //         <li>width : " + w + "</li> \
+        //         <li>height : " + h + "</li> \
+        //         </ul>");
+        // }
+        // ReSize();    
+
+        // $(window).resize(function () {
+        //     ReSize();
+        // });
+    </script>
+</body>
+</html>
