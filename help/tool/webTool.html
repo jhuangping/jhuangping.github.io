@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Browser 檢查瀏覽器</title>
+    <link rel="icon" type="image/png" href="../src/img/tool/crop.png">
+    <title>What Is My Viewport</title>
     <style>
+        body {
+            background: #333;
+            font-family: Arial, 'Microsoft JhengHei', sans-serif;
+            padding: 0px;
+            margin: 0px;
+        }
         .browser-develop{
             position: fixed;
             left:20px;
@@ -17,29 +24,84 @@
             box-shadow: 0 0 5px rgba(0,0,0,.3);
             background: #ededed;
         }
-        .hinit{
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: '微軟正黑體';
-            text-align: center;
+        .viewport {
+            max-width: 480px;
+            min-height: 100vh;
+            padding: 10px 20px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
         }
-        .hinit span{
-            color: #666;
-            font-size: 16px;
-            font-weight: normal;
+        .viewport_main{
+            width: 100%;
+            flex-basis: 100%;
+            text-align: center;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #666
+        }
+        .title{
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+        .document-size{
+            font-size: 60px;
+            font-weight: bold;
+        }
+        .viewport_other{
+            width: 100%;
+            flex-basis: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .viewport_info{
+            display: flex;
+            align-items: center;
+        }
+        .browser{
+            margin-right: 25px;
+        }
+        .dpr{
+            display: flex;
+        }
+        .dpr_title{
+            margin-right: 8px;
+        }
+        .screen_title{
+            margin-bottom: 8px;
+        }
+        .screen_size{}
+        @media (max-width: 600px) {
+            .title{ font-size: 20px; }
+            .document-size{ font-size: 30px; }
+            .viewport_other{
+                flex-direction: column;
+                align-items: center;
+            }
+            .viewport_info{
+                flex-direction: column;
+                margin-bottom: 5px;
+            }
+            .browser{ 
+                margin-right: 0px; 
+                margin-bottom: 5px;
+            }
+            .viewport_screen{
+                display: flex;
+                align-items: center;
+            }
+            .screen_title{
+                margin-bottom: 0px;
+                margin-right: 6px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="hinit">
-        檢查瀏覽器小幫手 ~<br>
-        <span>請幫我把畫面截下來，並回傳給我們喔</span>
-    </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
     <script>
         (function () {
@@ -172,35 +234,99 @@
                 function catchSize() {
                     var showWidth = document.documentElement.clientWidth
                     var showHeight = document.documentElement.clientHeight
+                    var newWidth = window.screen.width
+                    var newHeight = window.screen.height
+                    var newDPR = window.devicePixelRatio.toFixed(2);
+
                     documentSizeDiv.innerText = showWidth + 'px × ' + showHeight + 'px'
+                    screenSizeDiv.innerText = newWidth + 'px ×' + newHeight + 'px'
+                    devDPR.innerText = newDPR
                 }
                 var mainDiv = document.createElement('div')
+
+                var documentSizeMainDiv = document.createElement('div')
+                var documentSizeTitle = document.createElement('div')
                 var documentSizeDiv = document.createElement('div')
+
+                var otherDiv = document.createElement('div')
+                var otherLeftDiv = document.createElement('div')
+                var otherRightDiv = document.createElement('div')
+
                 var browser = document.createElement('div')
-                mainDiv.setAttribute('style',
-                    [
-                        'font-family: 微軟正黑體',
-                        'border-radius: 5px',
-                        'background-color: rgba(0, 0, 0, 0.3)',
-                        'position: fixed',
-                        'top: 30px',
-                        'right: 30px',
-                        'font-size: 14px',
-                        'color: white',
-                        'padding: 10px',
-                        'border-radius: 5px',
-                        'z-index: 9999999',
-                        'box-shadow: 0 0 5px rgba(white,0.5)',
-                        'user-select: none',
-                        'cursor: pointer'
-                    ].join(';')
-                )
-                browser.innerText = '目前的瀏覽器為：' + Browser.name + ' ( ' + Browser.version + ' ) '
+
+                var devMainDiv = document.createElement('div')
+                var devDPRTitle = document.createElement('div')
+                var devDPR = document.createElement('div')
+
+                var screenSizeMainDiv = document.createElement('div')
+                var screenSizeTitle = document.createElement('div')
+                var screenSizeDiv = document.createElement('div')
+                // mainDiv.setAttribute('style',
+                //     [
+                //         'font-family: 微軟正黑體',
+                //         'border-radius: 5px',
+                //         'background-color: rgba(0, 0, 0, 0.3)',
+                //         'position: fixed',
+                //         'top: 30px',
+                //         'right: 30px',
+                //         'font-size: 14px',
+                //         'color: white',
+                //         'padding: 10px',
+                //         'border-radius: 5px',
+                //         'z-index: 9999999',
+                //         'box-shadow: 0 0 5px rgba(white,0.5)',
+                //         'user-select: none',
+                //         'cursor: pointer'
+                //     ].join(';')
+                // )
+
+                // innerText
+                documentSizeTitle.innerText = 'your viewport size is:'
+
+                browser.innerText = Browser.name + ' ( ' + Browser.version + ' ) '
+
+                screenSizeTitle.innerText = 'Screen Size : '
+
+                devDPRTitle.innerText = 'DPR : '
+
                 mainDiv.addEventListener('click', function () {
                 })
                 catchSize()
-                mainDiv.appendChild(browser)
-                mainDiv.appendChild(documentSizeDiv)
+
+                // class
+                mainDiv.classList.add('viewport');
+
+                documentSizeMainDiv.classList.add('viewport_main')
+                documentSizeTitle.classList.add('title')
+                documentSizeDiv.classList.add('document-size')
+
+                otherDiv.classList.add('viewport_other')
+                otherLeftDiv.classList.add('viewport_info')
+                browser.classList.add('browser')
+                devMainDiv.classList.add('dpr')
+                devDPRTitle.classList.add('dpr_title')
+                devDPR.classList.add('dpr_number')
+                otherRightDiv.classList.add('viewport_screen')
+                screenSizeTitle.classList.add('screen_title')
+                screenSizeDiv.classList.add('screen_size')
+
+                // HTML layout
+                documentSizeMainDiv.appendChild(documentSizeTitle)
+                documentSizeMainDiv.appendChild(documentSizeDiv)
+                mainDiv.appendChild(documentSizeMainDiv)
+
+                otherLeftDiv.appendChild(browser)
+                devMainDiv.appendChild(devDPRTitle)
+                devMainDiv.appendChild(devDPR)
+                otherLeftDiv.appendChild(devMainDiv)
+                otherDiv.appendChild(otherLeftDiv)
+
+                otherRightDiv.appendChild(screenSizeTitle)
+                otherRightDiv.appendChild(screenSizeDiv)
+                otherDiv.appendChild(otherRightDiv)
+
+                mainDiv.appendChild(otherDiv)
+
                 document.body.appendChild(mainDiv)
                 window.addEventListener('resize', catchSize)
             }
@@ -216,8 +342,8 @@
             runWebTool();
         })(window.Browser);
 
-        // let info = window.Browser;    
-        // console.log(info);
+        let info = window.Browser;    
+        console.log(info);
         // function ReSize() {
         //     var w = $(window).width();
         //     var h = $(window).height();
