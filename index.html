@@ -29,16 +29,53 @@
 
 </head>
 
-<body>
-    <div class="l-wp-html">
-        <!-- <header class="hd"></header> -->
-        <main class="l-wp-main">
-            <div class="l-wp-1366">
-                測試頁面 ...
+<body data-id="index">
+  <div class="l-wp-html">
+    <header class="hd"></header>
+    <main class="main">
+      
+        <section class="idx-info idx-info--red">
+          <div class="idx-info_wp">
+            <figure class="idx-info_logo">
+              <img src="src/img/common/logo.svg">
+            </figure>
+            <div class="idx-info_content">
+              <div class="idx-info_headline">
+                <h1 class="idx-info_headline-name">JhuangPing．Hati</h1>
+                <h2 class="idx-info_headline-job">Front-end Engineer</h2>
+              </div>
+              <ul class="idx-info_depiction">
+                <li class="idx-info_depiction-item idx-info_depiction-item--school">建國科技大學 / 數位媒體設計</li>
+                <li class="idx-info_depiction-item idx-info_depiction-item--mail"><a href="mailto:jhuangping9981@gmail.com" target="_blank">jhuangping9981@gmail.com</a></li>
+                <li class="idx-info_depiction-item idx-info_depiction-item--add">現居 台中市 (Taichung,TW)</li>
+              </ul>            
             </div>
-        </main>
-        <!-- <footer class="ft"></footer> -->
-    </div>
+          </div>
+          <div class="idx-info_bg"></div>
+        </section>
+      
+      <div class="m-bn m-bn--index">
+        <div class="m-bn_ctr">
+          <div class="m-bn-idx_swp swiper-container">
+              <div class="swiper-wrapper">
+
+                  <div v-for="val in bn" class="swiper-slide">
+                    <div class="m-bn_pic" data-img="full">
+                      <img v-bind:src="val.pic" alt="">
+                    </div>
+                  </div>
+
+
+              </div>
+              
+          </div>
+        
+          <!-- <div class="bn_txt"></div> -->
+        </div>
+      </div>
+    </main>
+    <footer class="ft"></footer>
+  </div>
 </body>
 
 <!-- jquery 版本-->
