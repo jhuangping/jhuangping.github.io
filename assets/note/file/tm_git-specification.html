@@ -1,0 +1,72 @@
+<div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true">
+  <hr>
+  <p><a href="https://hackmd.io/8sRhCJ3fRjWG0XBIzuSxqg" target="_blank" rel="noopener"><span>回 前端共筆</span></a></p>
+  <h1 id="git規範、各分支定義及發佈版本流程" data-id="git規範、各分支定義及發佈版本流程"><span>git規範、各分支定義及發佈版本流程</span></h1>
+  <h2 id="git規範" data-id="git規範"><span>git規範</span></h2>
+  <p><span>修改文件請使用標準的 commit 方式，</span><a href="https://www.conventionalcommits.org/zh-hant/v1.0.0/#%e8%a6%8f%e7%af%84"
+      target="_blank" rel="noopener"><span>請看這裡</span></a><span>。</span></p>
+  <h3 id="常用commit定義" data-id="常用commit定義"><span>常用commit定義</span></h3>
+  <div class="code-block-wrapper">
+    <div class="code-toolbar"><button
+        class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]"
+        data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true"
+          style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+    <pre><code>feat - 新功能、項目
+fix - bug修正
+chore - 設定更新、更新版本、增加套件...
+ci - ci設定變更
+build - 專案建置、打包設定相關
+refactor - 重構
+BREAKING CHANGE - 會無法上下兼容
+</code></pre>
+  </div>
+  <h3 id="commit方式" data-id="commit方式"><span>commit方式</span></h3>
+  <div class="code-block-wrapper">
+    <div class="code-toolbar"><button
+        class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]"
+        data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true"
+          style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+    <pre><code>feat([功能項名稱]): [改動了什麼]
+
+e.g. feat(時間快捷): 遊戲匯總表增加時間快捷
+</code></pre>
+  </div>
+  <h2 id="各分支定義" data-id="各分支定義"><span>各分支定義</span></h2>
+  <ul>
+    <li><span>develop</span>
+      <ul>
+        <li><span>主分支</span></li>
+        <li><span>開發站使用</span></li>
+        <li><span>開發都從此分支拉分支出去開發</span></li>
+      </ul>
+    </li>
+    <li><span>release</span>
+      <ul>
+        <li><span>整合站使用</span></li>
+        <li><span>從develop用cherry-pick的方式將要送測的項目pick過來</span></li>
+      </ul>
+    </li>
+    <li><span>master</span>
+      <ul>
+        <li><span>正式站使用</span></li>
+        <li><span>從master用cherry-pick的方式將要上線的項目pick過來</span></li>
+      </ul>
+    </li>
+    <li><span>自訂義分支</span>
+      <ul>
+        <li><span>分支命名規則</span>
+          <ul>
+            <li><span>新項目開發： </span><mark><span>feat/[名字]/[項目名]</span></mark><span> e.g.
+                feat/black/add-account</span></li>
+            <li><span>bug修正： </span><mark><span>fix/[名字]/[項目名]</span></mark></li>
+            <li><span>重構： </span><mark><span>refactor/[名字]/[項目名]</span></mark></li>
+            <li><span>雜項(設定更新、更新版本、增加套件</span><span class="smartypants">…</span><span>)：
+              </span><mark><span>chore/[名字]/[項目名]</span></mark></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h6 id="tags-git-note" data-id="tags-git-note"><span>tags: </span><code>git</code><span> </span><code>note</code>
+  </h6>
+</div>
