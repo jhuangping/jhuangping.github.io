@@ -12,10 +12,10 @@
         <hr>
 
         <h3>Gulp 環境(Windows 安裝 Node.js)</h3>
-        <h5>相關指令</h5>
+        <h4>相關指令</h4>
             <p><code>node -v</code> 會出現Node.js的版本</p>
             <p><code>npm -v</code> 會出現npm的版本</p>
-        <h5>安裝步驟</h5>
+        <h4>安裝步驟</h4>
         <ol>
             <li>
                 <p>
@@ -101,7 +101,7 @@
 
         </ol>
         <hr>
-        <h5>gulp 語法</h5>
+        <h4>gulp 語法</h4>
         <ul>
             <li><code>gulp.task(name,fn(){})</code> //定義任務名稱</li>
             <li><code>gulp.run(task)</code> // 運行指定的任務</li>
@@ -115,9 +115,9 @@
             <li><code>gulp.parallel(fn)</code> //同時執行</li>
             <li><code>gulp.series(fn)</code> //依序執行</li>
         </ul><br>
-        <h5>Pipe 串接概念</h5>
+        <h4>Pipe 串接概念</h4>
         <div>
-            <h6>來源</h6>
+            <b>來源</b>
             <ol>
                 <li><code>.pipe(coffee())</code> //編譯</li>
                 <li><code>.pipe(concat(..))</code> //合併</li>
@@ -126,7 +126,7 @@
             </ol>
             
         </div>
-        <h5>gulp 插件</h5>
+        <h4>gulp 插件</h4>
         <ul>
             <li><strong>推薦</strong>
                 <ul>
@@ -173,7 +173,7 @@
     </li>
     <li>
         <h2>補充說明</h2>
-        <h5 id="gulpWatch">關於 Watch 的監控</h5>
+        <h4 id="gulpWatch">關於 Watch 的監控</h4>
         <div>
             <p>
                 目前版本的 Watch 並無法監控到 "新增” 及 “刪除” 的檔案更動<br>
@@ -183,7 +183,7 @@
             </p>
         </div>
         <hr>
-        <h5 id="babel">Babel 套件補充說明</h5>
+        <h4 id="babel">Babel 套件補充說明</h4>
         <div>
             <p>
                 gulp-babel 套件可能在更新時沒有加入核心套件<br>
@@ -203,7 +203,7 @@
         </div>
         <hr>
 
-        <h5 id="autoprefixer">AutoPrefixer 更新說明</h5>
+        <h4 id="autoprefixer">AutoPrefixer 更新說明</h4>
         <div>
             <p>
                 近期 <code>autoprefixer</code> 更新後<br>
@@ -237,7 +237,7 @@
         </div>
         <hr>
         
-        <h5 id="mainBowerFiles">Gulp & Bower 流程串接</h5>
+        <h4 id="mainBowerFiles">Gulp & Bower 流程串接</h4>
         <ol>
             <li>在專案下安裝<a href="tm_bower.html">Bower</a>環境</li>
             <li>安裝套件 <code>main-bower-files</code></li>
@@ -260,7 +260,7 @@ return gulp.src('./.tmp/vendors/**/**.js')
 
 gulp.task('default', ['vendorJs']);
 </code></pre>
-        <h6>Bower 額外補充說明</h6>
+        <b>Bower 額外補充說明</b>
         <div>
             <p>
                 並非所有套件對於 bower 的取用都那麼的友善<br>
@@ -302,7 +302,7 @@ return gulp.src(['./.tmp/vendors/**/**.js'])
 })</code></pre>
         </div>
         <hr>
-        <h5 id="minifyCss">gulp minify CSS 與 Webservice 補充說明</h5>
+        <h4 id="minifyCss">gulp minify CSS 與 Webservice 補充說明</h4>
         <div>
             <p>
                 gulp-minify-css 作者不再維護了<br>
@@ -333,7 +333,7 @@ reloadDebounce: 2000
         </div>
         <hr>
 
-        <h5 id="minimist">依據開發環境調整你的輸出內容 <code>minimist</code> <code>gulp-if</code></h5>
+        <h4 id="minimist">依據開發環境調整你的輸出內容 <code>minimist</code> <code>gulp-if</code></h4>
         <div>
 
             <b>環境簡圖</b>
@@ -366,7 +366,7 @@ console.log(options);</code></pre>
         </div>
         <hr>
 
-        <h5 id="gulpUp">確認任務完成的方法</h5>
+        <h4 id="gulpUp">確認任務完成的方法</h4>
 
         <p>錯誤說明：Did you forget to signal async completion</p>
         <p>由於這個任務沒有辦法明確知道什麼時候全部完成，因此解法有以下幾種</p>
@@ -401,7 +401,7 @@ return gulp
 
     </li>
     <li>
-        <h5>常見問題</h5>
+        <h4>常見問題</h4>
         <ul>
             <li>
                 <p>
