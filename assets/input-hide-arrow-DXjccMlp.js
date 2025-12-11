@@ -1,3 +1,0 @@
-import{_ as t}from"./LatticeHeadline-QrivTIRq.js";import{c as i,e as s,i as o,b as p,_ as a}from"./index-B507jP-v.js";function l(c,e){const n=t;return p(),i("div",null,[s(n,{title:"inpout hide arrow",subtitle:"input"}),e[0]||(e[0]=o(`<p>功能說明：</p><ul><li>隱藏 <code>&lt;input type=&quot;number&quot;&gt;</code> 的上下箭頭</li><li>表單 UI 想避免使用者用箭頭調整數字</li><li>設計上不希望出現瀏覽器預設的 spinner</li></ul><p>支援瀏覽器：</p><ul><li>Firefox</li><li>Chrome / Safari / Edge（WebKit）</li></ul><hr><h2>使用範例</h2><pre><code><span class="o">input</span>[<span class="r">type</span>=<span class="g">&quot;number&quot;</span>] {
-  <span class="p">@include</span> <span class="b">input-hide-arrows</span>();
-}</code></pre>`,7))])}const r={},_=a(r,[["render",l]]);export{_ as default};
