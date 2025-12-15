@@ -1,0 +1,1 @@
+import{_ as t}from"./LatticeHeadline-DbwJ8jck.js";import{c as n,e as o,b as c,_ as r}from"./index-Dur5vxo0.js";function i(a,s){const e=t;return c(),n("div",null,[o(e,{title:"grid",subtitle:"element"})])}const _={},d=r(_,[["render",i]]);export{d as default};
