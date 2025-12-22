@@ -1,0 +1,7 @@
+import{_ as l}from"./LatticeTable-B0Naatzu.js";import{_ as t}from"./LatticeHeadline-0FdPbW1y.js";import{t as a}from"./func-units-CZel95qk.js";import{c as m,e,i as n,g as p,b as r}from"./index-XeVrB2dC.js";const g={__name:"func-units-em",setup(i){return(d,s)=>{const o=t,c=l;return r(),m("div",null,[e(o,{title:"rem / em",subtitle:"Typography Units"}),s[0]||(s[0]=n(`<h1 class="use-code is:title"><code>rem()</code>  px → rem</h1><p>將 px 轉換為 rem，支援精度控制</p><h4 class="mb:0">SCSS 語法</h4><pre class="mt:0"><code><span class="b">rem</span>(<span class="r">$val, $fz, $digits, $mode</span>)
+</code></pre><h4>參數</h4>`,5)),e(c,{columns:p(a).columns,rows:p(a).rows},null,8,["columns","rows"]),s[1]||(s[1]=n(`<h4>範例</h4><pre><code><span class="b">rem</span>(<span class="o">32</span>); <span class="gy">// 2rem</span>
+<span class="b">rem</span>(<span class="o">20, 10</span>); <span class="gy">// 2rem</span>
+<span class="b">rem</span>(<span class="o">auto</span>); <span class="gy">// auto</span>
+</code></pre><br><h1 class="use-code is:title"><code>em()</code>  px → em</h1><p>與 <code>rem()</code> 相同，但轉換為 em </p><h4 class="mb:0">SCSS 語法</h4><pre class="mt:0"><code><span class="b">em</span>(<span class="r">$val, $fz, $digits, $mode</span>)
+</code></pre><h4>範例</h4><pre><code><span class="b">em</span>(<span class="o">24</span>); <span class="gy">// 1.5em</span>
+<span class="b">em</span>(<span class="o">20, 10</span>); <span class="gy">// 2em</span></code></pre>`,9))])}}};export{g as default};
