@@ -1,0 +1,1 @@
+import{c as s,b as l,a as o,k as c,t as r}from"./index-CRgGQZIT.js";const n={class:"mb:2"},_={__name:"LatticeBlock",props:{label:{type:String,default:"block title"}},setup(e){const t=e;return(a,p)=>(l(),s("div",null,[o("h3",n,r(t.label),1),c(a.$slots,"default")]))}};export{_};
