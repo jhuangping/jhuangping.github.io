@@ -1,0 +1,1 @@
+import{_ as o}from"./LatticeHeadline-DbmhXlwD.js";import{c as t,e as n,b as c,_ as a}from"./index-CY5MHss3.js";function l(_,s){const e=o;return c(),t("div",null,[n(e,{subtitle:"config",title:"global"})])}const r={},m=a(r,[["render",l]]);export{m as default};
