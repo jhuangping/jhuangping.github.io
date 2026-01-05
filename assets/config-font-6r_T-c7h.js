@@ -1,0 +1,10 @@
+import{_ as f}from"./LayoutNoteLink-CiQ3u79x.js";import{_ as m}from"./LatticeBlock-BfcNPi7u.js";import{_ as d}from"./LatticeScssCode-D274NkqP.js";import{_ as g}from"./LatticeHeadline-BswCHU26.js";import{c as a,e as t,a as l,s as r,b as e,A as s,_ as b}from"./index-_tu4U4cc.js";function N(x,n){const i=g,o=d,p=m,u=f;return e(),a("div",null,[t(i,{subtitle:"config",title:"fonts"}),n[28]||(n[28]=l("hr",null,null,-1)),t(p,{label:"字體設定"},{default:r(()=>[t(o,{code:"$fontDefault"}),n[0]||(n[0]=l("p",null,"預設字體（Arial + 微軟正黑體）",-1)),n[1]||(n[1]=l("br",null,null,-1)),t(o,{code:"$useFont"}),n[2]||(n[2]=l("p",null,"設定字型",-1)),n[3]||(n[3]=l("br",null,null,-1)),t(o,{code:"$letterSpacingUint"}),n[4]||(n[4]=l("p",null,[s("控制字距單位 (預設 "),l("code",null,"em"),s(")")],-1)),n[5]||(n[5]=l("p",{class:"tip"},[s("Tip: 若想要調整字距單位，可設定此變數為 "),l("code",null,"'px'"),s("、"),l("code",null,"'em'")],-1)),n[6]||(n[6]=l("br",null,null,-1)),n[7]||(n[7]=l("hr",null,null,-1))]),_:1}),t(p,{label:"設定範例"},{default:r(()=>[l("pre",null,[l("code",null,[n[9]||(n[9]=l("span",{class:"p"},"@forward",-1)),n[10]||(n[10]=s()),n[11]||(n[11]=l("span",{class:"g"},"'LatticeCSS/config'",-1)),n[12]||(n[12]=s()),n[13]||(n[13]=l("span",{class:"b"},"with",-1)),n[14]||(n[14]=s(` (
+  `,-1)),n[15]||(n[15]=l("span",{class:"r"},"$fontDefault",-1)),n[16]||(n[16]=s(": (",-1)),n[17]||(n[17]=l("span",{class:"g"},[s("'Inter', 'Noto Sans TC', "),l("span",{class:"b"},"Arial"),s(", 'Microsoft JhengHei', "),l("span",{class:"b"},"sans-serif")],-1)),n[18]||(n[18]=s(`),
+  `,-1)),n[19]||(n[19]=l("span",{class:"r"},"$useFont",-1)),n[20]||(n[20]=s(": (",-1)),n[21]||(n[21]=l("span",{class:"g"},`
+    'customFontName1': 'Noto Sans TC',
+    'customFontName2': 'Arial',`,-1)),n[22]||(n[22]=s(`
+    擴充設定 ...
+  ),
+  `,-1)),n[23]||(n[23]=l("span",{class:"r"},"$letterSpacingUint",-1)),n[24]||(n[24]=s(": ",-1)),n[25]||(n[25]=l("span",{class:"g"},"'px'",-1)),n[26]||(n[26]=s(`,
+  `,-1)),t(u,{url:"config-global"},{default:r(()=>[...n[8]||(n[8]=[s("其他設定 ...",-1)])]),_:1}),n[27]||(n[27]=s(`
+);`,-1))])])]),_:1})])}const $={},A=b($,[["render",N]]);export{A as default};

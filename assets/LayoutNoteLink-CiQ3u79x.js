@@ -1,0 +1,1 @@
+import{C as s,c as a,b as c,k as u}from"./index-_tu4U4cc.js";const k={__name:"LayoutNoteLink",props:{url:{type:String,default:null}},setup(n){const t=n,{noteLink:o}=s("layoutNotePageContext"),r=()=>{t.url!==null&&o(t.url)};return(l,e)=>(c(),a("a",{class:"c-link",href:"javascript:void(0);",onClick:e[0]||(e[0]=i=>r())},[u(l.$slots,"default")]))}};export{k as _};
