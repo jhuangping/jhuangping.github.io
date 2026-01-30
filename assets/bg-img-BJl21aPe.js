@@ -1,1 +1,0 @@
-import{_ as t}from"./LatticeHeadline-BhxiByke.js";import{c as n,e as o,b as c,_ as r}from"./index-7WYnqDRJ.js";function a(s,i){const e=t;return c(),n("div",null,[o(e,{title:"bg-img",subtitle:"background"})])}const _={},p=r(_,[["render",a]]);export{p as default};
