@@ -1,0 +1,1 @@
+import{_ as t}from"./LatticeHeadline-CHLOaSjt.js";import{c as n,e as o,b as c,_ as r}from"./index-lg5BKigg.js";function a(s,i){const e=t;return c(),n("div",null,[o(e,{title:"bg-img",subtitle:"background"})])}const _={},p=r(_,[["render",a]]);export{p as default};
