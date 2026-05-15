@@ -1,0 +1,91 @@
+<div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true"><p><a href="https://hackmd.io/8sRhCJ3fRjWG0XBIzuSxqg" target="_blank" rel="noopener"><span>回 前端共筆</span></a></p><h1 id="空值合並運算符（）" data-id="空值合並運算符（）"><span>空值合並運算符（??）</span></h1><p><span>空值合併運算符</span><code>??</code><span>是一个邏輯運算符，當左側的操作數為 </span><code>null</code><span> 或者 </span><code>undefined</code><span> 時，返回其右側操作數，否則返回左側操作數。</span></p><p><span>與邏輯或運算符</span><code>||</code><span>不同，邏輯或運算符會在左側操作數為假值時返回右側操作數。也就是说，如果使用 </span><code>||</code><span>來為某些變量設置默認值，可能會遇到意料之外的行為。比如為假值（例如，</span><code>''</code><span> 或 </span><code>0</code><span>）時。見下面的例子。</span></p><div class="code-block-wrapper"><div class="code-toolbar"><button class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+        <pre><code>const foo = null ?? 'default string';
+console.log(foo);
+// Expected output: "default string"
+
+const baz = 0 ?? 42;
+console.log(baz);
+// Expected output: 0
+</code></pre>
+      </div><h2 id="語法" data-id="語法"><span>語法</span></h2><div class="code-block-wrapper"><div class="code-toolbar"><button class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+        <pre><code>leftExpr ?? rightExpr
+</code></pre>
+      </div><h2 id="範例" data-id="範例"><span>範例</span></h2><h3 id="使用空值合並運算符" data-id="使用空值合並運算符"><span>使用空值合並運算符</span></h3><p><span>空值合算為常數提供確認值，保證常量不為 </span><code>null</code><span> 或者 </span><code>undefined</code></p><div class="code-block-wrapper"><div class="code-toolbar"><button class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+        <pre><code>const nullValue = null;
+const emptyText = ""; // 空字符串，是一个假值，Boolean("") === false
+const someNumber = 42;
+
+const valA = nullValue ?? "valA 的預設值";
+const valB = emptyText ?? "valB 的預設值";
+const valC = someNumber ?? 0;
+
+console.log(valA); // "valA 的預設值"
+console.log(valB); // ""（空字符串雖然是假值，但不是 null 或者 undefined）
+console.log(valC); // 42
+
+</code></pre>
+      </div><h3 id="為變量賦默認值" data-id="為變量賦默認值"><span>為變量賦默認值</span></h3><p><span>以前，如果想為一個變量賦默認值，通常的做法是使用邏輯或運算符</span><code>||</code><span>：</span></p><div class="code-block-wrapper"><div class="code-toolbar"><button class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+        <pre><code>let foo;
+
+//  foo is never assigned any value so it is still undefined
+let someDummyText = foo || "Hello!";
+
+</code></pre>
+      </div><p><span>然而，由於 </span><code>||</code><span> 是一个布爾邏輯運算符，左側的操作數會被强制轉換成布爾值用於求值。任何假值（</span><code>0</code><span>， </span><code>''</code><span>， </span><code>NaN</code><span>， </span><code>null</code><span>， </span><code>undefined</code><span>）都不會被返回。這導致如果你使用</span><code>0</code><span>，</span><code>''</code><span>或</span><code>NaN</code><span>作為有效值，就會出現不可預料的後果。</span></p><div class="code-block-wrapper"><div class="code-toolbar"><button class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+        <pre><code>let count = 0;
+let text = "";
+
+let qty = count || 42;
+let message = text || "hi!";
+console.log(qty); // 42，而不是 0
+console.log(message); // "hi!"，而不是 ""
+</code></pre>
+      </div><p><span>空值合併運算符可以避免這種陷阱，其只在第一個操作數為</span><code>null</code><span> 或 </span><code>undefined</code><span> 時（而不是其他假值）返回第二個操作數：</span></p><div class="code-block-wrapper"><div class="code-toolbar"><button class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+        <pre><code>let myText = ""; // An empty string (which is also a falsy value)
+
+let notFalsyText = myText || "Hello world";
+console.log(notFalsyText); // Hello world
+
+let preservingFalsy = myText ?? "Hi neighborhood";
+console.log(preservingFalsy); // '' (as myText is neither undefined nor null)
+
+</code></pre>
+      </div><h3 id="短路" data-id="短路"><span>短路</span></h3><p><span>與 OR 和 AND 邏輯運算符相似，當左表達式不為 </span><code>null</code><span> 或 </span><code>undefined</code><span> 時，不會對右表達式進行求值</span></p><div class="code-block-wrapper"><div class="code-toolbar"><button class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+        <pre><code>function A() {
+  console.log("函數 A 被調用了");
+  return undefined;
+}
+function B() {
+  console.log("函數 B 被調用了");
+  return false;
+}
+function C() {
+  console.log("函數 C 被調用了");
+  return "foo";
+}
+
+console.log(A() ?? C());
+// 依次打印 "函數 A 被調用了"、"函數 C 被調用了"、"foo"
+// A() 返回了 undefined，所以運算符兩邊的表達式都被執行了
+
+console.log(B() ?? C());
+// 依次打印 "函數 B 被調用了"、"false"
+// B() 返回了 false（既不是 null 也不是 undefined）
+// 所以右側表達式没有被執行
+
+</code></pre>
+      </div><h3 id="不能與-AND-或-OR-運算符共用" data-id="不能與-AND-或-OR-運算符共用"><span>不能與 AND 或 OR 運算符共用</span></h3><p><span>將 </span><code>??</code><span> 直接與 </span><code>AND（&amp;&amp;）</code><span>和 </span><code>OR（||）</code><span>運算符组合使用是不可取的。（譯者註：應當是因為空值合併運算符和其他邏輯運算符之間的運算優先級/運算順序是未定義的）這種情况下會抛出 SyntaxError 。</span></p><div class="code-block-wrapper"><div class="code-toolbar"><button class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+        <pre><code>null || undefined ?? "foo"; // 抛出 SyntaxError
+true || undefined ?? "foo"; // 抛出 SyntaxError
+</code></pre>
+      </div><p><span>但是，如果使用括號來顯式表明運算優先級，是没有問題的：</span></p><div class="code-block-wrapper"><div class="code-toolbar"><button class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+        <pre><code>(null || undefined) ?? "foo"; // 返回 "foo"
+</code></pre>
+      </div><h3 id="與可選鏈式運算符（）的關係" data-id="與可選鏈式運算符（）的關係"><span>與可選鏈式運算符（?.）的關係</span></h3><p><span>空值合併運算符針對 </span><code>undefined</code><span> 與 </span><code>null</code><span> 這兩個值，可選鏈式運算符（?.） 也是如此。在這訪問屬性可能為 </span><code>undefined</code><span> 與 </span><code>null</code><span> 的對象時，可選鏈式運算符非常有用</span></p><div class="code-block-wrapper"><div class="code-toolbar"><button class="rounded text-normal font-normal leading-normal flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled ui-code-block-copy-button p-[7px]" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div>
+        <pre><code>let foo = { someFooProp: "hi" };
+
+console.log(foo.someFooProp?.toUpperCase()); // "HI"
+console.log(foo.someBarProp?.toUpperCase()); // undefined
+
+</code></pre>
+      </div><h6 id="tags-javascript-note" data-id="tags-javascript-note"><span>tags: </span><code>javascript</code><span> </span><code>note</code></h6></div>
