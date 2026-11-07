@@ -1,0 +1,12 @@
+import{_ as m}from"./LatticeBlock-CmcqIpnD.js";import{_ as i}from"./LatticeGrammar-Be9hM5bN.js";import{_ as d}from"./LatticeScssCode-CzBWBA2y.js";import{_ as r}from"./LatticeHeadline-ChbfV0d1.js";import{c as u,e as o,a as n,j as c,x,b,z as e,_}from"./index-Cemr9kf5.js";function f(g,t){const a=r,s=d,p=i,l=m;return b(),u("div",null,[o(a,{subtitle:"Components",title:"Input"}),t[4]||(t[4]=n("p",null,"建立 表單輸入元件 (Input / Textarea) 的基礎樣式，讓你能快速套用一致的設計規範，同時保留擴充的彈性",-1)),t[5]||(t[5]=n("hr",null,null,-1)),t[6]||(t[6]=n("br",null,null,-1)),o(s,{code:"components.input()"}),o(p,{code:"components.input",var:"$style"}),t[7]||(t[7]=c('<p class="mb:2">通用設定 :</p><p class="mt:0"><code>input</code> 欄位（text、tel、email、file、password、number）以及 <code>textarea</code> 的基礎樣式 </p><p class="mb:2">樣式 :</p><ul class="mt:0"><li>預設樣式 → <code>components.input()</code></li><li>自訂樣式 → <code>components.input(custom)</code></li></ul><p class="tip">如果 <code>$style</code> 不是 <code>default</code>，則會執行 <code>@content</code>，允許你自訂樣式</p><br>',6)),o(s,{code:"components.textarea()"}),o(p,{code:"components.textarea",var:"$h"}),t[8]||(t[8]=c('<p class="mb:2">專門針對 <code>textarea</code> 設定基礎樣式</p><ul class="mt:0"><li>預設最小高度，參數 <code>$h</code> 可調整（預設 100px）</li><li>支援 <code>@content</code> → 可在呼叫時插入額外樣式(一般與 <code>components.input</code> 一致)</li></ul><br><hr>',4)),o(l,{label:"設定方式"},{default:x(()=>[o(s,{code:["components.input","components.textarea"]}),o(p,{code:[{code:"components.input",var:"$style"},{code:"components.textarea",var:"$h"}]}),t[0]||(t[0]=n("h4",{class:"mb:2"},"SCSS file setting",-1)),t[1]||(t[1]=n("pre",{class:"mt:0"},[n("code",null,[n("span",{class:"gy"},"// 引入 LatticeCSS components"),e(`
+`),n("span",{class:"p"},"@use"),e(),n("span",{class:"g"},"'LatticeCSS/components'"),e(`;
+
+`),n("span",{class:"gy"},"// 初始化 input (使用預設樣式)"),e(`
+`),n("span",{class:"p"},"@include"),e(),n("span",{class:"b"},"components.input"),e(`;
+`),n("span",{class:"p"},"@include"),e(),n("span",{class:"b"},"components.textarea"),e(`;
+`)])],-1)),t[2]||(t[2]=n("p",{class:"mb:2"},"使用自訂樣式",-1)),t[3]||(t[3]=n("pre",{class:"mt:0"},[n("code",null,[n("span",{class:"p"},"@include"),e(),n("span",{class:"b"},"components.input"),e(`() {
+  自訂樣式 ...
+}
+`),n("span",{class:"p"},"@include"),e(),n("span",{class:"b"},"components.textarea"),e("("),n("span",{class:"o"},"500"),e(`) {
+  其他自訂樣式 (一般與 components.input 一致) ...
+}`)])],-1))]),_:1})])}const S={},B=_(S,[["render",f]]);export{B as default};
